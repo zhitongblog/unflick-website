@@ -1,0 +1,69 @@
+---
+import type { Locale } from '../i18n/config';
+import { t } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const s = t(locale);
+
+// Direct GitHub release links — keep big binaries off Cloudflare Pages.
+const RELEASE = 'https://github.com/zhitongblog/unflick/releases/latest/download';
+---
+
+<section id="download" class="py-20 sm:py-28 border-t border-white/5">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">{s.download.title}</h2>
+      <p class="mt-3 text-zinc-400">{s.download.subtitle}</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5">
+      <!-- Standard -->
+      <div class="card flex flex-col">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xl font-semibold text-white">{s.download.standard.name}</h3>
+          <span class="text-xs text-zinc-500 font-mono">{s.download.standard.size}</span>
+        </div>
+        <p class="mt-3 text-sm text-zinc-400 leading-relaxed flex-1">{s.download.standard.blurb}</p>
+        <a
+          href={`${RELEASE}/unflick_0.6.1_x64-setup-standard.exe`}
+          class="btn-secondary mt-6 w-full justify-center"
+        >
+          {s.download.standard.cta}
+        </a>
+      </div>
+
+      <!-- AI (recommended) -->
+      <div class="card flex flex-col relative border-brand-purple/40 bg-gradient-to-br from-brand-purple/10 to-transparent">
+        <span class="absolute -top-3 left-6 px-2.5 py-0.5 rounded-full text-[10px] uppercase font-bold tracking-wider gradient-bg text-white">
+          {s.download.ai.badge}
+        </span>
+        <div class="flex items-center justify-between">
+          <h3 class="text-xl font-semibold text-white">{s.download.ai.name}</h3>
+          <span class="text-xs text-zinc-500 font-mono">{s.download.ai.size}</span>
+        </div>
+        <p class="mt-3 text-sm text-zinc-400 leading-relaxed flex-1">{s.download.ai.blurb}</p>
+        <a
+          href={`${RELEASE}/unflick-ai_0.6.1_x64-setup.exe`}
+          class="btn-primary mt-6 w-full"
+        >
+          {s.download.ai.cta}
+        </a>
+      </div>
+    </div>
+
+    <div class="text-center mt-10">
+      <a
+        href="https://github.com/zhitongblog/unflick"
+        target="_blank"
+        rel="noopener"
+        class="text-sm text-zinc-400 hover:text-white transition"
+      >
+        {s.download.github}
+      </a>
+    </div>
+  </div>
+</section>

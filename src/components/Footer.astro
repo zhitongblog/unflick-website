@@ -1,0 +1,35 @@
+---
+import type { Locale } from '../i18n/config';
+import { t } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const s = t(locale);
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-auto border-t border-white/5 py-10">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
+    <div class="flex items-center gap-3">
+      <span class="inline-block w-5 h-5 rounded-md gradient-bg"></span>
+      <span class="font-medium text-zinc-300">unflick</span>
+      <span>·</span>
+      <span>{s.footer.tagline}</span>
+    </div>
+    <div class="flex items-center gap-5">
+      <a href="https://github.com/zhitongblog/unflick" target="_blank" rel="noopener" class="hover:text-zinc-200 transition">
+        GitHub
+      </a>
+      <a href="https://solomd.app" target="_blank" rel="noopener" class="hover:text-zinc-200 transition">
+        SoloMD
+      </a>
+      <a href="https://storyalter.com" target="_blank" rel="noopener" class="hover:text-zinc-200 transition">
+        StoryAlter
+      </a>
+      <span>© {year}</span>
+    </div>
+  </div>
+</footer>

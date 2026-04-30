@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "unflick — Un lecteur vidéo pour les humains et les IA",
+    "description": "Lecture moderne et soignée. Contrôle complet via CLI et MCP. Les agents IA peuvent piloter chaque fonctionnalité, jusqu'à la génération de sous-titres hors ligne."
+  },
+  "ads": {
+    "solomd": {
+      "label": "Du même créateur",
+      "name": "SoloMD",
+      "tagline": "Un éditeur Markdown avec serveur MCP intégré. Connecte tes notes à n'importe quel LLM.",
+      "cta": "Essayer"
+    },
+    "storyalter": {
+      "label": "Du même créateur",
+      "name": "StoryAlter",
+      "tagline": "Entraîne ton alter ego d'écriture IA personnel. De la nouvelle à l'épopée de plusieurs millions de mots.",
+      "cta": "Essayer"
+    }
+  },
+  "nav": {
+    "features": "Fonctionnalités",
+    "download": "Télécharger",
+    "github": "GitHub"
+  },
+  "hero": {
+    "headline": "Un lecteur vidéo pour les humains et les IA",
+    "subhead": "Lecture moderne et soignée. Contrôle complet via CLI et MCP. Chaque fonctionnalité tourne en headless — y compris la génération de sous-titres hors ligne.",
+    "primaryCta": "Télécharger pour Windows",
+    "secondaryCta": "Étoile sur GitHub",
+    "version": "v0.6.0 — sorti aujourd'hui"
+  },
+  "features": {
+    "title": "Trois interfaces, un seul cœur",
+    "subtitle": "Conçu dès le premier jour pour les humains et les agents IA. Ce que fait l'interface, le CLI et MCP le font aussi.",
+    "gui": {
+      "title": "Belle interface",
+      "body": "Effet verre dépoli, contrôles auto-masqués, plein écran et incrustation. libmpv sous le capot pour une lecture de niveau professionnel sur tous les formats."
+    },
+    "cli": {
+      "title": "CLI complet",
+      "body": "Toutes les fonctions scriptables. Lire, naviguer, capture d'écran, clip GIF, générer des sous-titres — depuis ton terminal. Sortie JSON partout."
+    },
+    "mcp": {
+      "title": "Natif IA (MCP)",
+      "body": "Serveur MCP intégré. Claude, ChatGPT, Cursor — n'importe quel agent IA peut lire, découper, transcrire et chercher dans ta bibliothèque via 39 outils et 3 ressources live."
+    }
+  },
+  "download": {
+    "title": "Télécharger unflick",
+    "subtitle": "Windows 10 et 11 supportés. macOS bientôt.",
+    "standard": {
+      "name": "Édition Standard",
+      "size": "80 Mo",
+      "blurb": "Lecteur complet avec ffmpeg et yt-dlp inclus pour les clips et la lecture par URL.",
+      "cta": "Télécharger Standard"
+    },
+    "ai": {
+      "name": "Édition AI",
+      "size": "145 Mo",
+      "blurb": "Standard plus un modèle Whisper hors ligne. Sous-titres IA sans configuration.",
+      "cta": "Télécharger AI",
+      "badge": "Recommandé"
+    },
+    "github": "Ou le code source sur GitHub →"
+  },
+  "mcpDemo": {
+    "title": "Branche unflick dans Claude / Cursor / tout client MCP",
+    "body": "Ajoute cette configuration à ton client MCP et l'agent peut piloter la lecture, générer des sous-titres, scanner ta bibliothèque — toutes les fonctions exposées par unflick."
+  },
+  "footer": {
+    "tagline": "Open source · licence MIT",
+    "byline": "Conçu avec soin pour les humains et les IA."
+  },
+  "switcher": {
+    "label": "Langue"
+  }
+}

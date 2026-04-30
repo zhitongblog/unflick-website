@@ -1,0 +1,48 @@
+---
+import '../styles/global.css';
+import { type Locale, LOCALES } from '../i18n/config';
+import { t } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const strings = t(locale);
+const url = Astro.url;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{strings.meta.title}</title>
+    <meta name="description" content={strings.meta.description} />
+    <meta property="og:title" content={strings.meta.title} />
+    <meta property="og:description" content={strings.meta.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url.toString()} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    {LOCALES.map((l) => (
+      <link rel="alternate" hreflang={l} href={`https://unflick.app/${l}/`} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href="https://unflick.app/" />
+
+    <script is:inline define:vars={{ locale }}>
+      // Persist the user's current locale so the country-redirect Function
+      // honors their last visit on subsequent root visits.
+      try {
+        document.cookie = 'lang=' + locale + '; path=/; max-age=31536000; SameSite=Lax';
+      } catch (_) {}
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <slot />
+  </body>
+</html>

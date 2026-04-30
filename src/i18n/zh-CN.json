@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "unflick — 给人类和 AI 的视频播放器",
+    "description": "现代、漂亮的视频播放器，完整支持 CLI 和 MCP 控制。AI Agent 可以驱动每一项功能，包括离线 AI 字幕生成。"
+  },
+  "ads": {
+    "solomd": {
+      "label": "同一作者出品",
+      "name": "SoloMD",
+      "tagline": "内置 MCP server 的 Markdown 编辑器，让你的笔记直通任何 LLM。",
+      "cta": "去看看"
+    },
+    "storyalter": {
+      "label": "同一作者出品",
+      "name": "StoryAlter",
+      "tagline": "培养专属 AI 写作分身，从短篇到百万字长篇都能写。",
+      "cta": "去看看"
+    }
+  },
+  "nav": {
+    "features": "功能",
+    "download": "下载",
+    "github": "GitHub"
+  },
+  "hero": {
+    "headline": "给人类和 AI 的视频播放器",
+    "subhead": "现代漂亮的界面，完整的 CLI 和 MCP 控制。每一项功能都能 headless 跑——包括离线 AI 字幕生成。",
+    "primaryCta": "下载 Windows 版",
+    "secondaryCta": "在 GitHub 上 Star",
+    "version": "v0.6.0 — 今日发布"
+  },
+  "features": {
+    "title": "一个内核，三种用法",
+    "subtitle": "从第一天起就为人类和 AI Agent 同时设计。GUI 能做的事，CLI 和 MCP 全都能做。",
+    "gui": {
+      "title": "精致 GUI",
+      "body": "毛玻璃质感、自动隐藏控制栏、全屏和画中画模式。底层是 libmpv，工业级播放性能，覆盖所有主流格式。"
+    },
+    "cli": {
+      "title": "完整 CLI",
+      "body": "每个功能都可脚本化。播放、跳转、截图、剪 GIF、生成字幕——全部命令行搞定，输出统一 JSON。"
+    },
+    "mcp": {
+      "title": "AI 原生 (MCP)",
+      "body": "内置 MCP server。Claude、ChatGPT、Cursor 等任意 AI Agent 都能通过 39 个工具和 3 个实时资源驱动播放、剪辑、转录、搜索媒体库。"
+    }
+  },
+  "download": {
+    "title": "下载 unflick",
+    "subtitle": "支持 Windows 10 和 11。macOS 即将推出。",
+    "standard": {
+      "name": "标准版",
+      "size": "80 MB",
+      "blurb": "完整播放器，内置 ffmpeg 和 yt-dlp，支持剪辑和 URL 在线播放。",
+      "cta": "下载标准版"
+    },
+    "ai": {
+      "name": "AI 版",
+      "size": "145 MB",
+      "blurb": "标准版 + 离线 Whisper 模型。零配置直接生成 AI 字幕。",
+      "cta": "下载 AI 版",
+      "badge": "推荐"
+    },
+    "github": "或者去 GitHub 看源码 →"
+  },
+  "mcpDemo": {
+    "title": "接入 Claude / Cursor / 任意 MCP 客户端",
+    "body": "把这段配置加到你的 MCP 客户端，AI 就能驱动播放、生成字幕、扫描媒体库——unflick 所有功能 Agent 都能用。"
+  },
+  "footer": {
+    "tagline": "开源 · MIT 协议",
+    "byline": "用心为人类和 AI 打造。"
+  },
+  "switcher": {
+    "label": "语言"
+  }
+}

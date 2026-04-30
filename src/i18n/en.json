@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "unflick — A video player for humans and AI",
+    "description": "Beautiful, modern video player with full CLI and MCP control. AI agents can drive every feature, from playback to AI subtitle generation."
+  },
+  "ads": {
+    "solomd": {
+      "label": "From the same maker",
+      "name": "SoloMD",
+      "tagline": "A markdown editor with a built-in MCP server. Bridge your notes to any LLM.",
+      "cta": "Try it"
+    },
+    "storyalter": {
+      "label": "From the same maker",
+      "name": "StoryAlter",
+      "tagline": "Train your personal AI writing alter ego. From short stories to million-word epics.",
+      "cta": "Try it"
+    }
+  },
+  "nav": {
+    "features": "Features",
+    "download": "Download",
+    "github": "GitHub"
+  },
+  "hero": {
+    "headline": "A video player for humans and AI",
+    "subhead": "Beautiful, modern playback. Full CLI and MCP control. Every feature works headless — including offline AI subtitle generation.",
+    "primaryCta": "Download for Windows",
+    "secondaryCta": "Star on GitHub",
+    "version": "v0.6.0 — released today"
+  },
+  "features": {
+    "title": "Three interfaces, one core",
+    "subtitle": "Built for humans and AI agents from day one. Whatever the GUI does, the CLI and MCP do too.",
+    "gui": {
+      "title": "Beautiful GUI",
+      "body": "Frosted glass UI, smart auto-hide controls, fullscreen and PiP modes. libmpv under the hood for industry-grade playback of every format."
+    },
+    "cli": {
+      "title": "Full CLI",
+      "body": "Every feature scriptable. Play, seek, screenshot, clip to GIF, generate subtitles — all from your terminal. JSON output everywhere."
+    },
+    "mcp": {
+      "title": "AI-native (MCP)",
+      "body": "Built-in MCP server. Claude, ChatGPT, Cursor — any AI agent can play, clip, transcribe, and search your library through 39 tools and 3 live resources."
+    }
+  },
+  "download": {
+    "title": "Download unflick",
+    "subtitle": "Windows 10 and 11 supported. macOS coming soon.",
+    "standard": {
+      "name": "Standard Edition",
+      "size": "80 MB",
+      "blurb": "Full player with bundled ffmpeg and yt-dlp for clipping and URL playback.",
+      "cta": "Download standard"
+    },
+    "ai": {
+      "name": "AI Edition",
+      "size": "145 MB",
+      "blurb": "Standard plus an offline Whisper model. Generate subtitles with zero configuration.",
+      "cta": "Download AI",
+      "badge": "Recommended"
+    },
+    "github": "Or grab the source on GitHub →"
+  },
+  "mcpDemo": {
+    "title": "Drop unflick into Claude / Cursor / any MCP client",
+    "body": "Add this to your MCP client config and the agent can drive playback, generate subtitles, scan your library — every feature unflick exposes."
+  },
+  "footer": {
+    "tagline": "Open source · MIT licensed",
+    "byline": "Made with care for humans and AI."
+  },
+  "switcher": {
+    "label": "Language"
+  }
+}

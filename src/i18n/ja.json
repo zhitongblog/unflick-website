@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "unflick — 人と AI のためのビデオプレーヤー",
+    "description": "美しくモダンな再生体験。CLI と MCP の完全な操作。AI エージェントは再生からオフライン AI 字幕生成まで、すべての機能を駆動できます。"
+  },
+  "ads": {
+    "solomd": {
+      "label": "同じ作者のプロダクト",
+      "name": "SoloMD",
+      "tagline": "MCP サーバー内蔵のマークダウンエディター。あなたのノートを任意の LLM に直結。",
+      "cta": "見てみる"
+    },
+    "storyalter": {
+      "label": "同じ作者のプロダクト",
+      "name": "StoryAlter",
+      "tagline": "あなた専用の AI ライティング分身を育てる。短編から長編まで。",
+      "cta": "見てみる"
+    }
+  },
+  "nav": {
+    "features": "機能",
+    "download": "ダウンロード",
+    "github": "GitHub"
+  },
+  "hero": {
+    "headline": "人と AI のためのビデオプレーヤー",
+    "subhead": "美しくモダンな UI、完全な CLI と MCP コントロール。すべての機能はヘッドレスで動作します — オフライン AI 字幕生成も含めて。",
+    "primaryCta": "Windows 版をダウンロード",
+    "secondaryCta": "GitHub でスター",
+    "version": "v0.6.0 — 本日リリース"
+  },
+  "features": {
+    "title": "1 つのコア、3 つの使い方",
+    "subtitle": "初日から人と AI エージェントの両方のために設計。GUI でできることは、CLI と MCP でも全部できます。",
+    "gui": {
+      "title": "美しい GUI",
+      "body": "フロストガラス調 UI、自動非表示コントロール、フルスクリーンと PIP モード。基盤は libmpv で、あらゆる主要フォーマットを業務レベルで再生。"
+    },
+    "cli": {
+      "title": "完全な CLI",
+      "body": "すべての機能をスクリプト化可能。再生、シーク、スクリーンショット、GIF クリップ、字幕生成 — すべてターミナルから。出力は統一 JSON。"
+    },
+    "mcp": {
+      "title": "AI ネイティブ (MCP)",
+      "body": "MCP サーバー内蔵。Claude、ChatGPT、Cursor — あらゆる AI エージェントが 39 のツールと 3 のライブリソースで再生、クリップ、文字起こし、ライブラリ検索を実行できます。"
+    }
+  },
+  "download": {
+    "title": "unflick をダウンロード",
+    "subtitle": "Windows 10 / 11 対応。macOS 版は近日公開。",
+    "standard": {
+      "name": "Standard 版",
+      "size": "80 MB",
+      "blurb": "完全なプレーヤー、ffmpeg と yt-dlp 同梱でクリップ抽出と URL ストリーミングに対応。",
+      "cta": "Standard をダウンロード"
+    },
+    "ai": {
+      "name": "AI 版",
+      "size": "145 MB",
+      "blurb": "Standard にオフライン Whisper モデルを追加。設定不要で AI 字幕生成。",
+      "cta": "AI 版をダウンロード",
+      "badge": "推奨"
+    },
+    "github": "GitHub でソースを見る →"
+  },
+  "mcpDemo": {
+    "title": "Claude / Cursor / 任意の MCP クライアントに接続",
+    "body": "この設定を MCP クライアントに追加すれば、エージェントが再生、字幕生成、ライブリ検索を実行可能 — unflick のすべての機能を AI から使えます。"
+  },
+  "footer": {
+    "tagline": "オープンソース · MIT ライセンス",
+    "byline": "人と AI のために、心を込めて。"
+  },
+  "switcher": {
+    "label": "言語"
+  }
+}

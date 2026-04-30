@@ -1,0 +1,31 @@
+---
+import type { Locale } from '../i18n/config';
+import { t } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const s = t(locale);
+
+const mcpConfig = `{
+  "mcpServers": {
+    "unflick": {
+      "command": "C:\\\\Users\\\\<you>\\\\AppData\\\\Local\\\\unflick\\\\unflick.exe",
+      "args": ["--mcp"]
+    }
+  }
+}`;
+---
+
+<section class="py-20 sm:py-28 border-t border-white/5">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">{s.mcpDemo.title}</h2>
+      <p class="mt-3 text-zinc-400 max-w-2xl mx-auto">{s.mcpDemo.body}</p>
+    </div>
+
+    <pre class="rounded-xl border border-zinc-800 bg-ink-900 p-5 sm:p-6 overflow-x-auto text-sm font-mono leading-relaxed text-zinc-200"><code>{mcpConfig}</code></pre>
+  </div>
+</section>

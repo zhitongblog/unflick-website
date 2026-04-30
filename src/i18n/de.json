@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "unflick — Ein Videoplayer für Menschen und KI",
+    "description": "Wunderschöne, moderne Wiedergabe. Vollständige CLI- und MCP-Steuerung. KI-Agenten können jede Funktion bedienen, einschließlich Offline-Untertitel-Generierung."
+  },
+  "ads": {
+    "solomd": {
+      "label": "Vom selben Entwickler",
+      "name": "SoloMD",
+      "tagline": "Ein Markdown-Editor mit eingebautem MCP-Server. Verbindet deine Notizen mit jedem LLM.",
+      "cta": "Ausprobieren"
+    },
+    "storyalter": {
+      "label": "Vom selben Entwickler",
+      "name": "StoryAlter",
+      "tagline": "Trainiere dein persönliches KI-Schreib-Alter-Ego. Von Kurzgeschichten bis zu Millionenwort-Epen.",
+      "cta": "Ausprobieren"
+    }
+  },
+  "nav": {
+    "features": "Funktionen",
+    "download": "Download",
+    "github": "GitHub"
+  },
+  "hero": {
+    "headline": "Ein Videoplayer für Menschen und KI",
+    "subhead": "Wunderschöne, moderne Wiedergabe. Vollständige CLI- und MCP-Steuerung. Jede Funktion läuft headless — auch die Offline-KI-Untertitel-Generierung.",
+    "primaryCta": "Für Windows herunterladen",
+    "secondaryCta": "Auf GitHub Star geben",
+    "version": "v0.6.0 — heute veröffentlicht"
+  },
+  "features": {
+    "title": "Drei Schnittstellen, ein Kern",
+    "subtitle": "Vom ersten Tag an für Menschen und KI-Agenten gebaut. Was die GUI kann, können CLI und MCP auch.",
+    "gui": {
+      "title": "Schöne GUI",
+      "body": "Frosted-Glass-Optik, intelligent ausblendende Bedienelemente, Vollbild- und Bild-in-Bild-Modus. libmpv unter der Haube für industriegerechte Wiedergabe aller Formate."
+    },
+    "cli": {
+      "title": "Vollständiges CLI",
+      "body": "Jede Funktion skriptfähig. Abspielen, Springen, Screenshots, GIF-Clips, Untertitel generieren — alles vom Terminal aus. JSON-Ausgabe überall."
+    },
+    "mcp": {
+      "title": "KI-nativ (MCP)",
+      "body": "Eingebauter MCP-Server. Claude, ChatGPT, Cursor — jeder KI-Agent kann über 39 Tools und 3 Live-Ressourcen abspielen, schneiden, transkribieren und deine Bibliothek durchsuchen."
+    }
+  },
+  "download": {
+    "title": "unflick herunterladen",
+    "subtitle": "Windows 10 und 11 werden unterstützt. macOS folgt bald.",
+    "standard": {
+      "name": "Standard Edition",
+      "size": "80 MB",
+      "blurb": "Vollständiger Player mit gebündeltem ffmpeg und yt-dlp für Clips und URL-Wiedergabe.",
+      "cta": "Standard herunterladen"
+    },
+    "ai": {
+      "name": "AI Edition",
+      "size": "145 MB",
+      "blurb": "Standard plus offline Whisper-Modell. KI-Untertitel ohne Konfiguration.",
+      "cta": "AI Edition herunterladen",
+      "badge": "Empfohlen"
+    },
+    "github": "Oder den Quellcode auf GitHub ansehen →"
+  },
+  "mcpDemo": {
+    "title": "unflick in Claude / Cursor / jeden MCP-Client einbinden",
+    "body": "Füge diese Konfiguration zu deinem MCP-Client hinzu, und der Agent kann Wiedergabe, Untertitel-Generierung und Bibliotheks-Scan steuern — alle Funktionen, die unflick bietet."
+  },
+  "footer": {
+    "tagline": "Open Source · MIT-lizenziert",
+    "byline": "Mit Sorgfalt gebaut für Menschen und KI."
+  },
+  "switcher": {
+    "label": "Sprache"
+  }
+}

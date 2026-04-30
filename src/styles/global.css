@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-ink-950 text-zinc-100;
+    background-image:
+      radial-gradient(circle at 15% -10%, rgba(124, 58, 237, 0.18), transparent 40%),
+      radial-gradient(circle at 85% 5%, rgba(219, 39, 119, 0.14), transparent 45%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-purple to-brand-pink;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-r from-brand-purple to-brand-pink;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3
+           font-medium text-white gradient-bg
+           shadow-lg shadow-brand-purple/25
+           hover:opacity-95 active:opacity-90
+           transition;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3
+           font-medium text-zinc-100
+           border border-zinc-700 bg-ink-800/60 backdrop-blur-sm
+           hover:border-zinc-500 hover:bg-ink-700/60
+           transition;
+  }
+
+  .card {
+    @apply rounded-2xl border border-zinc-800 bg-ink-900/60 backdrop-blur-sm p-6;
+  }
+}

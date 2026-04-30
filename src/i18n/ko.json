@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "unflick — 사람과 AI를 위한 비디오 플레이어",
+    "description": "아름답고 현대적인 재생 경험. 완전한 CLI와 MCP 제어. AI 에이전트가 재생부터 오프라인 AI 자막 생성까지 모든 기능을 구동할 수 있습니다."
+  },
+  "ads": {
+    "solomd": {
+      "label": "같은 제작자의 제품",
+      "name": "SoloMD",
+      "tagline": "MCP 서버가 내장된 마크다운 에디터. 노트를 어떤 LLM에든 직접 연결하세요.",
+      "cta": "둘러보기"
+    },
+    "storyalter": {
+      "label": "같은 제작자의 제품",
+      "name": "StoryAlter",
+      "tagline": "나만의 AI 글쓰기 분신을 키우세요. 단편부터 백만 자 장편까지.",
+      "cta": "둘러보기"
+    }
+  },
+  "nav": {
+    "features": "기능",
+    "download": "다운로드",
+    "github": "GitHub"
+  },
+  "hero": {
+    "headline": "사람과 AI를 위한 비디오 플레이어",
+    "subhead": "아름답고 현대적인 UI, 완전한 CLI와 MCP 제어. 모든 기능이 헤드리스로 동작합니다 — 오프라인 AI 자막 생성을 포함하여.",
+    "primaryCta": "Windows용 다운로드",
+    "secondaryCta": "GitHub에서 별표",
+    "version": "v0.6.0 — 오늘 출시"
+  },
+  "features": {
+    "title": "하나의 코어, 세 가지 사용법",
+    "subtitle": "처음부터 사람과 AI 에이전트 모두를 위해 설계. GUI에서 가능한 것은 CLI와 MCP에서도 모두 가능합니다.",
+    "gui": {
+      "title": "아름다운 GUI",
+      "body": "프로스트 글래스 UI, 자동 숨김 컨트롤, 전체 화면과 PIP 모드. 내부는 libmpv로 모든 주요 포맷을 산업 표준 수준으로 재생."
+    },
+    "cli": {
+      "title": "완전한 CLI",
+      "body": "모든 기능을 스크립트화. 재생, 탐색, 스크린샷, GIF 클립, 자막 생성 — 터미널에서 전부. 출력은 통일된 JSON."
+    },
+    "mcp": {
+      "title": "AI 네이티브 (MCP)",
+      "body": "MCP 서버 내장. Claude, ChatGPT, Cursor — 모든 AI 에이전트가 39개 도구와 3개 라이브 리소스를 통해 재생, 클립, 전사, 라이브러리 검색을 수행할 수 있습니다."
+    }
+  },
+  "download": {
+    "title": "unflick 다운로드",
+    "subtitle": "Windows 10 / 11 지원. macOS 곧 출시.",
+    "standard": {
+      "name": "Standard 에디션",
+      "size": "80 MB",
+      "blurb": "완전한 플레이어, ffmpeg와 yt-dlp 번들 포함으로 클립 추출과 URL 스트리밍 지원.",
+      "cta": "Standard 다운로드"
+    },
+    "ai": {
+      "name": "AI 에디션",
+      "size": "145 MB",
+      "blurb": "Standard에 오프라인 Whisper 모델 추가. 설정 없이 AI 자막 생성.",
+      "cta": "AI 에디션 다운로드",
+      "badge": "추천"
+    },
+    "github": "GitHub에서 소스 보기 →"
+  },
+  "mcpDemo": {
+    "title": "Claude / Cursor / 모든 MCP 클라이언트에 연결",
+    "body": "이 설정을 MCP 클라이언트에 추가하면 에이전트가 재생, 자막 생성, 라이브러리 스캔을 수행할 수 있습니다 — unflick의 모든 기능을 AI에서 사용 가능."
+  },
+  "footer": {
+    "tagline": "오픈 소스 · MIT 라이선스",
+    "byline": "사람과 AI를 위해 정성껏 만들었습니다."
+  },
+  "switcher": {
+    "label": "언어"
+  }
+}

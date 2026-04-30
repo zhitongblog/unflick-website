@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "unflick — Un reproductor de vídeo para humanos e IA",
+    "description": "Reproducción moderna y cuidada. Control total por CLI y MCP. Los agentes de IA pueden manejar cada función, incluida la generación de subtítulos sin conexión."
+  },
+  "ads": {
+    "solomd": {
+      "label": "Del mismo autor",
+      "name": "SoloMD",
+      "tagline": "Un editor Markdown con servidor MCP integrado. Conecta tus notas a cualquier LLM.",
+      "cta": "Probar"
+    },
+    "storyalter": {
+      "label": "Del mismo autor",
+      "name": "StoryAlter",
+      "tagline": "Entrena tu alter ego de escritura con IA. Desde relatos cortos hasta sagas de millones de palabras.",
+      "cta": "Probar"
+    }
+  },
+  "nav": {
+    "features": "Funciones",
+    "download": "Descargar",
+    "github": "GitHub"
+  },
+  "hero": {
+    "headline": "Un reproductor de vídeo para humanos e IA",
+    "subhead": "Reproducción moderna y cuidada. Control total por CLI y MCP. Cada función corre en headless — incluida la generación de subtítulos con IA sin conexión.",
+    "primaryCta": "Descargar para Windows",
+    "secondaryCta": "Star en GitHub",
+    "version": "v0.6.0 — publicado hoy"
+  },
+  "features": {
+    "title": "Tres interfaces, un mismo núcleo",
+    "subtitle": "Diseñado desde el día uno para humanos y agentes de IA. Lo que hace la GUI, también lo hacen CLI y MCP.",
+    "gui": {
+      "title": "GUI cuidada",
+      "body": "Estética cristal esmerilado, controles que se autoocultan, pantalla completa y modo PiP. libmpv por dentro, reproducción de calidad industrial en todos los formatos."
+    },
+    "cli": {
+      "title": "CLI completo",
+      "body": "Cada función automatizable. Reproducir, buscar, capturar, recortar GIF, generar subtítulos — todo desde la terminal. Salida JSON en todas partes."
+    },
+    "mcp": {
+      "title": "Nativo de IA (MCP)",
+      "body": "Servidor MCP integrado. Claude, ChatGPT, Cursor — cualquier agente de IA puede reproducir, recortar, transcribir y buscar en tu biblioteca con 39 herramientas y 3 recursos en vivo."
+    }
+  },
+  "download": {
+    "title": "Descargar unflick",
+    "subtitle": "Compatible con Windows 10 y 11. macOS muy pronto.",
+    "standard": {
+      "name": "Edición Standard",
+      "size": "80 MB",
+      "blurb": "Reproductor completo con ffmpeg y yt-dlp incluidos para recortes y reproducción por URL.",
+      "cta": "Descargar Standard"
+    },
+    "ai": {
+      "name": "Edición AI",
+      "size": "145 MB",
+      "blurb": "Standard más un modelo Whisper sin conexión. Subtítulos con IA sin configurar nada.",
+      "cta": "Descargar AI",
+      "badge": "Recomendado"
+    },
+    "github": "O mira el código en GitHub →"
+  },
+  "mcpDemo": {
+    "title": "Conecta unflick a Claude / Cursor / cualquier cliente MCP",
+    "body": "Añade esta configuración a tu cliente MCP y el agente podrá reproducir, generar subtítulos, escanear tu biblioteca — todas las funciones que unflick expone."
+  },
+  "footer": {
+    "tagline": "Código abierto · licencia MIT",
+    "byline": "Hecho con cariño para humanos e IA."
+  },
+  "switcher": {
+    "label": "Idioma"
+  }
+}

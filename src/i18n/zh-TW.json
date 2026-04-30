@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "unflick — 給人類和 AI 的影片播放器",
+    "description": "現代、漂亮的影片播放器，完整支援 CLI 和 MCP 控制。AI Agent 可以驅動每一項功能，包含離線 AI 字幕生成。"
+  },
+  "ads": {
+    "solomd": {
+      "label": "同一作者出品",
+      "name": "SoloMD",
+      "tagline": "內建 MCP server 的 Markdown 編輯器，讓你的筆記直通任何 LLM。",
+      "cta": "去看看"
+    },
+    "storyalter": {
+      "label": "同一作者出品",
+      "name": "StoryAlter",
+      "tagline": "培養專屬 AI 寫作分身，從短篇到百萬字長篇都能寫。",
+      "cta": "去看看"
+    }
+  },
+  "nav": {
+    "features": "功能",
+    "download": "下載",
+    "github": "GitHub"
+  },
+  "hero": {
+    "headline": "給人類和 AI 的影片播放器",
+    "subhead": "現代漂亮的介面，完整的 CLI 和 MCP 控制。每一項功能都能 headless 執行——包含離線 AI 字幕生成。",
+    "primaryCta": "下載 Windows 版",
+    "secondaryCta": "在 GitHub 上 Star",
+    "version": "v0.6.0 — 今日發布"
+  },
+  "features": {
+    "title": "一個核心，三種用法",
+    "subtitle": "從第一天起就為人類和 AI Agent 同時設計。GUI 能做的事，CLI 和 MCP 全都能做。",
+    "gui": {
+      "title": "精緻 GUI",
+      "body": "毛玻璃質感、自動隱藏控制列、全螢幕和子母畫面模式。底層是 libmpv，工業級播放效能，涵蓋所有主流格式。"
+    },
+    "cli": {
+      "title": "完整 CLI",
+      "body": "每個功能都可腳本化。播放、跳轉、截圖、剪 GIF、生成字幕——全部命令列搞定，輸出統一 JSON。"
+    },
+    "mcp": {
+      "title": "AI 原生 (MCP)",
+      "body": "內建 MCP server。Claude、ChatGPT、Cursor 等任意 AI Agent 都能透過 39 個工具和 3 個即時資源驅動播放、剪輯、轉錄、搜尋媒體庫。"
+    }
+  },
+  "download": {
+    "title": "下載 unflick",
+    "subtitle": "支援 Windows 10 和 11。macOS 即將推出。",
+    "standard": {
+      "name": "標準版",
+      "size": "80 MB",
+      "blurb": "完整播放器，內建 ffmpeg 和 yt-dlp，支援剪輯和 URL 線上播放。",
+      "cta": "下載標準版"
+    },
+    "ai": {
+      "name": "AI 版",
+      "size": "145 MB",
+      "blurb": "標準版 + 離線 Whisper 模型。零設定直接生成 AI 字幕。",
+      "cta": "下載 AI 版",
+      "badge": "推薦"
+    },
+    "github": "或者去 GitHub 看原始碼 →"
+  },
+  "mcpDemo": {
+    "title": "接入 Claude / Cursor / 任意 MCP 用戶端",
+    "body": "把這段設定加到你的 MCP 用戶端，AI 就能驅動播放、生成字幕、掃描媒體庫——unflick 所有功能 Agent 都能用。"
+  },
+  "footer": {
+    "tagline": "開放原始碼 · MIT 授權",
+    "byline": "用心為人類和 AI 打造。"
+  },
+  "switcher": {
+    "label": "語言"
+  }
+}

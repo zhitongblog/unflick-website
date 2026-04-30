@@ -1,0 +1,86 @@
+---
+import type { Locale } from '../i18n/config';
+import { t } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const s = t(locale);
+
+// Two ads. We render both server-side and let a tiny inline script pick one
+// at random per page-load and remove the other. This keeps the build static
+// while still rotating exposure across visits.
+const ads = [
+  { id: 'solomd', href: 'https://solomd.app', ...s.ads.solomd },
+  { id: 'storyalter', href: 'https://storyalter.com', ...s.ads.storyalter },
+];
+---
+
+<div id="top-ad-banner" class="relative border-b border-white/5 bg-gradient-to-r from-brand-purple/15 via-brand-pink/10 to-transparent">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-2 flex items-center gap-3 text-sm">
+    {ads.map((ad, idx) => (
+      <a
+        href={ad.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-ad-slot
+        class="ad-slot flex-1 inline-flex items-center gap-2 sm:gap-3 min-w-0 group"
+        style={idx === 0 ? '' : 'display:none'}
+      >
+        <span class="hidden sm:inline-flex items-center text-xs uppercase tracking-wider text-zinc-500 shrink-0">
+          {ad.label}
+        </span>
+        <span class="font-semibold text-white shrink-0">{ad.name}</span>
+        <span class="text-zinc-300 truncate">{ad.tagline}</span>
+        <span class="ml-auto inline-flex items-center gap-1 text-zinc-200 group-hover:text-white shrink-0 whitespace-nowrap">
+          {ad.cta}
+          <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" />
+          </svg>
+        </span>
+      </a>
+    ))}
+    <button
+      type="button"
+      id="top-ad-dismiss"
+      aria-label="Dismiss"
+      class="shrink-0 text-zinc-500 hover:text-zinc-200 transition"
+    >
+      <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var banner = document.getElementById('top-ad-banner');
+    if (!banner) return;
+
+    if (localStorage.getItem('hide-top-ad') === '1') {
+      banner.style.display = 'none';
+      return;
+    }
+
+    var slots = banner.querySelectorAll('[data-ad-slot]');
+    if (slots.length > 1) {
+      var pick = Math.floor(Math.random() * slots.length);
+      slots.forEach(function (el, i) {
+        el.style.display = i === pick ? '' : 'none';
+      });
+    }
+
+    var dismiss = document.getElementById('top-ad-dismiss');
+    if (dismiss) {
+      dismiss.addEventListener('click', function () {
+        try {
+          localStorage.setItem('hide-top-ad', '1');
+        } catch (_) {}
+        banner.style.display = 'none';
+      });
+    }
+  })();
+</script>
