@@ -1,6 +1,7 @@
 ---
 import type { Locale } from '../i18n/config';
 import { t } from '../i18n/utils';
+import stats from '../data/stats.json';
 
 interface Props {
   locale: Locale;
@@ -9,8 +10,13 @@ interface Props {
 const { locale } = Astro.props;
 const s = t(locale);
 
-// Direct GitHub release links — keep big binaries off Cloudflare Pages.
-const RELEASE = 'https://github.com/zhitongblog/unflick/releases/latest/download';
+// Pin the download link to the exact tag stats.json captured at build time,
+// so the file name (e.g. unflick-ai_0.6.2_x64-setup.exe) always matches the
+// asset that GitHub actually has. /releases/latest/download works for the
+// latest tag but breaks if anyone visits an older URL or shares a permalink.
+const tag = (stats as { latest_tag?: string | null }).latest_tag ?? 'v0.6.2';
+const tagBare = tag.replace(/^v/, '');
+const RELEASE = `https://github.com/zhitongblog/unflick/releases/download/${tag}`;
 ---
 
 <section id="download" class="py-20 sm:py-28 border-t border-white/5">
@@ -29,7 +35,7 @@ const RELEASE = 'https://github.com/zhitongblog/unflick/releases/latest/download
         </div>
         <p class="mt-3 text-sm text-zinc-400 leading-relaxed flex-1">{s.download.standard.blurb}</p>
         <a
-          href={`${RELEASE}/unflick_0.6.1_x64-setup-standard.exe`}
+          href={`${RELEASE}/unflick_${tagBare}_x64-setup-standard.exe`}
           class="btn-secondary mt-6 w-full justify-center"
         >
           {s.download.standard.cta}
@@ -47,7 +53,7 @@ const RELEASE = 'https://github.com/zhitongblog/unflick/releases/latest/download
         </div>
         <p class="mt-3 text-sm text-zinc-400 leading-relaxed flex-1">{s.download.ai.blurb}</p>
         <a
-          href={`${RELEASE}/unflick-ai_0.6.1_x64-setup.exe`}
+          href={`${RELEASE}/unflick-ai_${tagBare}_x64-setup.exe`}
           class="btn-primary mt-6 w-full"
         >
           {s.download.ai.cta}

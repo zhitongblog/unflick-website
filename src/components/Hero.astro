@@ -17,6 +17,10 @@ function formatDownloads(n: number): string {
 
 const initialStars = stats.stars;
 const initialDownloads = stats.downloads;
+// Derive the headline version from whatever the build-time stats grab pulled.
+// Falls through to a hardcoded value only if the stats fetch was unable to
+// resolve a release (offline build, fresh repo with no releases, etc).
+const versionLabel = (stats as { latest_tag?: string | null }).latest_tag ?? 'v0.6.2';
 ---
 
 <section class="relative overflow-hidden">
@@ -24,7 +28,7 @@ const initialDownloads = stats.downloads;
     <div class="inline-flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 px-3.5 py-1.5 rounded-full text-xs font-medium text-zinc-300 bg-white/5 border border-white/10 mb-8">
       <span class="inline-flex items-center gap-1.5">
         <span class="w-1.5 h-1.5 rounded-full gradient-bg animate-pulse"></span>
-        v0.6.1
+        {versionLabel}
       </span>
       <span class="text-zinc-600">·</span>
       <span>MIT</span>
