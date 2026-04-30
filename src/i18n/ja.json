@@ -20,6 +20,7 @@
   "nav": {
     "features": "機能",
     "download": "ダウンロード",
+    "docs": "ドキュメント",
     "github": "GitHub"
   },
   "hero": {
@@ -73,5 +74,34 @@
   },
   "switcher": {
     "label": "言語"
+  },
+  "docs": {
+    "title": "ドキュメント",
+    "subtitle": "すべての機能は GUI / CLI / MCP のいずれからでも使えます。以下が完全なリファレンスです。",
+    "noteEnglish": "コマンド名、フラグ、JSON キーは実際に入力する内容と一致するよう英語のままにしています。周りの説明文は日本語に翻訳済みです。",
+    "quickStart": {
+      "title": "クイックスタート",
+      "install": "インストール",
+      "installBody": "AI 版インストーラーをダウンロードして実行するだけ。すべて同梱済みなので PATH 設定は不要です。",
+      "playback": "ターミナルから試す",
+      "mcp": "AI クライアントに接続",
+      "mcpBody": "以下の設定を MCP クライアント（Claude Desktop / Cursor / Codex CLI など）に追加すると、エージェントが 39 のツールと 3 のライブリソースで再生、字幕生成、ライブラリ検索などを実行できます。"
+    },
+    "cli": {
+      "title": "CLI リファレンス",
+      "body": "すべてのコマンドは stdout に JSON を返します。jq でパイプ、スクリプトから解析、自由に自動化できます。サブコマンドは初回使用時にバックグラウンド daemon を自動起動します。"
+    },
+    "mcp": {
+      "title": "MCP リファレンス",
+      "body": "--mcp で起動すると、unflick は stdio 経由で Model Context Protocol サーバーを公開します。CLI のすべての機能がツールとして使え、状態を購読できる 3 つのリソースもあります。",
+      "tools": "ツール",
+      "resources": "リソース",
+      "uri": "URI"
+    },
+    "fields": {
+      "command": "コマンド",
+      "summary": "概要",
+      "tool": "ツール"
+    }
   }
 }

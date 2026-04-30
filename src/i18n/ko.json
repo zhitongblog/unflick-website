@@ -20,6 +20,7 @@
   "nav": {
     "features": "기능",
     "download": "다운로드",
+    "docs": "문서",
     "github": "GitHub"
   },
   "hero": {
@@ -73,5 +74,34 @@
   },
   "switcher": {
     "label": "언어"
+  },
+  "docs": {
+    "title": "문서",
+    "subtitle": "모든 기능을 GUI / CLI / MCP에서 사용할 수 있습니다. 아래는 전체 레퍼런스입니다.",
+    "noteEnglish": "명령어 이름, 플래그, JSON 키는 실제로 입력하는 내용과 일치하도록 영어로 유지합니다. 주변 설명은 한국어로 번역되어 있습니다.",
+    "quickStart": {
+      "title": "빠른 시작",
+      "install": "설치",
+      "installBody": "AI 에디션 설치 프로그램을 다운로드하고 실행하세요. 모든 의존성이 포함되어 있어 PATH 수정이 필요 없습니다.",
+      "playback": "터미널에서 시도",
+      "mcp": "AI 클라이언트에 연결",
+      "mcpBody": "다음 설정을 MCP 클라이언트(Claude Desktop / Cursor / Codex CLI 등)에 추가하면 에이전트가 39개 도구와 3개 라이브 리소스로 재생, 자막 생성, 라이브러리 스캔 등을 수행할 수 있습니다."
+    },
+    "cli": {
+      "title": "CLI 레퍼런스",
+      "body": "모든 명령어는 stdout에 JSON을 반환합니다. jq로 파이프, 스크립트에서 파싱, 자유롭게 자동화하세요. 서브명령어는 첫 사용 시 백그라운드 daemon을 자동 시작합니다."
+    },
+    "mcp": {
+      "title": "MCP 레퍼런스",
+      "body": "--mcp로 시작하면 unflick은 stdio를 통해 Model Context Protocol 서버를 노출합니다. 모든 CLI 기능이 도구로 제공되며 상태를 구독할 수 있는 3개의 리소스도 있습니다.",
+      "tools": "도구",
+      "resources": "리소스",
+      "uri": "URI"
+    },
+    "fields": {
+      "command": "명령",
+      "summary": "설명",
+      "tool": "도구"
+    }
   }
 }

@@ -20,6 +20,7 @@
   "nav": {
     "features": "Funktionen",
     "download": "Download",
+    "docs": "Docs",
     "github": "GitHub"
   },
   "hero": {
@@ -73,5 +74,34 @@
   },
   "switcher": {
     "label": "Sprache"
+  },
+  "docs": {
+    "title": "Docs",
+    "subtitle": "Jede Funktion ist über GUI, CLI und MCP-Server erreichbar. Die folgende Referenz deckt alle drei ab.",
+    "noteEnglish": "Befehlsnamen, Flags und JSON-Keys bleiben auf Englisch — sie entsprechen dem, was du tatsächlich tippst. Die umgebenden Erklärungen sind übersetzt.",
+    "quickStart": {
+      "title": "Schnellstart",
+      "install": "Installation",
+      "installBody": "Lade den AI-Edition-Installer herunter und führe ihn aus. Alles ist vorkonfiguriert — keine PATH-Änderungen nötig.",
+      "playback": "Im Terminal ausprobieren",
+      "mcp": "In einen KI-Client einbinden",
+      "mcpBody": "Füge dieses Snippet zu deiner MCP-Client-Konfiguration hinzu (Claude Desktop, Cursor, Codex CLI usw.) und der Agent erhält 39 Tools und 3 Live-Ressourcen für Wiedergabe, Untertitelgenerierung, Bibliotheksscan und mehr."
+    },
+    "cli": {
+      "title": "CLI-Referenz",
+      "body": "Das CLI gibt für jeden Befehl JSON auf stdout aus. Pipe es durch jq, parse es im Skript, automatisiere frei. Subcommands starten den Hintergrund-Daemon beim ersten Aufruf automatisch."
+    },
+    "mcp": {
+      "title": "MCP-Referenz",
+      "body": "Mit --mcp gestartet stellt unflick einen Model-Context-Protocol-Server über stdio bereit. Jede CLI-Fähigkeit ist auch ein Tool, plus drei abonnierbare Ressourcen für den Zustand.",
+      "tools": "Tools",
+      "resources": "Ressourcen",
+      "uri": "URI"
+    },
+    "fields": {
+      "command": "Befehl",
+      "summary": "Was er tut",
+      "tool": "Tool"
+    }
   }
 }

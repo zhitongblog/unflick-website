@@ -20,6 +20,7 @@
   "nav": {
     "features": "Features",
     "download": "Download",
+    "docs": "Docs",
     "github": "GitHub"
   },
   "hero": {
@@ -73,5 +74,34 @@
   },
   "switcher": {
     "label": "Language"
+  },
+  "docs": {
+    "title": "Docs",
+    "subtitle": "Every feature is reachable from the GUI, the CLI, and the MCP server. The reference below covers all three.",
+    "noteEnglish": "Command names, flags, and JSON keys are kept in English so they match what you actually type. The surrounding explanations are translated.",
+    "quickStart": {
+      "title": "Quick start",
+      "install": "Install",
+      "installBody": "Download the AI Edition installer and run it. Everything ships preconfigured — no PATH tweaks required.",
+      "playback": "Try it from a terminal",
+      "mcp": "Drop it into an AI client",
+      "mcpBody": "Add this snippet to your MCP client config (Claude Desktop, Cursor, Codex CLI, etc.) and the agent gains 39 tools and 3 live resources to drive playback, generate subtitles, scan your library, and more."
+    },
+    "cli": {
+      "title": "CLI reference",
+      "body": "The CLI returns JSON on stdout for every command. Pipe through jq, parse it from a script, automate freely. Subcommands auto-launch the background daemon on first use."
+    },
+    "mcp": {
+      "title": "MCP reference",
+      "body": "unflick exposes a Model Context Protocol server over stdio when launched with --mcp. Every CLI capability is also a tool, plus three subscribable resources for state.",
+      "tools": "Tools",
+      "resources": "Resources",
+      "uri": "URI"
+    },
+    "fields": {
+      "command": "Command",
+      "summary": "What it does",
+      "tool": "Tool"
+    }
   }
 }

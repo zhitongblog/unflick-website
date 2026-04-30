@@ -19,8 +19,9 @@ const s = t(locale);
     </a>
 
     <nav class="ml-auto hidden md:flex items-center gap-6 text-sm text-zinc-300">
-      <a href="#features" class="hover:text-white transition">{s.nav.features}</a>
-      <a href="#download" class="hover:text-white transition">{s.nav.download}</a>
+      <a href={`/${locale}/#features`} class="hover:text-white transition">{s.nav.features}</a>
+      <a href={`/${locale}/docs/`} class="hover:text-white transition">{s.nav.docs}</a>
+      <a href={`/${locale}/#download`} class="hover:text-white transition">{s.nav.download}</a>
       <a href="https://github.com/zhitongblog/unflick" target="_blank" rel="noopener" class="hover:text-white transition">
         {s.nav.github}
       </a>

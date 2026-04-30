@@ -20,6 +20,7 @@
   "nav": {
     "features": "Fonctionnalités",
     "download": "Télécharger",
+    "docs": "Docs",
     "github": "GitHub"
   },
   "hero": {
@@ -73,5 +74,34 @@
   },
   "switcher": {
     "label": "Langue"
+  },
+  "docs": {
+    "title": "Docs",
+    "subtitle": "Chaque fonctionnalité est accessible depuis l'interface, le CLI et le serveur MCP. La référence ci-dessous couvre les trois.",
+    "noteEnglish": "Les noms de commandes, drapeaux et clés JSON restent en anglais — ils correspondent à ce que tu tapes vraiment. Les explications autour sont traduites.",
+    "quickStart": {
+      "title": "Démarrage rapide",
+      "install": "Installation",
+      "installBody": "Télécharge l'installeur de l'édition AI et lance-le. Tout est préconfiguré — pas besoin de modifier le PATH.",
+      "playback": "À tester depuis un terminal",
+      "mcp": "Brancher dans un client IA",
+      "mcpBody": "Ajoute ce snippet à la configuration de ton client MCP (Claude Desktop, Cursor, Codex CLI, etc.) et l'agent gagne 39 outils et 3 ressources live pour piloter la lecture, générer des sous-titres, scanner ta bibliothèque, et plus."
+    },
+    "cli": {
+      "title": "Référence CLI",
+      "body": "Le CLI renvoie du JSON sur stdout pour chaque commande. Pipe-le à jq, parse-le depuis un script, automatise librement. Les sous-commandes lancent automatiquement le daemon en arrière-plan au premier usage."
+    },
+    "mcp": {
+      "title": "Référence MCP",
+      "body": "Lancé avec --mcp, unflick expose un serveur Model Context Protocol via stdio. Chaque capacité du CLI est aussi un outil, plus trois ressources abonnables pour l'état.",
+      "tools": "Outils",
+      "resources": "Ressources",
+      "uri": "URI"
+    },
+    "fields": {
+      "command": "Commande",
+      "summary": "Ce qu'elle fait",
+      "tool": "Outil"
+    }
   }
 }

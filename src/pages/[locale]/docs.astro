@@ -1,0 +1,137 @@
+---
+import { LOCALES, type Locale } from '../../i18n/config';
+import { t } from '../../i18n/utils';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TopAdBanner from '../../components/TopAdBanner.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import {
+  CLI_GROUPS,
+  MCP_TOOLS,
+  MCP_RESOURCES,
+  MCP_CONFIG_SNIPPET,
+  QUICK_START_PLAYBACK,
+} from '../../data/reference';
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const locale = Astro.params.locale as Locale;
+const s = t(locale);
+---
+
+<BaseLayout locale={locale}>
+  <TopAdBanner locale={locale} />
+  <Header locale={locale} />
+
+  <main class="flex-1">
+    <section class="py-14 sm:py-20 border-b border-white/5">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6">
+        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight gradient-text inline-block">
+          {s.docs.title}
+        </h1>
+        <p class="mt-4 text-zinc-300 max-w-3xl">{s.docs.subtitle}</p>
+        <p class="mt-3 text-sm text-zinc-500 max-w-3xl">{s.docs.noteEnglish}</p>
+      </div>
+    </section>
+
+    <!-- Quick start -->
+    <section id="quick-start" class="py-12 sm:py-16 border-b border-white/5">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-8">{s.docs.quickStart.title}</h2>
+
+        <div class="grid sm:grid-cols-3 gap-5">
+          <div class="card">
+            <h3 class="text-base font-semibold text-white">{s.docs.quickStart.install}</h3>
+            <p class="mt-2 text-sm text-zinc-400 leading-relaxed">{s.docs.quickStart.installBody}</p>
+          </div>
+          <div class="card sm:col-span-2">
+            <h3 class="text-base font-semibold text-white">{s.docs.quickStart.playback}</h3>
+            <pre class="mt-3 text-xs sm:text-sm font-mono text-zinc-200 bg-ink-950 rounded-lg p-4 overflow-x-auto"><code>{QUICK_START_PLAYBACK}</code></pre>
+          </div>
+        </div>
+
+        <div class="mt-6 card">
+          <h3 class="text-base font-semibold text-white">{s.docs.quickStart.mcp}</h3>
+          <p class="mt-2 text-sm text-zinc-400 leading-relaxed">{s.docs.quickStart.mcpBody}</p>
+          <pre class="mt-4 text-xs sm:text-sm font-mono text-zinc-200 bg-ink-950 rounded-lg p-4 overflow-x-auto"><code>{MCP_CONFIG_SNIPPET}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLI reference -->
+    <section id="cli" class="py-12 sm:py-16 border-b border-white/5">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">{s.docs.cli.title}</h2>
+        <p class="mt-3 text-zinc-400 max-w-3xl">{s.docs.cli.body}</p>
+
+        {CLI_GROUPS.map((group) => (
+          <div class="mt-10">
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-500 mb-3">{group.heading}</h3>
+            <div class="rounded-xl border border-zinc-800 bg-ink-900/40 overflow-hidden">
+              <table class="w-full text-sm">
+                <tbody>
+                  {group.commands.map((cmd, idx) => (
+                    <tr class={idx > 0 ? 'border-t border-zinc-800' : ''}>
+                      <td class="align-top p-4 w-1/2">
+                        <code class="font-mono text-xs sm:text-sm text-white whitespace-pre-wrap break-words">{cmd.signature}</code>
+                      </td>
+                      <td class="align-top p-4 text-zinc-400">{cmd.summary}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- MCP reference -->
+    <section id="mcp" class="py-12 sm:py-16">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">{s.docs.mcp.title}</h2>
+        <p class="mt-3 text-zinc-400 max-w-3xl">{s.docs.mcp.body}</p>
+
+        <h3 class="mt-10 text-sm font-semibold uppercase tracking-wider text-zinc-500 mb-3">
+          {s.docs.mcp.tools} <span class="text-zinc-600 ml-2 normal-case">({MCP_TOOLS.length})</span>
+        </h3>
+        <div class="rounded-xl border border-zinc-800 bg-ink-900/40 overflow-hidden">
+          <table class="w-full text-sm">
+            <tbody>
+              {MCP_TOOLS.map((tool, idx) => (
+                <tr class={idx > 0 ? 'border-t border-zinc-800' : ''}>
+                  <td class="align-top p-4 w-1/3">
+                    <code class="font-mono text-xs sm:text-sm text-white">{tool.name}</code>
+                  </td>
+                  <td class="align-top p-4 text-zinc-400">{tool.summary}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="mt-10 text-sm font-semibold uppercase tracking-wider text-zinc-500 mb-3">
+          {s.docs.mcp.resources} <span class="text-zinc-600 ml-2 normal-case">({MCP_RESOURCES.length})</span>
+        </h3>
+        <div class="rounded-xl border border-zinc-800 bg-ink-900/40 overflow-hidden">
+          <table class="w-full text-sm">
+            <tbody>
+              {MCP_RESOURCES.map((res, idx) => (
+                <tr class={idx > 0 ? 'border-t border-zinc-800' : ''}>
+                  <td class="align-top p-4 w-1/2">
+                    <code class="font-mono text-xs sm:text-sm text-white break-all">{res.uri}</code>
+                  </td>
+                  <td class="align-top p-4 text-zinc-400">{res.summary}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer locale={locale} />
+</BaseLayout>

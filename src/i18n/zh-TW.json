@@ -20,6 +20,7 @@
   "nav": {
     "features": "功能",
     "download": "下載",
+    "docs": "文件",
     "github": "GitHub"
   },
   "hero": {
@@ -73,5 +74,34 @@
   },
   "switcher": {
     "label": "語言"
+  },
+  "docs": {
+    "title": "文件",
+    "subtitle": "所有功能 GUI / CLI / MCP 都能使用。下面是完整的命令參考。",
+    "noteEnglish": "命令名稱、參數、JSON key 保持英文（這就是你實際輸入的內容），周邊的說明翻譯成中文。",
+    "quickStart": {
+      "title": "快速開始",
+      "install": "安裝",
+      "installBody": "下載 AI 版安裝包並執行。所有相依都打包好了，無需修改 PATH。",
+      "playback": "終端試用",
+      "mcp": "接入 AI 用戶端",
+      "mcpBody": "把下面這段設定加到你的 MCP 用戶端（Claude Desktop / Cursor / Codex CLI 等），AI Agent 立即取得 39 個工具和 3 個即時資源，可以驅動播放、生成字幕、掃描媒體庫等。"
+    },
+    "cli": {
+      "title": "CLI 參考",
+      "body": "所有命令都把 JSON 輸出到 stdout，可以管線接 jq、腳本裡解析、自由自動化。子命令首次呼叫時會自動啟動後台 daemon。"
+    },
+    "mcp": {
+      "title": "MCP 參考",
+      "body": "加 --mcp 參數啟動時，unflick 透過 stdio 暴露一個 Model Context Protocol 服務。所有 CLI 能力也都是 MCP 工具，外加 3 個可訂閱的狀態資源。",
+      "tools": "工具",
+      "resources": "資源",
+      "uri": "URI"
+    },
+    "fields": {
+      "command": "命令",
+      "summary": "說明",
+      "tool": "工具"
+    }
   }
 }
