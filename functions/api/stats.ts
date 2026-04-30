@@ -27,13 +27,25 @@ const FALLBACK: Stats = {
   fetchedAt: new Date(0).toISOString(),
 };
 
-async function fetchJson<T>(url: string): Promise<T> {
+interface Env {
+  /** Optional: bumps the GitHub anonymous rate limit (60/hr/IP) up to 5000/hr.
+   *  CF Pages edge IPs are shared with countless other sites so unauthenticated
+   *  calls get throttled fast. Set this in the Pages dashboard under
+   *  Settings → Environment variables. Fine-grained PAT scoped to public read
+   *  on this repo is plenty. */
+  GITHUB_TOKEN?: string;
+}
+
+async function fetchJson<T>(url: string, env: Env): Promise<T> {
+  const headers: Record<string, string> = {
+    'User-Agent': 'unflick-website-edge',
+    Accept: 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28',
+  };
+  if (env.GITHUB_TOKEN) headers.Authorization = `Bearer ${env.GITHUB_TOKEN}`;
+
   const res = await fetch(url, {
-    headers: {
-      'User-Agent': 'unflick-website-edge',
-      Accept: 'application/vnd.github+json',
-      'X-GitHub-Api-Version': '2022-11-28',
-    },
+    headers,
     cf: { cacheTtl: 300 } as RequestInitCfProperties,
   });
   if (!res.ok) throw new Error(`GitHub ${url} → HTTP ${res.status}`);
@@ -49,9 +61,9 @@ interface ReleaseApi {
   assets?: Array<{ download_count?: number }>;
 }
 
-async function fetchStats(): Promise<Stats> {
-  const repo = await fetchJson<RepoApi>(`https://api.github.com/repos/${REPO}`);
-  const releases = await fetchJson<ReleaseApi[]>(`https://api.github.com/repos/${REPO}/releases?per_page=100`);
+async function fetchStats(env: Env): Promise<Stats> {
+  const repo = await fetchJson<RepoApi>(`https://api.github.com/repos/${REPO}`, env);
+  const releases = await fetchJson<ReleaseApi[]>(`https://api.github.com/repos/${REPO}/releases?per_page=100`, env);
 
   const stars = repo.stargazers_count ?? 0;
   let downloads = 0;
@@ -70,10 +82,10 @@ async function fetchStats(): Promise<Stats> {
   return { stars, downloads, latest_tag, latest_url, fetchedAt: new Date().toISOString() };
 }
 
-export const onRequestGet: PagesFunction = async () => {
+export const onRequestGet: PagesFunction<Env> = async ({ env }) => {
   let body: Stats;
   try {
-    body = await fetchStats();
+    body = await fetchStats(env);
   } catch (err) {
     body = { ...FALLBACK, fetchedAt: new Date().toISOString() };
   }
