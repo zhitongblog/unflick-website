@@ -44,7 +44,11 @@ async function fetchStats() {
     }
   }
 
-  return { stars, downloads, fetchedAt: new Date().toISOString() };
+  const latest = releases.find((r) => !r.draft && !r.prerelease);
+  const latest_tag = latest?.tag_name ?? null;
+  const latest_url = latest?.html_url ?? null;
+
+  return { stars, downloads, latest_tag, latest_url, fetchedAt: new Date().toISOString() };
 }
 
 (async () => {

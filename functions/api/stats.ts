@@ -12,10 +12,20 @@ const REPO = 'zhitongblog/unflick';
 interface Stats {
   stars: number;
   downloads: number;
+  /** Latest release tag, e.g. "v0.6.1". Null if no releases or fetch failed. */
+  latest_tag: string | null;
+  /** Direct link to that release's GitHub page. */
+  latest_url: string | null;
   fetchedAt: string;
 }
 
-const FALLBACK: Stats = { stars: 0, downloads: 0, fetchedAt: new Date(0).toISOString() };
+const FALLBACK: Stats = {
+  stars: 0,
+  downloads: 0,
+  latest_tag: null,
+  latest_url: null,
+  fetchedAt: new Date(0).toISOString(),
+};
 
 async function fetchJson<T>(url: string): Promise<T> {
   const res = await fetch(url, {
@@ -31,7 +41,13 @@ async function fetchJson<T>(url: string): Promise<T> {
 }
 
 interface RepoApi { stargazers_count?: number }
-interface ReleaseApi { assets?: Array<{ download_count?: number }> }
+interface ReleaseApi {
+  tag_name?: string;
+  html_url?: string;
+  draft?: boolean;
+  prerelease?: boolean;
+  assets?: Array<{ download_count?: number }>;
+}
 
 async function fetchStats(): Promise<Stats> {
   const repo = await fetchJson<RepoApi>(`https://api.github.com/repos/${REPO}`);
@@ -44,7 +60,14 @@ async function fetchStats(): Promise<Stats> {
       downloads += asset.download_count ?? 0;
     }
   }
-  return { stars, downloads, fetchedAt: new Date().toISOString() };
+
+  // Latest non-draft, non-prerelease. The /releases listing comes back
+  // newest-first, so the first match wins.
+  const latest = releases.find((r) => !r.draft && !r.prerelease);
+  const latest_tag = latest?.tag_name ?? null;
+  const latest_url = latest?.html_url ?? null;
+
+  return { stars, downloads, latest_tag, latest_url, fetchedAt: new Date().toISOString() };
 }
 
 export const onRequestGet: PagesFunction = async () => {
