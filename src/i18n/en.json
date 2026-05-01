@@ -30,6 +30,26 @@
     "secondaryCta": "Star on GitHub",
     "version": "v0.6.0 — released today"
   },
+  "principles": {
+    "title": "Free, private, yours.",
+    "subtitle": "What we don't do — and why we don't do it.",
+    "free": {
+      "title": "Always free",
+      "body": "MIT-licensed and open source. No premium tier, no trial countdown, no surprise paywall down the road."
+    },
+    "noLogin": {
+      "title": "No login",
+      "body": "Open a file, hit play. unflick never asks for an email, account, or any cloud sign-in."
+    },
+    "noAds": {
+      "title": "Zero ads",
+      "body": "We don't sell your attention. The player is the entire product — no banners, no pre-roll, no \"sponsored\" content."
+    },
+    "local": {
+      "title": "100% local",
+      "body": "Library scans, subtitle generation, AI transcription — every feature runs on your machine. Your files never leave."
+    }
+  },
   "features": {
     "title": "Three interfaces, one core",
     "subtitle": "Built for humans and AI agents from day one. Whatever the GUI does, the CLI and MCP do too.",

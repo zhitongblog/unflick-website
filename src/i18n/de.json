@@ -30,6 +30,26 @@
     "secondaryCta": "Auf GitHub Star geben",
     "version": "v0.6.0 — heute veröffentlicht"
   },
+  "principles": {
+    "title": "Kostenlos, sauber, deins.",
+    "subtitle": "Was wir nicht tun — und warum nicht.",
+    "free": {
+      "title": "Für immer kostenlos",
+      "body": "MIT-lizenziert und Open Source. Keine Premium-Stufe, kein Testzeitraum, keine plötzliche Paywall."
+    },
+    "noLogin": {
+      "title": "Kein Login",
+      "body": "Datei öffnen, Play drücken. unflick fragt nie nach E-Mail, Konto oder Cloud-Anmeldung."
+    },
+    "noAds": {
+      "title": "Null Werbung",
+      "body": "Wir verkaufen deine Aufmerksamkeit nicht. Der Player ist das ganze Produkt — keine Banner, keine Pre-Rolls, keine \"gesponserten\" Inhalte."
+    },
+    "local": {
+      "title": "100 % lokal",
+      "body": "Bibliothek-Scans, Untertitel-Generierung, KI-Transkription — alles läuft auf deinem Gerät. Deine Dateien verlassen es nie."
+    }
+  },
   "features": {
     "title": "Drei Schnittstellen, ein Kern",
     "subtitle": "Vom ersten Tag an für Menschen und KI-Agenten gebaut. Was die GUI kann, können CLI und MCP auch.",

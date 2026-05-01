@@ -30,6 +30,26 @@
     "secondaryCta": "Étoile sur GitHub",
     "version": "v0.6.0 — sorti aujourd'hui"
   },
+  "principles": {
+    "title": "Gratuit, propre, à toi.",
+    "subtitle": "Ce qu'on ne fait pas — et pourquoi.",
+    "free": {
+      "title": "Toujours gratuit",
+      "body": "Licence MIT, open source. Pas de version premium, pas de compte à rebours d'essai, pas de paywall surprise plus tard."
+    },
+    "noLogin": {
+      "title": "Sans connexion",
+      "body": "Ouvre un fichier, lance la lecture. unflick ne demande jamais ton e-mail, ton compte, ni aucune connexion cloud."
+    },
+    "noAds": {
+      "title": "Zéro pub",
+      "body": "On ne vend pas ton attention. Le lecteur est le produit entier — pas de bannière, pas de pré-roll, pas de contenu \"sponsorisé\"."
+    },
+    "local": {
+      "title": "100 % local",
+      "body": "Scan de bibliothèque, génération de sous-titres, transcription IA — tout tourne sur ta machine. Tes fichiers restent chez toi."
+    }
+  },
   "features": {
     "title": "Trois interfaces, un seul cœur",
     "subtitle": "Conçu dès le premier jour pour les humains et les agents IA. Ce que fait l'interface, le CLI et MCP le font aussi.",

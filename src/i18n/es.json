@@ -30,6 +30,26 @@
     "secondaryCta": "Star en GitHub",
     "version": "v0.6.0 — publicado hoy"
   },
+  "principles": {
+    "title": "Gratis, limpio, tuyo.",
+    "subtitle": "Lo que no hacemos — y por qué no lo hacemos.",
+    "free": {
+      "title": "Siempre gratis",
+      "body": "Licencia MIT y código abierto. Sin nivel premium, sin cuenta atrás de prueba, sin muro de pago sorpresa."
+    },
+    "noLogin": {
+      "title": "Sin inicio de sesión",
+      "body": "Abre un archivo y dale a play. unflick nunca pide email, cuenta ni inicio de sesión en la nube."
+    },
+    "noAds": {
+      "title": "Cero anuncios",
+      "body": "No vendemos tu atención. El reproductor es el producto entero — sin banners, sin pre-roll, sin contenido \"patrocinado\"."
+    },
+    "local": {
+      "title": "100 % local",
+      "body": "Escaneo de biblioteca, generación de subtítulos, transcripción con IA — todo corre en tu máquina. Tus archivos no salen de aquí."
+    }
+  },
   "features": {
     "title": "Tres interfaces, un mismo núcleo",
     "subtitle": "Diseñado desde el día uno para humanos y agentes de IA. Lo que hace la GUI, también lo hacen CLI y MCP.",
