@@ -11,10 +11,10 @@ const { locale } = Astro.props;
 const s = t(locale);
 
 // Pin the download link to the exact tag stats.json captured at build time,
-// so the file name (e.g. unflick-ai_0.6.2_x64-setup.exe) always matches the
+// so the file name (e.g. unflick-ai_0.8.0_x64-setup.exe) always matches the
 // asset that GitHub actually has. /releases/latest/download works for the
 // latest tag but breaks if anyone visits an older URL or shares a permalink.
-const tag = (stats as { latest_tag?: string | null }).latest_tag ?? 'v0.6.2';
+const tag = (stats as { latest_tag?: string | null }).latest_tag ?? 'v0.8.0';
 const tagBare = tag.replace(/^v/, '');
 const RELEASE = `https://github.com/zhitongblog/unflick/releases/download/${tag}`;
 ---
@@ -24,6 +24,7 @@ const RELEASE = `https://github.com/zhitongblog/unflick/releases/download/${tag}
     <div class="text-center mb-12">
       <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">{s.download.title}</h2>
       <p class="mt-3 text-zinc-400">{s.download.subtitle}</p>
+      <p class="mt-2 text-xs text-zinc-500 font-mono">{tag} · x64 · Windows 10/11</p>
     </div>
 
     <div class="grid sm:grid-cols-2 gap-5">
@@ -39,6 +40,12 @@ const RELEASE = `https://github.com/zhitongblog/unflick/releases/download/${tag}
           class="btn-secondary mt-6 w-full justify-center"
         >
           {s.download.standard.cta}
+        </a>
+        <a
+          href={`${RELEASE}/unflick_${tagBare}_x64_en-US-standard.msi`}
+          class="mt-2 text-center text-[11px] text-zinc-500 hover:text-zinc-300 transition font-mono"
+        >
+          .msi (admin install)
         </a>
       </div>
 
@@ -58,8 +65,28 @@ const RELEASE = `https://github.com/zhitongblog/unflick/releases/download/${tag}
         >
           {s.download.ai.cta}
         </a>
+        <a
+          href={`${RELEASE}/unflick-ai_${tagBare}_x64_en-US.msi`}
+          class="mt-2 text-center text-[11px] text-white/40 hover:text-white/70 transition font-mono"
+        >
+          .msi (admin install)
+        </a>
       </div>
     </div>
+
+    <!-- SmartScreen / unsigned-binary heads-up. Tauri's NSIS installers
+         aren't code-signed yet so Windows shows the blue "Microsoft
+         Defender SmartScreen" dialog on first run; tell the user up front
+         so they don't think it's malware. -->
+    <div class="mt-8 rounded-lg border border-amber-400/20 bg-amber-400/5 px-4 py-3 text-[12px] leading-relaxed text-amber-200/80">
+      <strong class="text-amber-200">Heads up — </strong>
+      The installers aren't code-signed yet, so Windows may flash a "Microsoft Defender SmartScreen prevented an unrecognized app from starting" dialog. Click <em>More info</em> → <em>Run anyway</em>. Source is on GitHub if you want to audit before running.
+    </div>
+
+    <p class="mt-6 text-center text-[11px] text-zinc-500">
+      macOS &amp; Linux ports tracked for v0.8.x — see
+      <a href="https://github.com/zhitongblog/unflick/milestones" target="_blank" rel="noopener" class="underline hover:text-zinc-300">milestones</a>.
+    </p>
 
     <div class="text-center mt-10">
       <a
