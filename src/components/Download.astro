@@ -120,12 +120,61 @@ const RELEASE = `https://github.com/zhitongblog/unflick/releases/download/${tag}
       </div>
     </div>
 
-    <p class="mt-10 text-center text-[11px] text-zinc-500">
-      Linux port tracked for v0.8.x — see
-      <a href="https://github.com/zhitongblog/unflick/milestones" target="_blank" rel="noopener" class="underline hover:text-zinc-300">milestones</a>.
-    </p>
+    <!-- Linux -->
+    <div class="mt-10">
+      <div class="flex items-center gap-2 mb-4">
+        <svg class="w-4 h-4 text-zinc-400" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 0 0-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.685-.097.202-.151.346-.16.534-.009.184.045.367.115.515.139.299.348.535.501.78.31.501.522 1.092.357 1.526-.166.473-.005.866.198 1.106.205.24.526.365.913.4 1.155.092 2.706-.198 3.51-.246.797-.062 1.93.026 2.961.114.916.091 1.79.182 2.34.262.318.06.674.122 1.012.057.339-.066.654-.249.886-.474.402-.397.755-.881 1.111-1.293.355-.41.74-.795 1.066-1.225 1.13-1.483 1.978-3.115 2.477-4.892.498-1.79.585-3.5.156-5.034-.428-1.534-1.31-2.872-2.59-3.969-.583-.498-1.114-.974-1.581-1.488-.475-.518-.79-.952-1.067-1.488-.275-.535-.515-1.123-.798-1.756-.282-.633-.59-1.295-1.09-1.92-.498-.626-1.205-1.187-2.205-1.405A2.97 2.97 0 0 0 12.504 0z"/>
+        </svg>
+        <h3 class="text-sm font-semibold tracking-wide text-zinc-300">Linux x86_64 · X11 / Xwayland</h3>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-5">
+        <div class="card flex flex-col">
+          <div class="flex items-center justify-between">
+            <h4 class="text-xl font-semibold text-white">.deb</h4>
+            <span class="text-xs text-zinc-500 font-mono">9 MB</span>
+          </div>
+          <p class="mt-3 text-sm text-zinc-400 leading-relaxed flex-1">Ubuntu / Debian. <code class="font-mono text-amber-300/90 text-[11px]">sudo apt install ./unflick_*.deb</code></p>
+          <a
+            href={`${RELEASE}/unflick_${tagBare}_amd64.deb`}
+            class="btn-secondary mt-6 w-full justify-center"
+          >
+            Download .deb
+          </a>
+        </div>
+        <div class="card flex flex-col">
+          <div class="flex items-center justify-between">
+            <h4 class="text-xl font-semibold text-white">.rpm</h4>
+            <span class="text-xs text-zinc-500 font-mono">9 MB</span>
+          </div>
+          <p class="mt-3 text-sm text-zinc-400 leading-relaxed flex-1">Fedora / RHEL / openSUSE. <code class="font-mono text-amber-300/90 text-[11px]">sudo dnf install ./unflick-*.rpm</code></p>
+          <a
+            href={`${RELEASE}/unflick-${tagBare}-1.x86_64.rpm`}
+            class="btn-secondary mt-6 w-full justify-center"
+          >
+            Download .rpm
+          </a>
+        </div>
+        <div class="card flex flex-col">
+          <div class="flex items-center justify-between">
+            <h4 class="text-xl font-semibold text-white">.AppImage</h4>
+            <span class="text-xs text-zinc-500 font-mono">78 MB</span>
+          </div>
+          <p class="mt-3 text-sm text-zinc-400 leading-relaxed flex-1">Distro-agnostic. Make executable + run. Install <code class="font-mono text-amber-300/90 text-[11px]">libmpv2</code> system-wide first.</p>
+          <a
+            href={`${RELEASE}/unflick_${tagBare}_amd64.AppImage`}
+            class="btn-secondary mt-6 w-full justify-center"
+          >
+            Download .AppImage
+          </a>
+        </div>
+      </div>
+      <p class="mt-3 text-[11px] text-zinc-500 leading-relaxed">
+        Wayland sessions (GNOME, KDE Plasma 6, WSLg) auto-fall-back to Xwayland on first launch. Native Wayland subsurface support lands in a follow-up.
+      </p>
+    </div>
 
-    <div class="text-center mt-8">
+    <div class="text-center mt-10">
       <a
         href="https://github.com/zhitongblog/unflick"
         target="_blank"
