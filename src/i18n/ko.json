@@ -68,7 +68,7 @@
   },
   "download": {
     "title": "unflick 다운로드",
-    "subtitle": "Windows 10 / 11 지원. macOS 곧 출시.",
+    "subtitle": "Windows 10 / 11과 macOS (Apple Silicon) 모두 지원.",
     "standard": {
       "name": "Standard 에디션",
       "size": "80 MB",
@@ -81,6 +81,14 @@
       "blurb": "Standard에 오프라인 Whisper 모델 추가. 설정 없이 AI 자막 생성.",
       "cta": "AI 에디션 다운로드",
       "badge": "추천"
+    },
+    "mac": {
+      "name": "Apple Silicon",
+      "size": "103 MB",
+      "blurb": "공증 서명된 .dmg. Applications로 드래그만 하면 끝. Gatekeeper 경고 없음.",
+      "cta": ".dmg 다운로드",
+      "intelTitle": "Intel Mac?",
+      "intelBody": "유니버설 바이너리는 v0.8.2에서 지원 예정. 그때까지는 Apple Silicon만 — 죄송합니다."
     },
     "github": "GitHub에서 소스 보기 →"
   },

@@ -68,7 +68,7 @@
   },
   "download": {
     "title": "unflick herunterladen",
-    "subtitle": "Windows 10 und 11 werden unterstützt. macOS folgt bald.",
+    "subtitle": "Windows 10 / 11 und macOS (Apple Silicon) werden unterstützt.",
     "standard": {
       "name": "Standard Edition",
       "size": "80 MB",
@@ -81,6 +81,14 @@
       "blurb": "Standard plus offline Whisper-Modell. KI-Untertitel ohne Konfiguration.",
       "cta": "AI Edition herunterladen",
       "badge": "Empfohlen"
+    },
+    "mac": {
+      "name": "Apple Silicon",
+      "size": "103 MB",
+      "blurb": "Notarisierte signierte .dmg. Per Drag-and-Drop in den Programmordner — keine Gatekeeper-Hürden.",
+      "cta": ".dmg herunterladen",
+      "intelTitle": "Intel Mac?",
+      "intelBody": "Universal Binary kommt in v0.8.2. Bis dahin nur Apple Silicon — sorry."
     },
     "github": "Oder den Quellcode auf GitHub ansehen →"
   },

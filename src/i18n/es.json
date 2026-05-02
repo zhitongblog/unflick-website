@@ -68,7 +68,7 @@
   },
   "download": {
     "title": "Descargar unflick",
-    "subtitle": "Compatible con Windows 10 y 11. macOS muy pronto.",
+    "subtitle": "Compatible con Windows 10 / 11 y macOS (Apple Silicon).",
     "standard": {
       "name": "Edición Standard",
       "size": "80 MB",
@@ -81,6 +81,14 @@
       "blurb": "Standard más un modelo Whisper sin conexión. Subtítulos con IA sin configurar nada.",
       "cta": "Descargar AI",
       "badge": "Recomendado"
+    },
+    "mac": {
+      "name": "Apple Silicon",
+      "size": "103 MB",
+      "blurb": ".dmg notarizado y firmado. Arrástralo a Aplicaciones — sin avisos de Gatekeeper.",
+      "cta": "Descargar .dmg",
+      "intelTitle": "¿Mac Intel?",
+      "intelBody": "Binario universal en v0.8.2. Hasta entonces solo Apple Silicon — perdón."
     },
     "github": "O mira el código en GitHub →"
   },

@@ -68,7 +68,7 @@
   },
   "download": {
     "title": "下載 unflick",
-    "subtitle": "支援 Windows 10 和 11。macOS 即將推出。",
+    "subtitle": "Windows 10 / 11 和 macOS (Apple Silicon) 都支援了。",
     "standard": {
       "name": "標準版",
       "size": "80 MB",
@@ -81,6 +81,14 @@
       "blurb": "標準版 + 離線 Whisper 模型。零設定直接生成 AI 字幕。",
       "cta": "下載 AI 版",
       "badge": "推薦"
+    },
+    "mac": {
+      "name": "Apple Silicon",
+      "size": "103 MB",
+      "blurb": "已公證簽名的 .dmg。拖到 Applications 即裝即用，不會被 Gatekeeper 攔。",
+      "cta": "下載 .dmg",
+      "intelTitle": "Intel Mac?",
+      "intelBody": "通用二進位檔在 v0.8.2 才有。在那之前只支援 Apple Silicon — 抱歉。"
     },
     "github": "或者去 GitHub 看原始碼 →"
   },

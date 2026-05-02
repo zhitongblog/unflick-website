@@ -68,7 +68,7 @@
   },
   "download": {
     "title": "Download unflick",
-    "subtitle": "Windows 10 and 11 supported. macOS coming soon.",
+    "subtitle": "Windows 10 / 11 and macOS (Apple Silicon) supported.",
     "standard": {
       "name": "Standard Edition",
       "size": "80 MB",
@@ -81,6 +81,14 @@
       "blurb": "Standard plus an offline Whisper model. Generate subtitles with zero configuration.",
       "cta": "Download AI",
       "badge": "Recommended"
+    },
+    "mac": {
+      "name": "Apple Silicon",
+      "size": "103 MB",
+      "blurb": "Notarized .dmg for M-series Macs. Drag-to-Applications install, no Gatekeeper hoops.",
+      "cta": "Download .dmg",
+      "intelTitle": "Intel Mac?",
+      "intelBody": "Universal binary in v0.8.2. Until then, Apple Silicon only — sorry."
     },
     "github": "Or grab the source on GitHub →"
   },
