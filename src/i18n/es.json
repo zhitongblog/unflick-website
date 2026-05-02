@@ -68,7 +68,7 @@
   },
   "download": {
     "title": "Descargar unflick",
-    "subtitle": "Compatible con Windows 10 / 11 y macOS (Apple Silicon).",
+    "subtitle": "Compatible con Windows 10 / 11 y macOS.",
     "standard": {
       "name": "Edición Standard",
       "size": "80 MB",
@@ -83,12 +83,12 @@
       "badge": "Recomendado"
     },
     "mac": {
-      "name": "Apple Silicon",
-      "size": "103 MB",
-      "blurb": ".dmg notarizado y firmado. Arrástralo a Aplicaciones — sin avisos de Gatekeeper.",
+      "name": "Binario universal",
+      "size": "111 MB",
+      "blurb": ".dmg notarizado y firmado con Apple Silicon e Intel en el mismo paquete. Arrástralo a Aplicaciones — sin avisos de Gatekeeper.",
       "cta": "Descargar .dmg",
-      "intelTitle": "¿Mac Intel?",
-      "intelBody": "Binario universal en v0.8.2. Hasta entonces solo Apple Silicon — perdón."
+      "intelTitle": "Mac Intel",
+      "intelBody": "Mismo DMG. macOS elige la arquitectura correcta automáticamente."
     },
     "github": "O mira el código en GitHub →"
   },

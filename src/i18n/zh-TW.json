@@ -68,7 +68,7 @@
   },
   "download": {
     "title": "下載 unflick",
-    "subtitle": "Windows 10 / 11 和 macOS (Apple Silicon) 都支援了。",
+    "subtitle": "Windows 10 / 11 和 macOS 都支援了。",
     "standard": {
       "name": "標準版",
       "size": "80 MB",
@@ -83,12 +83,12 @@
       "badge": "推薦"
     },
     "mac": {
-      "name": "Apple Silicon",
-      "size": "103 MB",
-      "blurb": "已公證簽名的 .dmg。拖到 Applications 即裝即用，不會被 Gatekeeper 攔。",
+      "name": "Universal 通用版",
+      "size": "111 MB",
+      "blurb": "公證簽名 .dmg，同一個包內含 Apple Silicon 和 Intel 兩套架構。拖到 Applications 即裝即用，不會被 Gatekeeper 攔。",
       "cta": "下載 .dmg",
-      "intelTitle": "Intel Mac?",
-      "intelBody": "通用二進位檔在 v0.8.2 才有。在那之前只支援 Apple Silicon — 抱歉。"
+      "intelTitle": "Intel Mac 使用者",
+      "intelBody": "同一個 DMG。macOS 會自動挑對的架構跑。"
     },
     "github": "或者去 GitHub 看原始碼 →"
   },

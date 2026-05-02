@@ -68,7 +68,7 @@
   },
   "download": {
     "title": "Download unflick",
-    "subtitle": "Windows 10 / 11 and macOS (Apple Silicon) supported.",
+    "subtitle": "Windows 10 / 11 and macOS supported.",
     "standard": {
       "name": "Standard Edition",
       "size": "80 MB",
@@ -83,12 +83,12 @@
       "badge": "Recommended"
     },
     "mac": {
-      "name": "Apple Silicon",
-      "size": "103 MB",
-      "blurb": "Notarized .dmg for M-series Macs. Drag-to-Applications install, no Gatekeeper hoops.",
+      "name": "Universal binary",
+      "size": "111 MB",
+      "blurb": "Notarized + signed .dmg with both Apple Silicon and Intel slices. Drag to Applications, no Gatekeeper hoops.",
       "cta": "Download .dmg",
-      "intelTitle": "Intel Mac?",
-      "intelBody": "Universal binary in v0.8.2. Until then, Apple Silicon only — sorry."
+      "intelTitle": "Intel Mac users",
+      "intelBody": "Yes — same DMG. macOS picks the right slice automatically."
     },
     "github": "Or grab the source on GitHub →"
   },

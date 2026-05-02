@@ -68,7 +68,7 @@
   },
   "download": {
     "title": "unflick をダウンロード",
-    "subtitle": "Windows 10 / 11 と macOS (Apple Silicon) に対応。",
+    "subtitle": "Windows 10 / 11 と macOS に対応。",
     "standard": {
       "name": "Standard 版",
       "size": "80 MB",
@@ -83,12 +83,12 @@
       "badge": "推奨"
     },
     "mac": {
-      "name": "Apple Silicon",
-      "size": "103 MB",
-      "blurb": "公証署名済みの .dmg。Applications にドラッグするだけ。Gatekeeper の警告は出ません。",
+      "name": "ユニバーサル版",
+      "size": "111 MB",
+      "blurb": "Apple Silicon と Intel の両方を含むユニバーサル .dmg。公証・署名済み。Applications にドラッグするだけで Gatekeeper の警告も出ません。",
       "cta": ".dmg をダウンロード",
-      "intelTitle": "Intel Mac?",
-      "intelBody": "ユニバーサルバイナリは v0.8.2 で対応予定。それまでは Apple Silicon のみです、すみません。"
+      "intelTitle": "Intel Mac の方",
+      "intelBody": "同じ DMG で OK。macOS が自動的に正しいアーキテクチャを選びます。"
     },
     "github": "GitHub でソースを見る →"
   },

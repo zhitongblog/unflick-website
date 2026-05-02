@@ -68,7 +68,7 @@
   },
   "download": {
     "title": "unflick herunterladen",
-    "subtitle": "Windows 10 / 11 und macOS (Apple Silicon) werden unterstützt.",
+    "subtitle": "Windows 10 / 11 und macOS werden unterstützt.",
     "standard": {
       "name": "Standard Edition",
       "size": "80 MB",
@@ -83,12 +83,12 @@
       "badge": "Empfohlen"
     },
     "mac": {
-      "name": "Apple Silicon",
-      "size": "103 MB",
-      "blurb": "Notarisierte signierte .dmg. Per Drag-and-Drop in den Programmordner — keine Gatekeeper-Hürden.",
+      "name": "Universal Binary",
+      "size": "111 MB",
+      "blurb": "Notarisierte signierte .dmg mit Apple Silicon und Intel — ein Paket für beide. Per Drag-and-Drop in den Programmordner, keine Gatekeeper-Hürden.",
       "cta": ".dmg herunterladen",
-      "intelTitle": "Intel Mac?",
-      "intelBody": "Universal Binary kommt in v0.8.2. Bis dahin nur Apple Silicon — sorry."
+      "intelTitle": "Intel Mac",
+      "intelBody": "Gleiche DMG. macOS wählt die richtige Architektur automatisch."
     },
     "github": "Oder den Quellcode auf GitHub ansehen →"
   },

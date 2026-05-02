@@ -68,7 +68,7 @@
   },
   "download": {
     "title": "unflick 다운로드",
-    "subtitle": "Windows 10 / 11과 macOS (Apple Silicon) 모두 지원.",
+    "subtitle": "Windows 10 / 11과 macOS 모두 지원.",
     "standard": {
       "name": "Standard 에디션",
       "size": "80 MB",
@@ -83,12 +83,12 @@
       "badge": "추천"
     },
     "mac": {
-      "name": "Apple Silicon",
-      "size": "103 MB",
-      "blurb": "공증 서명된 .dmg. Applications로 드래그만 하면 끝. Gatekeeper 경고 없음.",
+      "name": "유니버설 빌드",
+      "size": "111 MB",
+      "blurb": "Apple Silicon과 Intel 슬라이스가 모두 포함된 공증 + 서명 .dmg. Applications로 드래그만 하면 끝. Gatekeeper 경고 없음.",
       "cta": ".dmg 다운로드",
-      "intelTitle": "Intel Mac?",
-      "intelBody": "유니버설 바이너리는 v0.8.2에서 지원 예정. 그때까지는 Apple Silicon만 — 죄송합니다."
+      "intelTitle": "Intel Mac 사용자",
+      "intelBody": "같은 DMG로 OK. macOS가 자동으로 알맞은 아키텍처를 선택합니다."
     },
     "github": "GitHub에서 소스 보기 →"
   },
