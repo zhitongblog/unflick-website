@@ -27,6 +27,9 @@
     "headline": "Un lecteur vidéo pour les humains et les IA",
     "subhead": "Lecture moderne et soignée. Contrôle complet via CLI et MCP. Chaque fonctionnalité tourne en headless — y compris la génération de sous-titres hors ligne.",
     "primaryCta": "Télécharger pour Windows",
+    "primaryCtaMac": "Télécharger pour macOS",
+    "primaryCtaLinux": "Télécharger pour Linux",
+    "allPlatforms": "Voir toutes les plateformes ↓",
     "secondaryCta": "Étoile sur GitHub",
     "version": "v0.6.0 — sorti aujourd'hui"
   },

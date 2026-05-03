@@ -27,6 +27,9 @@
     "headline": "人と AI のためのビデオプレーヤー",
     "subhead": "美しくモダンな UI、完全な CLI と MCP コントロール。すべての機能はヘッドレスで動作します — オフライン AI 字幕生成も含めて。",
     "primaryCta": "Windows 版をダウンロード",
+    "primaryCtaMac": "macOS 版をダウンロード",
+    "primaryCtaLinux": "Linux 版をダウンロード",
+    "allPlatforms": "すべてのプラットフォームを見る ↓",
     "secondaryCta": "GitHub でスター",
     "version": "v0.6.0 — 本日リリース"
   },

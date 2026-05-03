@@ -27,6 +27,9 @@
     "headline": "Un reproductor de vídeo para humanos e IA",
     "subhead": "Reproducción moderna y cuidada. Control total por CLI y MCP. Cada función corre en headless — incluida la generación de subtítulos con IA sin conexión.",
     "primaryCta": "Descargar para Windows",
+    "primaryCtaMac": "Descargar para macOS",
+    "primaryCtaLinux": "Descargar para Linux",
+    "allPlatforms": "Ver todas las plataformas ↓",
     "secondaryCta": "Star en GitHub",
     "version": "v0.6.0 — publicado hoy"
   },

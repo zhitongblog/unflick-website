@@ -27,6 +27,9 @@
     "headline": "A video player for humans and AI",
     "subhead": "Beautiful, modern playback. Full CLI and MCP control. Every feature works headless — including offline AI subtitle generation.",
     "primaryCta": "Download for Windows",
+    "primaryCtaMac": "Download for macOS",
+    "primaryCtaLinux": "Download for Linux",
+    "allPlatforms": "See all platforms ↓",
     "secondaryCta": "Star on GitHub",
     "version": "v0.6.0 — released today"
   },

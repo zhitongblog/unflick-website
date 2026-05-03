@@ -27,6 +27,9 @@
     "headline": "Ein Videoplayer für Menschen und KI",
     "subhead": "Wunderschöne, moderne Wiedergabe. Vollständige CLI- und MCP-Steuerung. Jede Funktion läuft headless — auch die Offline-KI-Untertitel-Generierung.",
     "primaryCta": "Für Windows herunterladen",
+    "primaryCtaMac": "Für macOS herunterladen",
+    "primaryCtaLinux": "Für Linux herunterladen",
+    "allPlatforms": "Alle Plattformen anzeigen ↓",
     "secondaryCta": "Auf GitHub Star geben",
     "version": "v0.6.0 — heute veröffentlicht"
   },

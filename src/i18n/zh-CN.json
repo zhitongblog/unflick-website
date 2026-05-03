@@ -27,6 +27,9 @@
     "headline": "给人类和 AI 的视频播放器",
     "subhead": "现代漂亮的界面，完整的 CLI 和 MCP 控制。每一项功能都能 headless 跑——包括离线 AI 字幕生成。",
     "primaryCta": "下载 Windows 版",
+    "primaryCtaMac": "下载 macOS 版",
+    "primaryCtaLinux": "下载 Linux 版",
+    "allPlatforms": "查看所有平台 ↓",
     "secondaryCta": "在 GitHub 上 Star",
     "version": "v0.6.0 — 今日发布"
   },

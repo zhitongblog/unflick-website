@@ -20,7 +20,19 @@ const initialDownloads = stats.downloads;
 // Derive the headline version from whatever the build-time stats grab pulled.
 // Falls through to a hardcoded value only if the stats fetch was unable to
 // resolve a release (offline build, fresh repo with no releases, etc).
-const versionLabel = (stats as { latest_tag?: string | null }).latest_tag ?? 'v0.8.0';
+const versionLabel = (stats as { latest_tag?: string | null }).latest_tag ?? 'v0.8.5';
+
+// Hero CTA points straight at a release asset, not at the #download anchor —
+// solomd-style direct link via GitHub's 302 to its CDN, so the user gets a
+// download stream instead of bouncing through a github.com page. Defaults
+// to the Windows standard installer (most visitors); inline JS below
+// rewrites the href + label for macOS / Linux user agents.
+const tag = (stats as { latest_tag?: string | null }).latest_tag ?? 'v0.8.5';
+const tagBare = tag.replace(/^v/, '');
+const RELEASE = `https://github.com/zhitongblog/unflick/releases/download/${tag}`;
+const winHref = `${RELEASE}/unflick_${tagBare}_x64-setup-standard.exe`;
+const macHref = `${RELEASE}/unflick_${tagBare}_universal.dmg`;
+const linuxHref = `${RELEASE}/unflick_${tagBare}_amd64.AppImage`;
 ---
 
 <section class="relative overflow-hidden">
@@ -54,12 +66,22 @@ const versionLabel = (stats as { latest_tag?: string | null }).latest_tag ?? 'v0
     </p>
 
     <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-      <a href="#download" class="btn-primary">
+      <a
+        id="hero-download"
+        href={winHref}
+        data-win-href={winHref}
+        data-mac-href={macHref}
+        data-linux-href={linuxHref}
+        data-win-text={s.hero.primaryCta}
+        data-mac-text={s.hero.primaryCtaMac}
+        data-linux-text={s.hero.primaryCtaLinux}
+        class="btn-primary"
+      >
         <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path d="M10.75 2.75a.75.75 0 0 0-1.5 0v8.6L6.3 8.4a.75.75 0 1 0-1.1 1.02l4.25 4.6a.75.75 0 0 0 1.1 0l4.25-4.6a.75.75 0 1 0-1.1-1.02l-2.95 3.2v-8.85Z" />
           <path d="M3.5 14a.75.75 0 0 1 .75.75v1.25c0 .14.11.25.25.25h11a.25.25 0 0 0 .25-.25V14.75a.75.75 0 0 1 1.5 0V16a1.75 1.75 0 0 1-1.75 1.75H4.5A1.75 1.75 0 0 1 2.75 16V14.75A.75.75 0 0 1 3.5 14Z" />
         </svg>
-        {s.hero.primaryCta}
+        <span data-cta-label>{s.hero.primaryCta}</span>
       </a>
       <a
         href="https://github.com/zhitongblog/unflick"
@@ -73,12 +95,39 @@ const versionLabel = (stats as { latest_tag?: string | null }).latest_tag ?? 'v0
         {s.hero.secondaryCta}
       </a>
     </div>
+
+    <a href="#download" class="mt-5 inline-block text-xs text-zinc-500 hover:text-zinc-300 transition">
+      {s.hero.allPlatforms}
+    </a>
   </div>
 </section>
 
 <script is:inline>
+  // OS-detect the hero CTA: visitor on macOS gets the .dmg, Linux gets the
+  // .AppImage, default is Windows .exe. Each variant is encoded as a data-*
+  // attribute on the button so the link works without JS (default Windows)
+  // and we only have to flip href + label client-side.
+  (function () {
+    var btn = document.getElementById('hero-download');
+    if (!btn) return;
+    var ua = navigator.userAgent || '';
+    var platform = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '';
+    var os = 'win';
+    if (/Mac|iPhone|iPad/i.test(ua) || /Mac/i.test(platform)) os = 'mac';
+    else if (/Linux/i.test(ua) && !/Android/i.test(ua)) os = 'linux';
+    else if (/Win/i.test(ua) || /Windows/i.test(platform)) os = 'win';
+    var href = btn.getAttribute('data-' + os + '-href');
+    var text = btn.getAttribute('data-' + os + '-text');
+    if (href) btn.setAttribute('href', href);
+    var label = btn.querySelector('[data-cta-label]');
+    if (label && text) label.textContent = text;
+  })();
+
   // Live-refresh GitHub stats. The page already SSRs build-time numbers so
   // the badge isn't blank if this fails — we just leave the static values.
+  // Guard with `> 0` not `!= null` so a single GitHub 503 returning
+  // `{stars: 0, downloads: 0}` from the failure-fallback path can't pin
+  // "⭐ 0" onto the homepage for the next 5 minutes.
   fetch('/api/stats')
     .then((r) => (r.ok ? r.json() : null))
     .then((s) => {
