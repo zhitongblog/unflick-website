@@ -30,6 +30,7 @@
     "primaryCtaMac": "Download for macOS",
     "primaryCtaLinux": "Download for Linux",
     "allPlatforms": "See all platforms ↓",
+    "installLabel": "⚡ Or one-line install",
     "secondaryCta": "Star on GitHub",
     "version": "v0.6.0 — released today"
   },

@@ -96,11 +96,44 @@ const linuxHref = `${RELEASE}/unflick_${tagBare}_amd64.AppImage`;
       </a>
     </div>
 
-    <a href="#download" class="mt-5 inline-block text-xs text-zinc-500 hover:text-zinc-300 transition">
+    <div class="mt-8 mx-auto max-w-xl">
+      <div class="text-[11px] uppercase tracking-wider text-zinc-500 mb-2">{s.hero.installLabel}</div>
+      <div class="inline-flex rounded-md border border-white/10 bg-white/5 p-0.5 mb-2 text-xs">
+        <button data-hi-tab="unix" class="hi-tab px-3 py-1 rounded text-zinc-300 hover:text-white transition">macOS / Linux</button>
+        <button data-hi-tab="win" class="hi-tab px-3 py-1 rounded text-zinc-300 hover:text-white transition">Windows</button>
+      </div>
+      <div class="relative">
+        <div data-hi-panel="unix" class="hi-panel rounded-md border border-white/10 bg-zinc-950/60 px-4 py-3 font-mono text-[13px] text-zinc-200 text-left">
+          <code>curl -fsSL https://unflick.app/install.sh | bash</code>
+          <button
+            data-hi-copy="curl -fsSL https://unflick.app/install.sh | bash"
+            class="absolute right-2 top-2 px-1.5 py-0.5 rounded text-zinc-500 hover:text-white hover:bg-white/10 transition"
+            aria-label="Copy"
+          >📋</button>
+        </div>
+        <div data-hi-panel="win" class="hi-panel hidden rounded-md border border-white/10 bg-zinc-950/60 px-4 py-3 font-mono text-[13px] text-zinc-200 text-left">
+          <code>irm https://unflick.app/install.ps1 | iex</code>
+          <button
+            data-hi-copy="irm https://unflick.app/install.ps1 | iex"
+            class="absolute right-2 top-2 px-1.5 py-0.5 rounded text-zinc-500 hover:text-white hover:bg-white/10 transition"
+            aria-label="Copy"
+          >📋</button>
+        </div>
+      </div>
+    </div>
+
+    <a href="#download" class="mt-6 inline-block text-xs text-zinc-500 hover:text-zinc-300 transition">
       {s.hero.allPlatforms}
     </a>
   </div>
 </section>
+
+<style>
+  /* Active tab visual: subtle bg + white text. JS toggles `hi-tab--active`
+     on the selected tab. Plain CSS rather than @apply so this works even
+     if the Tailwind plugin doesn't process scoped <style>. */
+  .hi-tab--active { background-color: rgba(255, 255, 255, 0.1); color: #fff; }
+</style>
 
 <script is:inline>
   // OS-detect the hero CTA: visitor on macOS gets the .dmg, Linux gets the
@@ -121,6 +154,58 @@ const linuxHref = `${RELEASE}/unflick_${tagBare}_amd64.AppImage`;
     if (href) btn.setAttribute('href', href);
     var label = btn.querySelector('[data-cta-label]');
     if (label && text) label.textContent = text;
+
+    // Mirror the same OS pick onto the install-command tabs: Windows
+    // visitors see the irm | iex line, everyone else sees curl | bash.
+    var initialTab = (os === 'win') ? 'win' : 'unix';
+    document.querySelectorAll('[data-hi-tab]').forEach(function (t) {
+      if (t.getAttribute('data-hi-tab') === initialTab) t.classList.add('hi-tab--active');
+    });
+    document.querySelectorAll('[data-hi-panel]').forEach(function (p) {
+      p.classList.toggle('hidden', p.getAttribute('data-hi-panel') !== initialTab);
+    });
+  })();
+
+  // Tab switching for the install-command pair.
+  (function () {
+    var tabs = document.querySelectorAll('[data-hi-tab]');
+    var panels = document.querySelectorAll('[data-hi-panel]');
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var target = tab.getAttribute('data-hi-tab');
+        tabs.forEach(function (t) { t.classList.remove('hi-tab--active'); });
+        tab.classList.add('hi-tab--active');
+        panels.forEach(function (p) {
+          p.classList.toggle('hidden', p.getAttribute('data-hi-panel') !== target);
+        });
+      });
+    });
+  })();
+
+  // Copy-to-clipboard button on each install command. Falls back to a
+  // textarea+execCommand path on browsers without async clipboard
+  // (Safari < 13.1, old Edge). Visual confirmation: swap the icon to ✓
+  // for one second.
+  (function () {
+    document.querySelectorAll('[data-hi-copy]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var text = btn.getAttribute('data-hi-copy') || '';
+        var done = function () {
+          var prev = btn.textContent;
+          btn.textContent = '✓';
+          setTimeout(function () { btn.textContent = prev; }, 1000);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(function () {});
+          return;
+        }
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      });
+    });
   })();
 
   // Live-refresh GitHub stats. The page already SSRs build-time numbers so

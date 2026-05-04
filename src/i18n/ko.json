@@ -30,6 +30,7 @@
     "primaryCtaMac": "macOS용 다운로드",
     "primaryCtaLinux": "Linux용 다운로드",
     "allPlatforms": "모든 플랫폼 보기 ↓",
+    "installLabel": "⚡ 또는 한 줄로 설치",
     "secondaryCta": "GitHub에서 별표",
     "version": "v0.6.0 — 오늘 출시"
   },

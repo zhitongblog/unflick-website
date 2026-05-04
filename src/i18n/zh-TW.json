@@ -30,6 +30,7 @@
     "primaryCtaMac": "下載 macOS 版",
     "primaryCtaLinux": "下載 Linux 版",
     "allPlatforms": "查看所有平台 ↓",
+    "installLabel": "⚡ 或一行命令安裝",
     "secondaryCta": "在 GitHub 上 Star",
     "version": "v0.6.0 — 今日發布"
   },
