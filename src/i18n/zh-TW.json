@@ -24,8 +24,8 @@
     "github": "GitHub"
   },
   "hero": {
-    "headline": "給人類和 AI 的影片播放器",
-    "subhead": "現代漂亮的介面，完整的 CLI 和 MCP 控制。每一項功能都能 headless 執行——包含離線 AI 字幕生成。",
+    "headline": "免費 · 無廣告 · 給人類和 AI",
+    "subhead": "MIT 開源，零廣告，零追蹤 —— 同時是 AI agent 唯一能原生驅動的播放器。SponsorBlock 自動跳過 YouTube 廣告段，本地 AI 字幕生成，CLI 和 MCP 優先。",
     "primaryCta": "下載 Windows 版",
     "primaryCtaMac": "下載 macOS 版",
     "primaryCtaLinux": "下載 Linux 版",

@@ -24,8 +24,8 @@
     "github": "GitHub"
   },
   "hero": {
-    "headline": "Un reproductor de vídeo para humanos e IA",
-    "subhead": "Reproducción moderna y cuidada. Control total por CLI y MCP. Cada función corre en headless — incluida la generación de subtítulos con IA sin conexión.",
+    "headline": "Gratis · sin anuncios · para humanos e IA",
+    "subhead": "Open source MIT, cero anuncios, sin telemetría — y el único reproductor de vídeo que los agentes de IA pueden controlar de forma nativa. Salta segmentos patrocinados de YouTube automáticamente con SponsorBlock, genera subtítulos con IA en local, CLI y MCP primero.",
     "primaryCta": "Descargar para Windows",
     "primaryCtaMac": "Descargar para macOS",
     "primaryCtaLinux": "Descargar para Linux",

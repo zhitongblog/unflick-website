@@ -24,8 +24,8 @@
     "github": "GitHub"
   },
   "hero": {
-    "headline": "A video player for humans and AI",
-    "subhead": "Beautiful, modern playback. Full CLI and MCP control. Every feature works headless — including offline AI subtitle generation.",
+    "headline": "Free. Ad-free. For humans and AI.",
+    "subhead": "MIT open source, zero ads, no telemetry — and the only video player AI agents can drive natively. Auto-skip YouTube sponsor segments via SponsorBlock, local AI subtitle generation, CLI + MCP first.",
     "primaryCta": "Download for Windows",
     "primaryCtaMac": "Download for macOS",
     "primaryCtaLinux": "Download for Linux",

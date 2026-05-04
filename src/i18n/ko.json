@@ -24,8 +24,8 @@
     "github": "GitHub"
   },
   "hero": {
-    "headline": "사람과 AI를 위한 비디오 플레이어",
-    "subhead": "아름답고 현대적인 UI, 완전한 CLI와 MCP 제어. 모든 기능이 헤드리스로 동작합니다 — 오프라인 AI 자막 생성을 포함하여.",
+    "headline": "무료 · 광고 없음 · 사람과 AI를 위해",
+    "subhead": "MIT 오픈소스, 광고 제로, 추적 없음 — AI 에이전트가 네이티브로 조작 가능한 유일한 비디오 플레이어. SponsorBlock 으로 YouTube 광고 구간 자동 스킵, 로컬 AI 자막 생성, CLI 와 MCP 우선.",
     "primaryCta": "Windows용 다운로드",
     "primaryCtaMac": "macOS용 다운로드",
     "primaryCtaLinux": "Linux용 다운로드",

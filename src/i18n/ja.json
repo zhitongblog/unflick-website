@@ -24,8 +24,8 @@
     "github": "GitHub"
   },
   "hero": {
-    "headline": "人と AI のためのビデオプレーヤー",
-    "subhead": "美しくモダンな UI、完全な CLI と MCP コントロール。すべての機能はヘッドレスで動作します — オフライン AI 字幕生成も含めて。",
+    "headline": "無料・広告なし・人と AI のために",
+    "subhead": "MIT オープンソース、広告ゼロ、トラッキングなし — そして AI エージェントがネイティブに操作できる唯一の動画プレイヤー。SponsorBlock で YouTube のスポンサー区間を自動スキップ、ローカル AI 字幕生成、CLI と MCP ファースト。",
     "primaryCta": "Windows 版をダウンロード",
     "primaryCtaMac": "macOS 版をダウンロード",
     "primaryCtaLinux": "Linux 版をダウンロード",

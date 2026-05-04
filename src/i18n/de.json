@@ -24,8 +24,8 @@
     "github": "GitHub"
   },
   "hero": {
-    "headline": "Ein Videoplayer für Menschen und KI",
-    "subhead": "Wunderschöne, moderne Wiedergabe. Vollständige CLI- und MCP-Steuerung. Jede Funktion läuft headless — auch die Offline-KI-Untertitel-Generierung.",
+    "headline": "Kostenlos · werbefrei · für Menschen und KI",
+    "subhead": "MIT Open Source, null Werbung, keine Telemetrie — und der einzige Videoplayer, den KI-Agenten nativ steuern können. Automatischer Skip von YouTube-Sponsor-Segmenten via SponsorBlock, lokale KI-Untertitel-Generierung, CLI- und MCP-first.",
     "primaryCta": "Für Windows herunterladen",
     "primaryCtaMac": "Für macOS herunterladen",
     "primaryCtaLinux": "Für Linux herunterladen",
