@@ -21,7 +21,8 @@
     "features": "Funktionen",
     "download": "Download",
     "docs": "Docs",
-    "github": "GitHub"
+    "github": "GitHub",
+    "tobefree": "To Be Free"
   },
   "hero": {
     "headline": "Kostenlos · werbefrei · für Menschen und KI",
@@ -31,8 +32,7 @@
     "primaryCtaLinux": "Für Linux herunterladen",
     "allPlatforms": "Alle Plattformen anzeigen ↓",
     "installLabel": "⚡ Oder One-Line-Installation",
-    "secondaryCta": "Auf GitHub Star geben",
-    "version": "v0.6.0 — heute veröffentlicht"
+    "secondaryCta": "Auf GitHub Star geben"
   },
   "principles": {
     "title": "Kostenlos, sauber, deins.",
@@ -59,7 +59,7 @@
     "subtitle": "Vom ersten Tag an für Menschen und KI-Agenten gebaut. Was die GUI kann, können CLI und MCP auch.",
     "gui": {
       "title": "Schöne GUI",
-      "body": "Frosted-Glass-Optik, intelligent ausblendende Bedienelemente, Vollbild- und Bild-in-Bild-Modus. libmpv unter der Haube für industriegerechte Wiedergabe aller Formate."
+      "body": "Milchglas-UI, Bild-in-Bild und echter Vollbildmodus. Kapitel, Lesezeichen, A-B-Schleife, 10-Band-Equalizer. DVDs, ISOs und Blu-ray, dazu Streaming auf den Fernseher per DLNA. libmpv unter der Haube spielt jedes Format."
     },
     "cli": {
       "title": "Vollständiges CLI",
@@ -67,32 +67,34 @@
     },
     "mcp": {
       "title": "KI-nativ (MCP)",
-      "body": "Eingebauter MCP-Server. Claude, ChatGPT, Cursor — jeder KI-Agent kann über 39 Tools und 3 Live-Ressourcen abspielen, schneiden, transkribieren und deine Bibliothek durchsuchen."
+      "body": "Eingebauter MCP-Server. Claude, ChatGPT, Cursor — jeder KI-Agent kann über 101 Tools und 3 Live-Ressourcen abspielen, schneiden, transkribieren und deine Bibliothek durchsuchen."
     }
   },
   "download": {
     "title": "unflick herunterladen",
-    "subtitle": "Windows 10 / 11, macOS und Linux werden unterstützt.",
+    "subtitle": "Windows 10 / 11, macOS 11+ und Linux auf x86_64 und ARM.",
     "standard": {
       "name": "Standard Edition",
-      "size": "80 MB",
+      "size": "100 MB",
       "blurb": "Vollständiger Player mit gebündeltem ffmpeg und yt-dlp für Clips und URL-Wiedergabe.",
       "cta": "Standard herunterladen"
     },
     "ai": {
       "name": "AI Edition",
-      "size": "145 MB",
+      "size": "165 MB",
       "blurb": "Standard plus offline Whisper-Modell. KI-Untertitel ohne Konfiguration.",
       "cta": "AI Edition herunterladen",
       "badge": "Empfohlen"
     },
     "mac": {
       "name": "Universal Binary",
-      "size": "111 MB",
-      "blurb": "Notarisierte signierte .dmg mit Apple Silicon und Intel — ein Paket für beide. Per Drag-and-Drop in den Programmordner, keine Gatekeeper-Hürden.",
+      "size": "45 MB",
+      "blurb": "Signierte und notarisierte Universal-.dmg für Apple Silicon und Intel. Bringt ihr eigenes libmpv mit — DVDs laufen, und sonst ist nichts zu installieren.",
       "cta": ".dmg herunterladen",
       "intelTitle": "Intel Mac",
-      "intelBody": "Gleiche DMG. macOS wählt die richtige Architektur automatisch."
+      "intelBody": "Ja — dieselbe DMG. macOS wählt automatisch die passende Architektur.",
+      "note": "Optional: ffmpeg für Clip-Export und Vorschaubilder in der Zeitleiste —",
+      "brew": "Oder mit Homebrew:"
     },
     "github": "Oder den Quellcode auf GitHub ansehen →"
   },
@@ -100,9 +102,19 @@
     "title": "unflick in Claude / Cursor / jeden MCP-Client einbinden",
     "body": "Füge diese Konfiguration zu deinem MCP-Client hinzu, und der Agent kann Wiedergabe, Untertitel-Generierung und Bibliotheks-Scan steuern — alle Funktionen, die unflick bietet."
   },
+  "tobefree": {
+    "badge": "Gelistet auf To Be Free",
+    "label": "Ein To-Be-Free-Projekt",
+    "title": "Mehr Software, die wirklich frei ist",
+    "body": "unflick ist eines der Tools auf To Be Free — einem handverlesenen Verzeichnis von Software, die wirklich frei nutzbar ist: keine Werbung, kein Konto, keine Bezahlschranke, die später auftaucht. Dort findest du die Vorstellung von unflick und den Rest der Sammlung.",
+    "cta": "unflick auf To Be Free ansehen",
+    "more": "Alle freien Tools ansehen →"
+  },
   "footer": {
     "tagline": "Open Source · MIT-lizenziert",
-    "byline": "Mit Sorgfalt gebaut für Menschen und KI."
+    "byline": "Mit Sorgfalt gebaut für Menschen und KI.",
+    "madeBy": "Ein To-Be-Free-Projekt",
+    "madeByTail": "Software, die jeder frei nutzen kann"
   },
   "switcher": {
     "label": "Sprache"
@@ -114,10 +126,12 @@
     "quickStart": {
       "title": "Schnellstart",
       "install": "Installation",
-      "installBody": "Lade den AI-Edition-Installer herunter und führe ihn aus. Alles ist vorkonfiguriert — keine PATH-Änderungen nötig.",
+      "installBody": "Eine Zeile auf jeder Plattform (siehe Startseite), Homebrew auf macOS oder ein Installer aus dem Download-Bereich. Die Windows-AI-Edition bringt zusätzlich ein Offline-Whisper-Modell für Untertitel ohne Einrichtung mit.",
       "playback": "Im Terminal ausprobieren",
       "mcp": "In einen KI-Client einbinden",
-      "mcpBody": "Füge dieses Snippet zu deiner MCP-Client-Konfiguration hinzu (Claude Desktop, Cursor, Codex CLI usw.) und der Agent erhält 39 Tools und 3 Live-Ressourcen für Wiedergabe, Untertitelgenerierung, Bibliotheksscan und mehr."
+      "mcpBody": "Füge dieses Snippet zu deiner MCP-Client-Konfiguration hinzu (Claude Desktop, Cursor, Codex CLI usw.) und der Agent erhält 101 Tools und 3 Live-Ressourcen für Wiedergabe, Untertitelgenerierung, Bibliotheksscan und mehr.",
+      "plugin": "Claude-Code-Plugin",
+      "pluginBody": "In Claude Code installieren diese zwei Befehle sieben unflick-Skills und richten den MCP-Server in einem Schritt ein."
     },
     "cli": {
       "title": "CLI-Referenz",
@@ -128,12 +142,14 @@
       "body": "Mit --mcp gestartet stellt unflick einen Model-Context-Protocol-Server über stdio bereit. Jede CLI-Fähigkeit ist auch ein Tool, plus drei abonnierbare Ressourcen für den Zustand.",
       "tools": "Tools",
       "resources": "Ressourcen",
-      "uri": "URI"
+      "uri": "URI",
+      "windowsNote": "Unter Windows den vollständigen Pfad angeben:"
     },
     "fields": {
       "command": "Befehl",
       "summary": "Was er tut",
       "tool": "Tool"
-    }
+    },
+    "generatedFrom": "Erzeugt aus unflick"
   }
 }

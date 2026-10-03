@@ -21,7 +21,8 @@
     "features": "機能",
     "download": "ダウンロード",
     "docs": "ドキュメント",
-    "github": "GitHub"
+    "github": "GitHub",
+    "tobefree": "To Be Free"
   },
   "hero": {
     "headline": "無料・広告なし・人と AI のために",
@@ -31,8 +32,7 @@
     "primaryCtaLinux": "Linux 版をダウンロード",
     "allPlatforms": "すべてのプラットフォームを見る ↓",
     "installLabel": "⚡ ワンラインインストール",
-    "secondaryCta": "GitHub でスター",
-    "version": "v0.6.0 — 本日リリース"
+    "secondaryCta": "GitHub でスター"
   },
   "principles": {
     "title": "無料・クリーン・あなたのもの",
@@ -59,7 +59,7 @@
     "subtitle": "初日から人と AI エージェントの両方のために設計。GUI でできることは、CLI と MCP でも全部できます。",
     "gui": {
       "title": "美しい GUI",
-      "body": "フロストガラス調 UI、自動非表示コントロール、フルスクリーンと PIP モード。基盤は libmpv で、あらゆる主要フォーマットを業務レベルで再生。"
+      "body": "すりガラス風 UI、ピクチャーインピクチャー、真のフルスクリーン。チャプター、ブックマーク、A-B ループ、10 バンドイコライザー。DVD・ISO・Blu-ray の再生、DLNA でテレビへのキャストにも対応。中身は libmpv なので、あらゆるフォーマットを再生できます。"
     },
     "cli": {
       "title": "完全な CLI",
@@ -67,32 +67,34 @@
     },
     "mcp": {
       "title": "AI ネイティブ (MCP)",
-      "body": "MCP サーバー内蔵。Claude、ChatGPT、Cursor — あらゆる AI エージェントが 39 のツールと 3 のライブリソースで再生、クリップ、文字起こし、ライブラリ検索を実行できます。"
+      "body": "MCP サーバー内蔵。Claude、ChatGPT、Cursor — あらゆる AI エージェントが 101 のツールと 3 のライブリソースで再生、クリップ、文字起こし、ライブラリ検索を実行できます。"
     }
   },
   "download": {
     "title": "unflick をダウンロード",
-    "subtitle": "Windows 10 / 11、macOS、Linux に対応。",
+    "subtitle": "Windows 10 / 11、macOS 11 以降、x86_64 と ARM の Linux に対応。",
     "standard": {
       "name": "Standard 版",
-      "size": "80 MB",
+      "size": "100 MB",
       "blurb": "完全なプレーヤー、ffmpeg と yt-dlp 同梱でクリップ抽出と URL ストリーミングに対応。",
       "cta": "Standard をダウンロード"
     },
     "ai": {
       "name": "AI 版",
-      "size": "145 MB",
+      "size": "165 MB",
       "blurb": "Standard にオフライン Whisper モデルを追加。設定不要で AI 字幕生成。",
       "cta": "AI 版をダウンロード",
       "badge": "推奨"
     },
     "mac": {
       "name": "ユニバーサル版",
-      "size": "111 MB",
-      "blurb": "Apple Silicon と Intel の両方を含むユニバーサル .dmg。公証・署名済み。Applications にドラッグするだけで Gatekeeper の警告も出ません。",
+      "size": "45 MB",
+      "blurb": "署名・公証済みのユニバーサル .dmg（Apple シリコン / Intel 両対応）。libmpv を同梱しているので DVD も再生でき、追加のインストールは不要です。",
       "cta": ".dmg をダウンロード",
       "intelTitle": "Intel Mac の方",
-      "intelBody": "同じ DMG で OK。macOS が自動的に正しいアーキテクチャを選びます。"
+      "intelBody": "はい、同じ DMG です。macOS が自動で適切なアーキテクチャを選びます。",
+      "note": "任意：クリップ書き出しとシークバーのサムネイルには ffmpeg を使います —",
+      "brew": "Homebrew の場合："
     },
     "github": "GitHub でソースを見る →"
   },
@@ -100,9 +102,19 @@
     "title": "Claude / Cursor / 任意の MCP クライアントに接続",
     "body": "この設定を MCP クライアントに追加すれば、エージェントが再生、字幕生成、ライブリ検索を実行可能 — unflick のすべての機能を AI から使えます。"
   },
+  "tobefree": {
+    "badge": "To Be Free に掲載",
+    "label": "To Be Free のプロジェクト",
+    "title": "本当に無料のソフトウェアをもっと",
+    "body": "unflick は To Be Free に掲載されているツールのひとつです。To Be Free は、広告なし・アカウント不要・あとから有料化もしない、本当に自由に使えるソフトウェアだけを厳選したディレクトリです。unflick の紹介ページと、ほかのツールもぜひご覧ください。",
+    "cta": "To Be Free で unflick を見る",
+    "more": "無料ツールをすべて見る →"
+  },
   "footer": {
     "tagline": "オープンソース · MIT ライセンス",
-    "byline": "人と AI のために、心を込めて。"
+    "byline": "人と AI のために、心を込めて。",
+    "madeBy": "To Be Free のプロジェクト",
+    "madeByTail": "誰もが自由にソフトウェアを使えるように"
   },
   "switcher": {
     "label": "言語"
@@ -114,10 +126,12 @@
     "quickStart": {
       "title": "クイックスタート",
       "install": "インストール",
-      "installBody": "AI 版インストーラーをダウンロードして実行するだけ。すべて同梱済みなので PATH 設定は不要です。",
+      "installBody": "どのプラットフォームでもワンラインでインストールできます（トップページ参照）。macOS は Homebrew、またはダウンロード欄のインストーラーからも。Windows の AI エディションにはオフライン Whisper モデルが同梱され、設定なしで字幕を生成できます。",
       "playback": "ターミナルから試す",
       "mcp": "AI クライアントに接続",
-      "mcpBody": "以下の設定を MCP クライアント（Claude Desktop / Cursor / Codex CLI など）に追加すると、エージェントが 39 のツールと 3 のライブリソースで再生、字幕生成、ライブラリ検索などを実行できます。"
+      "mcpBody": "以下の設定を MCP クライアント（Claude Desktop / Cursor / Codex CLI など）に追加すると、エージェントが 101 のツールと 3 のライブリソースで再生、字幕生成、ライブラリ検索などを実行できます。",
+      "plugin": "Claude Code プラグイン",
+      "pluginBody": "Claude Code でこの 2 行を実行すると、unflick の 7 つのスキルと MCP サーバーが一度にセットアップされます。"
     },
     "cli": {
       "title": "CLI リファレンス",
@@ -128,12 +142,14 @@
       "body": "--mcp で起動すると、unflick は stdio 経由で Model Context Protocol サーバーを公開します。CLI のすべての機能がツールとして使え、状態を購読できる 3 つのリソースもあります。",
       "tools": "ツール",
       "resources": "リソース",
-      "uri": "URI"
+      "uri": "URI",
+      "windowsNote": "Windows ではフルパスを指定してください："
     },
     "fields": {
       "command": "コマンド",
       "summary": "概要",
       "tool": "ツール"
-    }
+    },
+    "generatedFrom": "生成元 unflick"
   }
 }

@@ -21,7 +21,8 @@
     "features": "Features",
     "download": "Download",
     "docs": "Docs",
-    "github": "GitHub"
+    "github": "GitHub",
+    "tobefree": "To Be Free"
   },
   "hero": {
     "headline": "Free. Ad-free. For humans and AI.",
@@ -31,8 +32,7 @@
     "primaryCtaLinux": "Download for Linux",
     "allPlatforms": "See all platforms ↓",
     "installLabel": "⚡ Or one-line install",
-    "secondaryCta": "Star on GitHub",
-    "version": "v0.6.0 — released today"
+    "secondaryCta": "Star on GitHub"
   },
   "principles": {
     "title": "Free, private, yours.",
@@ -59,7 +59,7 @@
     "subtitle": "Built for humans and AI agents from day one. Whatever the GUI does, the CLI and MCP do too.",
     "gui": {
       "title": "Beautiful GUI",
-      "body": "Frosted glass UI, smart auto-hide controls, fullscreen and PiP modes. libmpv under the hood for industry-grade playback of every format."
+      "body": "Frosted glass UI, PiP and true fullscreen. Chapters, bookmarks, A-B loop, a 10-band equalizer. DVDs, ISOs and Blu-ray, and casting to your TV over DLNA. libmpv under the hood plays every format."
     },
     "cli": {
       "title": "Full CLI",
@@ -67,32 +67,34 @@
     },
     "mcp": {
       "title": "AI-native (MCP)",
-      "body": "Built-in MCP server. Claude, ChatGPT, Cursor — any AI agent can play, clip, transcribe, and search your library through 39 tools and 3 live resources."
+      "body": "Built-in MCP server. Claude, ChatGPT, Cursor — any AI agent can play, clip, transcribe, and search your library through 101 tools and 3 live resources."
     }
   },
   "download": {
     "title": "Download unflick",
-    "subtitle": "Windows 10 / 11, macOS, and Linux supported.",
+    "subtitle": "Windows 10 / 11, macOS 11+, and Linux on x86_64 and ARM.",
     "standard": {
       "name": "Standard Edition",
-      "size": "80 MB",
+      "size": "100 MB",
       "blurb": "Full player with bundled ffmpeg and yt-dlp for clipping and URL playback.",
       "cta": "Download standard"
     },
     "ai": {
       "name": "AI Edition",
-      "size": "145 MB",
+      "size": "165 MB",
       "blurb": "Standard plus an offline Whisper model. Generate subtitles with zero configuration.",
       "cta": "Download AI",
       "badge": "Recommended"
     },
     "mac": {
       "name": "Universal binary",
-      "size": "111 MB",
-      "blurb": "Notarized + signed .dmg with both Apple Silicon and Intel slices. Drag to Applications, no Gatekeeper hoops.",
+      "size": "45 MB",
+      "blurb": "Signed and notarized universal .dmg for Apple Silicon and Intel. Carries its own libmpv, so DVDs play and there's nothing else to install.",
       "cta": "Download .dmg",
       "intelTitle": "Intel Mac users",
-      "intelBody": "Yes — same DMG. macOS picks the right slice automatically."
+      "intelBody": "Yes — same DMG. macOS picks the right slice automatically.",
+      "note": "Optional: ffmpeg for clip export and seek-bar thumbnails —",
+      "brew": "Or with Homebrew:"
     },
     "github": "Or grab the source on GitHub →"
   },
@@ -100,9 +102,19 @@
     "title": "Drop unflick into Claude / Cursor / any MCP client",
     "body": "Add this to your MCP client config and the agent can drive playback, generate subtitles, scan your library — every feature unflick exposes."
   },
+  "tobefree": {
+    "badge": "Listed on To Be Free",
+    "label": "Part of To Be Free",
+    "title": "More software that's actually free",
+    "body": "unflick is one of the tools on To Be Free — a hand-picked directory of software that's genuinely free to use: no ads, no accounts, no paywall waiting down the road. Find unflick's review there, and the rest of the collection.",
+    "cta": "Read unflick on To Be Free",
+    "more": "Browse all free tools →"
+  },
   "footer": {
     "tagline": "Open source · MIT licensed",
-    "byline": "Made with care for humans and AI."
+    "byline": "Made with care for humans and AI.",
+    "madeBy": "A To Be Free project",
+    "madeByTail": "software everyone can use freely"
   },
   "switcher": {
     "label": "Language"
@@ -114,10 +126,12 @@
     "quickStart": {
       "title": "Quick start",
       "install": "Install",
-      "installBody": "Download the AI Edition installer and run it. Everything ships preconfigured — no PATH tweaks required.",
+      "installBody": "One line on any platform (see the home page), Homebrew on macOS, or an installer from the download section. The Windows AI Edition also bundles an offline Whisper model for zero-config subtitles.",
       "playback": "Try it from a terminal",
       "mcp": "Drop it into an AI client",
-      "mcpBody": "Add this snippet to your MCP client config (Claude Desktop, Cursor, Codex CLI, etc.) and the agent gains 39 tools and 3 live resources to drive playback, generate subtitles, scan your library, and more."
+      "mcpBody": "Add this snippet to your MCP client config (Claude Desktop, Cursor, Codex CLI, etc.) and the agent gains 101 tools and 3 live resources to drive playback, generate subtitles, scan your library, and more.",
+      "plugin": "Claude Code plugin",
+      "pluginBody": "In Claude Code, these two commands install seven unflick skills and wire up the MCP server in one step."
     },
     "cli": {
       "title": "CLI reference",
@@ -128,12 +142,14 @@
       "body": "unflick exposes a Model Context Protocol server over stdio when launched with --mcp. Every CLI capability is also a tool, plus three subscribable resources for state.",
       "tools": "Tools",
       "resources": "Resources",
-      "uri": "URI"
+      "uri": "URI",
+      "windowsNote": "On Windows, use the full path:"
     },
     "fields": {
       "command": "Command",
       "summary": "What it does",
       "tool": "Tool"
-    }
+    },
+    "generatedFrom": "Generated from unflick"
   }
 }

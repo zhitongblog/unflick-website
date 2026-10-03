@@ -1,0 +1,1070 @@
+{
+  "version": "0.15.0",
+  "cliGroups": [
+    {
+      "heading": "Playback",
+      "commands": [
+        {
+          "name": "play",
+          "signature": "unflick play [--seek <SEEK>] [--volume <VOLUME>] [--speed <SPEED>] <FILE>",
+          "summary": "Play a video file"
+        },
+        {
+          "name": "pause",
+          "signature": "unflick pause",
+          "summary": "Pause playback"
+        },
+        {
+          "name": "resume",
+          "signature": "unflick resume",
+          "summary": "Resume playback"
+        },
+        {
+          "name": "stop",
+          "signature": "unflick stop",
+          "summary": "Stop playback"
+        },
+        {
+          "name": "seek",
+          "signature": "unflick seek <SECONDS>",
+          "summary": "Seek to position in seconds"
+        },
+        {
+          "name": "volume",
+          "signature": "unflick volume <LEVEL>",
+          "summary": "Set volume (0-100)"
+        },
+        {
+          "name": "speed",
+          "signature": "unflick speed [--relative] [RATE]",
+          "summary": "Get or set the playback speed"
+        },
+        {
+          "name": "status",
+          "signature": "unflick status",
+          "summary": "Get current playback status"
+        },
+        {
+          "name": "chapter list",
+          "signature": "unflick chapter list",
+          "summary": "List all chapters of the current file"
+        },
+        {
+          "name": "chapter seek",
+          "signature": "unflick chapter seek <INDEX>",
+          "summary": "Jump to a chapter by 0-based index"
+        },
+        {
+          "name": "chapter next",
+          "signature": "unflick chapter next",
+          "summary": "Jump to the next chapter"
+        },
+        {
+          "name": "chapter prev",
+          "signature": "unflick chapter prev",
+          "summary": "Jump to the previous chapter"
+        },
+        {
+          "name": "chapter generate",
+          "signature": "unflick chapter generate [--count <COUNT>]",
+          "summary": "Derive chapters from the transcript, for a file that has none"
+        },
+        {
+          "name": "chapter set",
+          "signature": "unflick chapter set <JSON>",
+          "summary": "Set chapters explicitly from JSON: [{\"time\": 0, \"title\": \"Intro\"}, …]"
+        },
+        {
+          "name": "chapter clear",
+          "signature": "unflick chapter clear",
+          "summary": "Remove generated chapters (container chapters are untouched)"
+        },
+        {
+          "name": "loop a",
+          "signature": "unflick loop a [POSITION]",
+          "summary": "Set the loop start point (defaults to the current position)"
+        },
+        {
+          "name": "loop b",
+          "signature": "unflick loop b [POSITION]",
+          "summary": "Set the loop end point (defaults to the current position)"
+        },
+        {
+          "name": "loop clear",
+          "signature": "unflick loop clear",
+          "summary": "Clear both loop points"
+        },
+        {
+          "name": "loop status",
+          "signature": "unflick loop status",
+          "summary": "Show the current loop points"
+        },
+        {
+          "name": "frame next",
+          "signature": "unflick frame next",
+          "summary": "Step forward one frame (pauses playback)"
+        },
+        {
+          "name": "frame prev",
+          "signature": "unflick frame prev",
+          "summary": "Step back one frame (pauses playback)"
+        },
+        {
+          "name": "frame thumbnail",
+          "signature": "unflick frame thumbnail [--output <OUTPUT>] [--width <WIDTH>] <POSITION>",
+          "summary": "Save the timeline preview frame for a position (cached, keyframe-accurate)"
+        },
+        {
+          "name": "frame capture",
+          "signature": "unflick frame capture [--output <OUTPUT>] [--position <POSITION>] [--max-edge <MAX_EDGE>]",
+          "summary": "Save the current frame as a downscaled JPEG"
+        },
+        {
+          "name": "bookmark add",
+          "signature": "unflick bookmark add [--name <NAME>] [--position <POSITION>] [--file <FILE>]",
+          "summary": "Save a position — where playback is now, unless told otherwise"
+        },
+        {
+          "name": "bookmark list",
+          "signature": "unflick bookmark list [--file <FILE>] [--key <KEY>] [--all]",
+          "summary": "Show bookmarks for the current file"
+        },
+        {
+          "name": "bookmark goto",
+          "signature": "unflick bookmark goto <ID>",
+          "summary": "Jump to a bookmark, opening its file if it isn't the one playing"
+        },
+        {
+          "name": "bookmark rename",
+          "signature": "unflick bookmark rename [--clear] <ID> [NAME]",
+          "summary": "Rename a bookmark, or drop its name with `--clear`"
+        },
+        {
+          "name": "bookmark remove",
+          "signature": "unflick bookmark remove <ID>",
+          "summary": "Delete one bookmark"
+        },
+        {
+          "name": "bookmark clear",
+          "signature": "unflick bookmark clear [--file <FILE>] [--key <KEY>] [--all]",
+          "summary": "Delete every bookmark for the current file"
+        },
+        {
+          "name": "session show",
+          "signature": "unflick session show",
+          "summary": "Report what would be resumed (the default)"
+        },
+        {
+          "name": "session restore",
+          "signature": "unflick session restore",
+          "summary": "Reopen it, at the point it got to"
+        },
+        {
+          "name": "session clear",
+          "signature": "unflick session clear",
+          "summary": "Forget it"
+        },
+        {
+          "name": "recent list",
+          "signature": "unflick recent list [--limit <LIMIT>]",
+          "summary": "Show recently played files, newest first"
+        },
+        {
+          "name": "recent clear",
+          "signature": "unflick recent clear",
+          "summary": "Forget the play history (scanned metadata is kept)"
+        },
+        {
+          "name": "incognito",
+          "signature": "unflick incognito [ENABLED]",
+          "summary": "Turn incognito on or off (nothing is written to the play history)"
+        }
+      ]
+    },
+    {
+      "heading": "Media tools",
+      "commands": [
+        {
+          "name": "info",
+          "signature": "unflick info <FILE>",
+          "summary": "Get media file info"
+        },
+        {
+          "name": "screenshot",
+          "signature": "unflick screenshot [--output <OUTPUT>]",
+          "summary": "Take a screenshot of the current frame"
+        },
+        {
+          "name": "clip",
+          "signature": "unflick clip [--file <FILE>] [--output <OUTPUT>] [--gif] <START> <END>",
+          "summary": "Extract a video clip (requires ffmpeg)"
+        },
+        {
+          "name": "transcript get",
+          "signature": "unflick transcript get",
+          "summary": "Print every cue of the current file's transcript"
+        },
+        {
+          "name": "transcript search",
+          "signature": "unflick transcript search [--limit <LIMIT>] <QUERY>",
+          "summary": "Find lines containing a phrase"
+        },
+        {
+          "name": "transcript seek",
+          "signature": "unflick transcript seek [--occurrence <OCCURRENCE>] <QUERY>",
+          "summary": "Jump to where a phrase is spoken"
+        },
+        {
+          "name": "nowplaying",
+          "signature": "unflick nowplaying [--cover]",
+          "summary": "What is playing, as tags rather than a path"
+        }
+      ]
+    },
+    {
+      "heading": "Subtitles & audio",
+      "commands": [
+        {
+          "name": "subtitle load",
+          "signature": "unflick subtitle load <FILE>",
+          "summary": "Load an external subtitle file"
+        },
+        {
+          "name": "subtitle list",
+          "signature": "unflick subtitle list",
+          "summary": "List subtitle tracks"
+        },
+        {
+          "name": "subtitle select",
+          "signature": "unflick subtitle select <ID>",
+          "summary": "Select a subtitle track by ID (0 to disable)"
+        },
+        {
+          "name": "subtitle generate",
+          "signature": "unflick subtitle generate [--mode <MODE>] [--whisper <WHISPER>] [--model <MODEL>] [--api-key <API_KEY>] [--output-dir <OUTPUT_DIR>] <VIDEO>",
+          "summary": "Generate subtitles for a video using whisper (local or OpenAI API)"
+        },
+        {
+          "name": "subtitle translate",
+          "signature": "unflick subtitle translate [--to <TARGET_LANG>] [--api-key <API_KEY>] [--output-dir <OUTPUT_DIR>] --to <TARGET_LANG> --api-key <API_KEY> <SRT>",
+          "summary": "Translate an SRT file to another language via OpenAI API"
+        },
+        {
+          "name": "subtitle search",
+          "signature": "unflick subtitle search [--file <FILE>] [--lang <LANGUAGES>] [--no-hash] [QUERY]",
+          "summary": "Find subtitles for the playing file on OpenSubtitles"
+        },
+        {
+          "name": "subtitle download",
+          "signature": "unflick subtitle download [--file <FILE>] [--lang <LANGUAGE>] [--name <NAME>] [--no-load] <FILE_ID>",
+          "summary": "Download a subtitle found by `subtitle search` and load it"
+        },
+        {
+          "name": "subtitle auto",
+          "signature": "unflick subtitle auto [--file <FILE>] [--lang <LANGUAGES>] [--no-hash] [--no-load] [QUERY]",
+          "summary": "Search and download the best match in one step"
+        },
+        {
+          "name": "subtitle delay",
+          "signature": "unflick subtitle delay [--relative] [SECONDS]",
+          "summary": "Get or set the subtitle delay. Positive values show subtitles later"
+        },
+        {
+          "name": "subtitle style get",
+          "signature": "unflick subtitle style get",
+          "summary": "Print all subtitle style values"
+        },
+        {
+          "name": "subtitle style set",
+          "signature": "unflick subtitle style set <NAME> <VALUE>",
+          "summary": "Set one style property"
+        },
+        {
+          "name": "subtitle bilingual",
+          "signature": "unflick subtitle bilingual [--primary <PRIMARY>] [--secondary <SECONDARY>] [--layout <LAYOUT>] [STATE]",
+          "summary": "Show two subtitle tracks at once — the original and a translation"
+        },
+        {
+          "name": "audio list",
+          "signature": "unflick audio list",
+          "summary": "List all audio tracks"
+        },
+        {
+          "name": "audio select",
+          "signature": "unflick audio select <ID>",
+          "summary": "Select an audio track by ID (0 to disable)"
+        },
+        {
+          "name": "audio delay",
+          "signature": "unflick audio delay [--relative] [SECONDS]",
+          "summary": "Get or set the audio delay. Positive values play audio later"
+        },
+        {
+          "name": "audio eq get",
+          "signature": "unflick audio eq get",
+          "summary": "Show the current curve, preamp and normalisation state"
+        },
+        {
+          "name": "audio eq on",
+          "signature": "unflick audio eq on",
+          "summary": "Turn the equaliser on or off without discarding the curve"
+        },
+        {
+          "name": "audio eq off",
+          "signature": "unflick audio eq off",
+          "summary": ""
+        },
+        {
+          "name": "audio eq band",
+          "signature": "unflick audio eq band <INDEX> <GAIN>",
+          "summary": "Set one band's gain in dB"
+        },
+        {
+          "name": "audio eq curve",
+          "signature": "unflick audio eq curve [GAINS] [GAINS] [GAINS] [GAINS] [GAINS] [GAINS] [GAINS] [GAINS] [GAINS] [GAINS]...",
+          "summary": "Set the whole curve at once"
+        },
+        {
+          "name": "audio eq preamp",
+          "signature": "unflick audio eq preamp <DB>",
+          "summary": "Set the preamp in dB (negative makes headroom for boosted bands)"
+        },
+        {
+          "name": "audio eq normalize",
+          "signature": "unflick audio eq normalize <STATE>",
+          "summary": "Even out quiet dialogue against loud action"
+        },
+        {
+          "name": "audio eq preset",
+          "signature": "unflick audio eq preset [NAME]",
+          "summary": "Apply a named preset"
+        },
+        {
+          "name": "audio eq reset",
+          "signature": "unflick audio eq reset",
+          "summary": "Clear every audio filter"
+        },
+        {
+          "name": "audio pitch",
+          "signature": "unflick audio pitch [STATE]",
+          "summary": "Keep the original pitch when playback speed changes"
+        }
+      ]
+    },
+    {
+      "heading": "Picture & window",
+      "commands": [
+        {
+          "name": "video get",
+          "signature": "unflick video get",
+          "summary": "Show the current aspect, rotation, zoom, pan-scan and deinterlace"
+        },
+        {
+          "name": "video set",
+          "signature": "unflick video set <NAME> <VALUE>",
+          "summary": "Set one: aspect | rotate | zoom | panscan | deinterlace"
+        },
+        {
+          "name": "video reset",
+          "signature": "unflick video reset",
+          "summary": "Back to the file's own geometry"
+        },
+        {
+          "name": "filter list",
+          "signature": "unflick filter list",
+          "summary": "Show all current filter values (brightness, contrast, saturation, gamma, hue)"
+        },
+        {
+          "name": "filter set",
+          "signature": "unflick filter set <NAME> <VALUE>",
+          "summary": "Set a filter to the given value (-100 to 100)"
+        },
+        {
+          "name": "filter reset",
+          "signature": "unflick filter reset",
+          "summary": "Reset all filters to 0 (neutral)"
+        },
+        {
+          "name": "window mode",
+          "signature": "unflick window mode [MODE]",
+          "summary": "Read or set the window mode"
+        }
+      ]
+    },
+    {
+      "heading": "Playlist & library",
+      "commands": [
+        {
+          "name": "playlist add",
+          "signature": "unflick playlist add <FILE>",
+          "summary": "Add a file to the playlist"
+        },
+        {
+          "name": "playlist remove",
+          "signature": "unflick playlist remove <INDEX>",
+          "summary": "Remove entry at index"
+        },
+        {
+          "name": "playlist list",
+          "signature": "unflick playlist list",
+          "summary": "List all playlist entries"
+        },
+        {
+          "name": "playlist next",
+          "signature": "unflick playlist next",
+          "summary": "Play the next track"
+        },
+        {
+          "name": "playlist prev",
+          "signature": "unflick playlist prev",
+          "summary": "Play the previous track"
+        },
+        {
+          "name": "playlist clear",
+          "signature": "unflick playlist clear",
+          "summary": "Clear the playlist"
+        },
+        {
+          "name": "playlist play",
+          "signature": "unflick playlist play <INDEX>",
+          "summary": "Play a specific entry by index"
+        },
+        {
+          "name": "playlist repeat",
+          "signature": "unflick playlist repeat [MODE]",
+          "summary": "Get or set the repeat mode"
+        },
+        {
+          "name": "playlist shuffle",
+          "signature": "unflick playlist shuffle [ENABLED]",
+          "summary": "Get or set shuffle"
+        },
+        {
+          "name": "library scan",
+          "signature": "unflick library scan <DIR>",
+          "summary": "Scan a directory for video files and add them to the library"
+        },
+        {
+          "name": "library search",
+          "signature": "unflick library search <QUERY>",
+          "summary": "Search the library by title or path"
+        },
+        {
+          "name": "library list",
+          "signature": "unflick library list",
+          "summary": "List all media in the library"
+        },
+        {
+          "name": "library remove",
+          "signature": "unflick library remove <ID>",
+          "summary": "Remove an entry by ID"
+        }
+      ]
+    },
+    {
+      "heading": "Streams, discs & casting",
+      "commands": [
+        {
+          "name": "sponsor list",
+          "signature": "unflick sponsor list <URL>",
+          "summary": "Fetch SponsorBlock segments for a YouTube URL and print them as JSON. 404 / no-segments returns an empty list (success)"
+        },
+        {
+          "name": "sponsor enable",
+          "signature": "unflick sponsor enable",
+          "summary": "Turn SponsorBlock auto-skip on (writes settings)"
+        },
+        {
+          "name": "sponsor disable",
+          "signature": "unflick sponsor disable",
+          "summary": "Turn SponsorBlock auto-skip off (writes settings)"
+        },
+        {
+          "name": "sponsor categories",
+          "signature": "unflick sponsor categories <LIST>",
+          "summary": "Replace the SponsorBlock category list (comma-separated, e.g. `sponsor,selfpromo,intro,outro,interaction`)"
+        },
+        {
+          "name": "disc",
+          "signature": "unflick disc [PATH]",
+          "summary": "Optical drives, and whether there is a video disc in them"
+        },
+        {
+          "name": "cast list",
+          "signature": "unflick cast list [--seconds <SECONDS>]",
+          "summary": "Find DLNA renderers on the network"
+        },
+        {
+          "name": "cast to",
+          "signature": "unflick cast to [--file <FILE>] [--seconds <SECONDS>] [RENDERER]",
+          "summary": "Send what is playing (or a named file) to a renderer"
+        },
+        {
+          "name": "cast stop",
+          "signature": "unflick cast stop",
+          "summary": "Stop casting"
+        },
+        {
+          "name": "cast status",
+          "signature": "unflick cast status",
+          "summary": "Where the cast has got to"
+        },
+        {
+          "name": "cast pause",
+          "signature": "unflick cast pause",
+          "summary": ""
+        },
+        {
+          "name": "cast resume",
+          "signature": "unflick cast resume",
+          "summary": ""
+        },
+        {
+          "name": "cast seek",
+          "signature": "unflick cast seek <SECONDS>",
+          "summary": "Seek the cast, in seconds"
+        }
+      ]
+    },
+    {
+      "heading": "Input",
+      "commands": [
+        {
+          "name": "keybind list",
+          "signature": "unflick keybind list",
+          "summary": "List every bindable action with its current key"
+        },
+        {
+          "name": "keybind set",
+          "signature": "unflick keybind set <ACTION> <KEY>",
+          "summary": "Bind a key to an action, e.g. `keybind set play_pause k`"
+        },
+        {
+          "name": "keybind reset",
+          "signature": "unflick keybind reset [ACTION]",
+          "summary": "Restore defaults — one action, or all of them"
+        },
+        {
+          "name": "mouse list",
+          "signature": "unflick mouse list",
+          "summary": "List every mouse trigger with the action it runs"
+        },
+        {
+          "name": "mouse set",
+          "signature": "unflick mouse set <TRIGGER> <ACTION>",
+          "summary": "Point a trigger at an action, e.g. `mouse set wheel_up volume_up`"
+        },
+        {
+          "name": "mouse reset",
+          "signature": "unflick mouse reset [TRIGGER]",
+          "summary": "Restore defaults — one trigger, or all of them"
+        }
+      ]
+    },
+    {
+      "heading": "Settings",
+      "commands": [
+        {
+          "name": "settings path",
+          "signature": "unflick settings path",
+          "summary": "Print the absolute path to the settings file"
+        },
+        {
+          "name": "settings get",
+          "signature": "unflick settings get [--key <KEY>]",
+          "summary": "Print all settings (or a single key with --key)"
+        },
+        {
+          "name": "settings set",
+          "signature": "unflick settings set <KEY> <VALUE>",
+          "summary": "Set a single key to the given JSON value"
+        },
+        {
+          "name": "settings unset",
+          "signature": "unflick settings unset <KEY>",
+          "summary": "Remove a single key"
+        }
+      ]
+    },
+    {
+      "heading": "Daemon & diagnostics",
+      "commands": [
+        {
+          "name": "daemon",
+          "signature": "unflick daemon",
+          "summary": "Start the background daemon (holds the player instance)"
+        },
+        {
+          "name": "--mcp",
+          "signature": "unflick --mcp",
+          "summary": "Start the MCP server over stdio. See the MCP reference below."
+        },
+        {
+          "name": "shutdown",
+          "signature": "unflick shutdown",
+          "summary": "Shut down the daemon"
+        },
+        {
+          "name": "startup",
+          "signature": "unflick startup",
+          "summary": "The last launch's startup timeline, phase by phase"
+        },
+        {
+          "name": "cleanup",
+          "signature": "unflick cleanup [--apply]",
+          "summary": "Find (and optionally remove) files an older unflick left behind"
+        },
+        {
+          "name": "dev eval",
+          "signature": "unflick dev eval [--timeout <TIMEOUT>] <SCRIPT>",
+          "summary": "Run JavaScript in the window and print what it evaluated to"
+        },
+        {
+          "name": "dev click",
+          "signature": "unflick dev click [--index <INDEX>] [--timeout <TIMEOUT>] <SELECTOR>",
+          "summary": "Click an element, after checking it is really the thing on top"
+        },
+        {
+          "name": "dev text",
+          "signature": "unflick dev text <SELECTOR>",
+          "summary": "Visible text of every element matching a selector"
+        },
+        {
+          "name": "dev snapshot",
+          "signature": "unflick dev snapshot [--selector <SELECTOR>] [--depth <DEPTH>]",
+          "summary": "The accessibility tree of the window: role, name, state, selector"
+        },
+        {
+          "name": "dev capture",
+          "signature": "unflick dev capture [--output <OUTPUT>] [--max-edge <MAX_EDGE>]",
+          "summary": "A PNG of the interface layer"
+        },
+        {
+          "name": "dev wait",
+          "signature": "unflick dev wait [--gone] [--timeout <TIMEOUT>] <SELECTOR>",
+          "summary": "Wait for an element to appear — or, with --gone, to leave"
+        }
+      ]
+    }
+  ],
+  "mcpTools": [
+    {
+      "name": "play",
+      "summary": "Play a video file or URL."
+    },
+    {
+      "name": "pause",
+      "summary": "Pause playback."
+    },
+    {
+      "name": "resume",
+      "summary": "Resume playback after a pause."
+    },
+    {
+      "name": "stop",
+      "summary": "Stop playback and unload the file."
+    },
+    {
+      "name": "seek",
+      "summary": "Seek to a position in seconds"
+    },
+    {
+      "name": "set_volume",
+      "summary": "Set volume level"
+    },
+    {
+      "name": "set_speed",
+      "summary": "Get or set the playback speed of the window the user is watching."
+    },
+    {
+      "name": "get_status",
+      "summary": "Get current playback status including state, file, position, duration, volume, and speed."
+    },
+    {
+      "name": "file_info",
+      "summary": "Get media file metadata (duration, resolution, codecs) without affecting current playback"
+    },
+    {
+      "name": "playlist_add",
+      "summary": "Add a file to the playlist"
+    },
+    {
+      "name": "playlist_remove",
+      "summary": "Remove a playlist entry by index"
+    },
+    {
+      "name": "playlist_list",
+      "summary": "List all playlist entries with index, path, and current track indicator"
+    },
+    {
+      "name": "playlist_next",
+      "summary": "Advance to and play the next track in the playlist"
+    },
+    {
+      "name": "playlist_prev",
+      "summary": "Go back to and play the previous track in the playlist"
+    },
+    {
+      "name": "playlist_clear",
+      "summary": "Clear all entries from the playlist"
+    },
+    {
+      "name": "playlist_play",
+      "summary": "Play a specific playlist entry by index"
+    },
+    {
+      "name": "load_subtitle",
+      "summary": "Load an external subtitle file"
+    },
+    {
+      "name": "subtitle_list",
+      "summary": "List all subtitle tracks (embedded and external)"
+    },
+    {
+      "name": "subtitle_select",
+      "summary": "Select a subtitle track by ID (0 to disable subtitles)."
+    },
+    {
+      "name": "audio_list",
+      "summary": "List all audio tracks (embedded)"
+    },
+    {
+      "name": "audio_select",
+      "summary": "Select an audio track by ID (0 to disable audio)"
+    },
+    {
+      "name": "generate_subtitles",
+      "summary": "Generate subtitles for a video using whisper."
+    },
+    {
+      "name": "translate_subtitles",
+      "summary": "Translate an SRT file to another language using OpenAI."
+    },
+    {
+      "name": "library_scan",
+      "summary": "Scan a directory for video files and add them to the library"
+    },
+    {
+      "name": "library_search",
+      "summary": "Search the media library by title or path"
+    },
+    {
+      "name": "library_list",
+      "summary": "List all media files in the library"
+    },
+    {
+      "name": "library_remove",
+      "summary": "Remove a media entry from the library by ID"
+    },
+    {
+      "name": "clip",
+      "summary": "Extract a video clip segment, optionally as GIF."
+    },
+    {
+      "name": "screenshot",
+      "summary": "Take a screenshot of the current video frame"
+    },
+    {
+      "name": "save_position",
+      "summary": "Save playback position for a file (for resume playback)"
+    },
+    {
+      "name": "get_position",
+      "summary": "Get saved playback position for a file"
+    },
+    {
+      "name": "settings_path",
+      "summary": "Get the absolute path of the settings.json file"
+    },
+    {
+      "name": "settings_get",
+      "summary": "Read all settings, or a single key if provided"
+    },
+    {
+      "name": "settings_set",
+      "summary": "Set a single settings key to the given JSON value"
+    },
+    {
+      "name": "settings_unset",
+      "summary": "Remove a single settings key"
+    },
+    {
+      "name": "filter_list",
+      "summary": "List current video filter values (brightness, contrast, saturation, gamma, hue)"
+    },
+    {
+      "name": "filter_set",
+      "summary": "Set a video filter (brightness | contrast | saturation | gamma | hue) to a value in -100..100"
+    },
+    {
+      "name": "filter_reset",
+      "summary": "Reset all video filters to 0 (neutral)"
+    },
+    {
+      "name": "sponsor_segments",
+      "summary": "Fetch SponsorBlock skip segments for a YouTube URL."
+    },
+    {
+      "name": "subtitle_delay",
+      "summary": "Get or set the subtitle delay in seconds."
+    },
+    {
+      "name": "audio_delay",
+      "summary": "Get or set the audio delay in seconds, for fixing lip-sync."
+    },
+    {
+      "name": "subtitle_style_get",
+      "summary": "Read subtitle appearance: scale, vertical position, colour, border size, bold."
+    },
+    {
+      "name": "subtitle_style_set",
+      "summary": "Set one subtitle appearance property."
+    },
+    {
+      "name": "subtitle_bilingual",
+      "summary": "Show two subtitle tracks at once — typically the original plus a translation."
+    },
+    {
+      "name": "chapter_list",
+      "summary": "List the chapters of the currently playing file: index, title, start time, and which one is playing."
+    },
+    {
+      "name": "chapter_seek",
+      "summary": "Jump to a chapter by 0-based index."
+    },
+    {
+      "name": "chapter_next",
+      "summary": "Jump to the next chapter."
+    },
+    {
+      "name": "chapter_prev",
+      "summary": "Jump to the previous chapter."
+    },
+    {
+      "name": "ab_loop",
+      "summary": "Control the A-B loop, which repeats a section of the current file."
+    },
+    {
+      "name": "frame_step",
+      "summary": "Step forward exactly one frame."
+    },
+    {
+      "name": "frame_back_step",
+      "summary": "Step back exactly one frame."
+    },
+    {
+      "name": "playlist_repeat",
+      "summary": "Get or set the playlist repeat mode."
+    },
+    {
+      "name": "playlist_shuffle",
+      "summary": "Get or set playlist shuffle."
+    },
+    {
+      "name": "shutdown",
+      "summary": "Shut down the unflick daemon."
+    },
+    {
+      "name": "get_subtitles",
+      "summary": "Find and load subtitles for the playing video from OpenSubtitles, in one step."
+    },
+    {
+      "name": "find_subtitles",
+      "summary": "Search OpenSubtitles and return the candidates without downloading anything."
+    },
+    {
+      "name": "download_subtitle",
+      "summary": "Download one subtitle chosen from find_subtitles and load it into the player."
+    },
+    {
+      "name": "search_transcript",
+      "summary": "Search the currently playing file's subtitles for a phrase and return every match with its timestamp."
+    },
+    {
+      "name": "seek_to_text",
+      "summary": "Jump playback to where a phrase is spoken."
+    },
+    {
+      "name": "transcript_get",
+      "summary": "Return the full transcript of the currently playing file as timed cues, plus where it came from."
+    },
+    {
+      "name": "generate_chapters",
+      "summary": "Give a file that has no chapters a set of them, derived from the pauses in its transcript."
+    },
+    {
+      "name": "set_chapters",
+      "summary": "Set the chapter list for a file that has none, from your own reading of its content."
+    },
+    {
+      "name": "clear_chapters",
+      "summary": "Remove chapters added by generate_chapters or set_chapters."
+    },
+    {
+      "name": "keybind_list",
+      "summary": "List every keyboard shortcut: action id, label, current key, default, and whether the user has changed it."
+    },
+    {
+      "name": "keybind_set",
+      "summary": "Rebind a keyboard shortcut."
+    },
+    {
+      "name": "keybind_reset",
+      "summary": "Restore a shortcut to its default."
+    },
+    {
+      "name": "video_transform_get",
+      "summary": "Read how the picture is fitted to the window: aspect override, rotation, zoom multiplier, pan-scan and deinterlace."
+    },
+    {
+      "name": "video_transform_set",
+      "summary": "Fix a squashed aspect ratio, straighten a video recorded sideways, crop black bars, or deinterlace broadcast footage."
+    },
+    {
+      "name": "video_transform_reset",
+      "summary": "Restore the file's own geometry — no aspect override, no rotation, no zoom or pan-scan, deinterlace off."
+    },
+    {
+      "name": "incognito",
+      "summary": "Read or set incognito mode."
+    },
+    {
+      "name": "recent_files",
+      "summary": "Recently played files, newest first, with how many times each was played and when."
+    },
+    {
+      "name": "recent_clear",
+      "summary": "Forget the play history."
+    },
+    {
+      "name": "bookmark_add",
+      "summary": "Save a named position in a file, so it can be jumped back to later."
+    },
+    {
+      "name": "bookmark_list",
+      "summary": "Bookmarks for the file being watched, in timeline order."
+    },
+    {
+      "name": "bookmark_goto",
+      "summary": "Jump to a bookmark by id."
+    },
+    {
+      "name": "bookmark_rename",
+      "summary": "Give a bookmark a name, or drop the one it has by omitting name."
+    },
+    {
+      "name": "bookmark_remove",
+      "summary": "Delete one bookmark by id."
+    },
+    {
+      "name": "bookmark_clear",
+      "summary": "Delete every bookmark for the file being watched, or for the file named."
+    },
+    {
+      "name": "mouse_list",
+      "summary": "List mouse bindings: wheel up/down, click, double click, middle click, and the four right-drag gestures, each with the action it runs."
+    },
+    {
+      "name": "mouse_set",
+      "summary": "Point a mouse trigger at an action."
+    },
+    {
+      "name": "mouse_reset",
+      "summary": "Restore a mouse trigger to its default."
+    },
+    {
+      "name": "describe_frame",
+      "summary": "Return the frame showing right now as an image, so you can see what is on screen."
+    },
+    {
+      "name": "equalizer_get",
+      "summary": "Read the 10-band equaliser: per-band gains in dB, the band centre frequencies they correspond to, the preamp, whether loudness normalisation is on, and the filter chain mpv is actually running."
+    },
+    {
+      "name": "equalizer_set",
+      "summary": "Adjust the equaliser."
+    },
+    {
+      "name": "equalizer_preset",
+      "summary": "Apply a named equaliser curve and switch the equaliser on."
+    },
+    {
+      "name": "equalizer_presets",
+      "summary": "List the available equaliser presets with a description of what each is for and the curve it applies."
+    },
+    {
+      "name": "equalizer_reset",
+      "summary": "Remove every audio filter: flat curve, no preamp, no normalisation."
+    },
+    {
+      "name": "pitch_correction",
+      "summary": "Read or set whether changing playback speed keeps the original pitch."
+    },
+    {
+      "name": "window_mode",
+      "summary": "Get or set the shape of the player window the user is looking at."
+    },
+    {
+      "name": "cleanup",
+      "summary": "Find files an older unflick left behind — on Windows, upgrading from v0.9 moved the install directory and stranded roughly half a gigabyte with no uninstall entry."
+    },
+    {
+      "name": "cast",
+      "summary": "Send what is playing to a television on the network over DLNA."
+    },
+    {
+      "name": "disc_list",
+      "summary": "Optical drives on this machine and whether each holds a DVD or Blu-ray, plus whether this build can play them at all."
+    },
+    {
+      "name": "session",
+      "summary": "What the user was last watching and how far in — and, with action \"restore\", reopen it there."
+    },
+    {
+      "name": "startup",
+      "summary": "The last launch's startup timeline, phase by phase, in milliseconds from process start — process init, video pipeline, window shown, the launch file opening, React mounting, the control port."
+    },
+    {
+      "name": "now_playing",
+      "summary": "What is playing, described the way a person would: title, artist, album, and whether there is any picture (an embedded cover is not video)."
+    },
+    {
+      "name": "dev_snapshot",
+      "summary": "The accessibility tree of the unflick window: every visible element with its role, accessible name, state and a CSS selector that feeds straight back into dev_click and dev_text."
+    },
+    {
+      "name": "dev_click",
+      "summary": "Click an element in the unflick window."
+    },
+    {
+      "name": "dev_text",
+      "summary": "Visible text of every element matching a selector, each with its index."
+    },
+    {
+      "name": "dev_wait",
+      "summary": "Wait for an element to appear, or with `gone` for it to leave the page."
+    },
+    {
+      "name": "dev_capture",
+      "summary": "A picture of the unflick interface."
+    },
+    {
+      "name": "dev_eval",
+      "summary": "Run JavaScript in the unflick window and get back what it evaluated to."
+    }
+  ],
+  "mcpResources": [
+    {
+      "uri": "unflick://now-playing",
+      "summary": "Current playback state: file, position, duration, volume, speed"
+    },
+    {
+      "uri": "unflick://playlist",
+      "summary": "Current playlist entries with current-track indicator"
+    },
+    {
+      "uri": "unflick://library",
+      "summary": "All media files in the library"
+    }
+  ]
+}

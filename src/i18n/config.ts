@@ -80,3 +80,15 @@ export const COUNTRY_TO_LOCALE: Record<string, Locale> = {
 export function isLocale(value: string | undefined): value is Locale {
   return !!value && (LOCALES as readonly string[]).includes(value);
 }
+
+/**
+ * To Be Free (tobefree.app) — the free-software directory unflick is listed
+ * in. It only has Chinese and English pages; every other locale there
+ * redirects to Chinese, so non-Chinese visitors are sent to English.
+ */
+export const TOBEFREE_ORIGIN = 'https://tobefree.app';
+
+export function tobefreeUrl(locale: Locale, path = ''): string {
+  const lang = locale === 'zh-CN' || locale === 'zh-TW' ? 'zh' : 'en';
+  return `${TOBEFREE_ORIGIN}/${lang}/${path}`;
+}

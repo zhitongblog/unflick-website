@@ -23,7 +23,7 @@ npm run build  # produces ./dist
 │   └── index.ts           # CF Pages Function: country → locale redirect at /
 ├── public/                # Static assets (favicon, OG image)
 ├── src/
-│   ├── components/        # TopAdBanner, Header, Hero, Features, McpDemo, Download, Footer
+│   ├── components/        # TopAdBanner, Header, Hero, Features, McpDemo, Download, ToBeFree, Footer
 │   ├── i18n/
 │   │   ├── config.ts      # locale list + country→locale map
 │   │   ├── utils.ts       # t(locale) → string bundle
@@ -57,4 +57,18 @@ npm run build  # produces ./dist
 
 All user-visible strings live in `src/i18n/<locale>.json`. Translations were drafted with AI as a starting point — native-speaker PRs welcome.
 
-The download URLs point to GitHub releases, so updating the unflick release version means updating the version string in `src/components/Download.astro`.
+## After an unflick release
+
+- **Download links** follow the newest release on their own. The build pins them to the tag `scripts/fetch-stats.mjs` sees, and on page load `/api/stats` repoints each link at a newer release when that release has the same file. A rebuild (any push) just bakes the new tag in.
+- **Docs tables** (CLI + MCP) are generated from a real binary. Install the new release, then:
+
+  ```bash
+  node scripts/gen-reference.mjs            # or: node scripts/gen-reference.mjs /path/to/unflick
+  ```
+
+  and commit `src/data/reference.generated.json`.
+- Tool counts in the copy (`features.mcp.body`, `docs.quickStart.mcpBody`) are prose in every `src/i18n/<locale>.json` — update them if the count moved.
+
+## To Be Free
+
+unflick is listed on [To Be Free](https://tobefree.app). The header, hero badge, the To Be Free section and the footer link there via `tobefreeUrl()` in `src/i18n/config.ts`, which sends Chinese locales to `/zh/` and everyone else to `/en/` (the only two languages To Be Free has).

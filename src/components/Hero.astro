@@ -1,5 +1,5 @@
 ---
-import type { Locale } from '../i18n/config';
+import { type Locale, tobefreeUrl } from '../i18n/config';
 import { t } from '../i18n/utils';
 import stats from '../data/stats.json';
 
@@ -20,14 +20,14 @@ const initialDownloads = stats.downloads;
 // Derive the headline version from whatever the build-time stats grab pulled.
 // Falls through to a hardcoded value only if the stats fetch was unable to
 // resolve a release (offline build, fresh repo with no releases, etc).
-const versionLabel = (stats as { latest_tag?: string | null }).latest_tag ?? 'v0.8.5';
+const versionLabel = (stats as { latest_tag?: string | null }).latest_tag ?? 'v0.15.0';
 
 // Hero CTA points straight at a release asset, not at the #download anchor —
 // solomd-style direct link via GitHub's 302 to its CDN, so the user gets a
 // download stream instead of bouncing through a github.com page. Defaults
 // to the Windows standard installer (most visitors); inline JS below
 // rewrites the href + label for macOS / Linux user agents.
-const tag = (stats as { latest_tag?: string | null }).latest_tag ?? 'v0.8.5';
+const tag = (stats as { latest_tag?: string | null }).latest_tag ?? 'v0.15.0';
 const tagBare = tag.replace(/^v/, '');
 const RELEASE = `https://github.com/zhitongblog/unflick/releases/download/${tag}`;
 const winHref = `${RELEASE}/unflick_${tagBare}_x64-setup-standard.exe`;
@@ -40,7 +40,7 @@ const linuxHref = `${RELEASE}/unflick_${tagBare}_amd64.AppImage`;
     <div class="inline-flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 px-3.5 py-1.5 rounded-full text-xs font-medium text-zinc-300 bg-white/5 border border-white/10 mb-8">
       <span class="inline-flex items-center gap-1.5">
         <span class="w-1.5 h-1.5 rounded-full gradient-bg animate-pulse"></span>
-        {versionLabel}
+        <span data-release-tag-label>{versionLabel}</span>
       </span>
       <span class="text-zinc-600">·</span>
       <span>MIT</span>
@@ -55,6 +55,20 @@ const linuxHref = `${RELEASE}/unflick_${tagBare}_amd64.AppImage`;
       <span>
         <span id="hero-downloads">{formatDownloads(initialDownloads)}</span> downloads
       </span>
+    </div>
+
+    <div class="-mt-4 mb-8">
+      <a
+        href={tobefreeUrl(locale, 'tools/unflick/')}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition"
+      >
+        <svg class="w-3.5 h-3.5 text-emerald-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.58l7.3-7.3a1 1 0 0 1 1.4 0Z" clip-rule="evenodd" />
+        </svg>
+        {s.tobefree.badge} →
+      </a>
     </div>
 
     <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]">
@@ -207,24 +221,4 @@ const linuxHref = `${RELEASE}/unflick_${tagBare}_amd64.AppImage`;
       });
     });
   })();
-
-  // Live-refresh GitHub stats. The page already SSRs build-time numbers so
-  // the badge isn't blank if this fails — we just leave the static values.
-  // Guard with `> 0` not `!= null` so a single GitHub 503 returning
-  // `{stars: 0, downloads: 0}` from the failure-fallback path can't pin
-  // "⭐ 0" onto the homepage for the next 5 minutes.
-  fetch('/api/stats')
-    .then((r) => (r.ok ? r.json() : null))
-    .then((s) => {
-      if (!s || typeof s.stars !== 'number') return;
-      var starsEl = document.getElementById('hero-stars');
-      var dlEl = document.getElementById('hero-downloads');
-      if (starsEl && s.stars > 0) starsEl.textContent = s.stars.toString();
-      if (dlEl && typeof s.downloads === 'number' && s.downloads > 0) {
-        dlEl.textContent = s.downloads >= 1000
-          ? (s.downloads / 1000).toFixed(1).replace(/\.0$/, '') + 'k'
-          : s.downloads.toString();
-      }
-    })
-    .catch(function () { /* keep static values */ });
 </script>

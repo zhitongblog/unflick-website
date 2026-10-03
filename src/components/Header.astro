@@ -1,6 +1,6 @@
 ---
 import type { Locale } from '../i18n/config';
-import { LOCALES, LOCALE_NAMES } from '../i18n/config';
+import { LOCALES, LOCALE_NAMES, tobefreeUrl } from '../i18n/config';
 import { t } from '../i18n/utils';
 
 interface Props {
@@ -24,6 +24,9 @@ const s = t(locale);
       <a href={`/${locale}/#download`} class="hover:text-white transition">{s.nav.download}</a>
       <a href="https://github.com/zhitongblog/unflick" target="_blank" rel="noopener" class="hover:text-white transition">
         {s.nav.github}
+      </a>
+      <a href={tobefreeUrl(locale, 'tools/unflick/')} target="_blank" rel="noopener" class="hover:text-white transition">
+        {s.nav.tobefree}
       </a>
     </nav>
 

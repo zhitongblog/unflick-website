@@ -1,0 +1,32 @@
+---
+import { type Locale, tobefreeUrl } from '../i18n/config';
+import { t } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const s = t(locale);
+---
+
+<section id="tobefree" class="py-16 sm:py-20 border-t border-white/5">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6">
+    <div class="card relative overflow-hidden border-brand-purple/30 bg-gradient-to-br from-brand-purple/10 via-brand-pink/5 to-transparent p-6 sm:p-10">
+      <div class="text-xs uppercase tracking-wider text-zinc-400">{s.tobefree.label}</div>
+      <h2 class="mt-2 text-2xl sm:text-3xl font-bold tracking-tight text-white">{s.tobefree.title}</h2>
+      <p class="mt-4 text-zinc-300 leading-relaxed max-w-2xl">{s.tobefree.body}</p>
+      <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+        <a href={tobefreeUrl(locale, 'tools/unflick/')} target="_blank" rel="noopener" class="btn-primary justify-center">
+          {s.tobefree.cta}
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clip-rule="evenodd" />
+          </svg>
+        </a>
+        <a href={tobefreeUrl(locale)} target="_blank" rel="noopener" class="text-sm text-zinc-400 hover:text-white transition text-center sm:text-left">
+          {s.tobefree.more}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

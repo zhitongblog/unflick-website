@@ -21,7 +21,8 @@
     "features": "功能",
     "download": "下載",
     "docs": "文件",
-    "github": "GitHub"
+    "github": "GitHub",
+    "tobefree": "To Be Free"
   },
   "hero": {
     "headline": "免費 · 無廣告 · 給人類和 AI",
@@ -31,8 +32,7 @@
     "primaryCtaLinux": "下載 Linux 版",
     "allPlatforms": "查看所有平台 ↓",
     "installLabel": "⚡ 或一行命令安裝",
-    "secondaryCta": "在 GitHub 上 Star",
-    "version": "v0.6.0 — 今日發布"
+    "secondaryCta": "在 GitHub 上 Star"
   },
   "principles": {
     "title": "免費、純淨、屬於你",
@@ -59,7 +59,7 @@
     "subtitle": "從第一天起就為人類和 AI Agent 同時設計。GUI 能做的事，CLI 和 MCP 全都能做。",
     "gui": {
       "title": "精緻 GUI",
-      "body": "毛玻璃質感、自動隱藏控制列、全螢幕和子母畫面模式。底層是 libmpv，工業級播放效能，涵蓋所有主流格式。"
+      "body": "毛玻璃介面、子母畫面、真全螢幕。章節、書籤、A-B 循環、10 段等化器。支援 DVD、ISO 和藍光，還能透過 DLNA 投放到電視。底層 libmpv，什麼格式都能播。"
     },
     "cli": {
       "title": "完整 CLI",
@@ -67,32 +67,34 @@
     },
     "mcp": {
       "title": "AI 原生 (MCP)",
-      "body": "內建 MCP server。Claude、ChatGPT、Cursor 等任意 AI Agent 都能透過 39 個工具和 3 個即時資源驅動播放、剪輯、轉錄、搜尋媒體庫。"
+      "body": "內建 MCP server。Claude、ChatGPT、Cursor 等任意 AI Agent 都能透過 101 個工具和 3 個即時資源驅動播放、剪輯、轉錄、搜尋媒體庫。"
     }
   },
   "download": {
     "title": "下載 unflick",
-    "subtitle": "Windows 10 / 11、macOS 和 Linux 全部支援。",
+    "subtitle": "支援 Windows 10 / 11、macOS 11+，以及 x86_64 和 ARM 上的 Linux。",
     "standard": {
       "name": "標準版",
-      "size": "80 MB",
+      "size": "100 MB",
       "blurb": "完整播放器，內建 ffmpeg 和 yt-dlp，支援剪輯和 URL 線上播放。",
       "cta": "下載標準版"
     },
     "ai": {
       "name": "AI 版",
-      "size": "145 MB",
+      "size": "165 MB",
       "blurb": "標準版 + 離線 Whisper 模型。零設定直接生成 AI 字幕。",
       "cta": "下載 AI 版",
       "badge": "推薦"
     },
     "mac": {
       "name": "Universal 通用版",
-      "size": "111 MB",
-      "blurb": "公證簽名 .dmg，同一個包內含 Apple Silicon 和 Intel 兩套架構。拖到 Applications 即裝即用，不會被 Gatekeeper 攔。",
+      "size": "45 MB",
+      "blurb": "已簽署並公證的通用 .dmg，同時支援 Apple 晶片和 Intel。自帶 libmpv，能直接播 DVD，不用再裝別的。",
       "cta": "下載 .dmg",
       "intelTitle": "Intel Mac 使用者",
-      "intelBody": "同一個 DMG。macOS 會自動挑對的架構跑。"
+      "intelBody": "對，就是同一個 DMG。macOS 會自動選擇對應架構。",
+      "note": "選用：剪輯匯出和進度列縮圖需要 ffmpeg ——",
+      "brew": "或者用 Homebrew："
     },
     "github": "或者去 GitHub 看原始碼 →"
   },
@@ -100,9 +102,19 @@
     "title": "接入 Claude / Cursor / 任意 MCP 用戶端",
     "body": "把這段設定加到你的 MCP 用戶端，AI 就能驅動播放、生成字幕、掃描媒體庫——unflick 所有功能 Agent 都能用。"
   },
+  "tobefree": {
+    "badge": "已收錄於 To Be Free",
+    "label": "To Be Free 出品",
+    "title": "更多真正免費的軟體",
+    "body": "unflick 是 To Be Free 收錄的工具之一。To Be Free 是一個精選目錄，只收錄真正可以自由使用的軟體：沒有廣告，不用註冊帳號，也不會哪天突然收費。去那裡看看 unflick 的介紹，還有更多同類好軟體。",
+    "cta": "在 To Be Free 查看 unflick",
+    "more": "瀏覽全部免費工具 →"
+  },
   "footer": {
     "tagline": "開放原始碼 · MIT 授權",
-    "byline": "用心為人類和 AI 打造。"
+    "byline": "用心為人類和 AI 打造。",
+    "madeBy": "To Be Free 出品",
+    "madeByTail": "讓每個人都能自由使用軟體"
   },
   "switcher": {
     "label": "語言"
@@ -114,10 +126,12 @@
     "quickStart": {
       "title": "快速開始",
       "install": "安裝",
-      "installBody": "下載 AI 版安裝包並執行。所有相依都打包好了，無需修改 PATH。",
+      "installBody": "任意平台一行指令安裝（見首頁），macOS 也可以用 Homebrew，或在下載區選安裝檔。Windows AI 版額外內建離線 Whisper 模型，生成字幕零設定。",
       "playback": "終端試用",
       "mcp": "接入 AI 用戶端",
-      "mcpBody": "把下面這段設定加到你的 MCP 用戶端（Claude Desktop / Cursor / Codex CLI 等），AI Agent 立即取得 39 個工具和 3 個即時資源，可以驅動播放、生成字幕、掃描媒體庫等。"
+      "mcpBody": "把下面這段設定加到你的 MCP 用戶端（Claude Desktop / Cursor / Codex CLI 等），AI Agent 立即取得 101 個工具和 3 個即時資源，可以驅動播放、生成字幕、掃描媒體庫等。",
+      "plugin": "Claude Code 外掛",
+      "pluginBody": "在 Claude Code 裡執行這兩行指令，一步裝好 unflick 的七個 skill 並接好 MCP server。"
     },
     "cli": {
       "title": "CLI 參考",
@@ -128,12 +142,14 @@
       "body": "加 --mcp 參數啟動時，unflick 透過 stdio 暴露一個 Model Context Protocol 服務。所有 CLI 能力也都是 MCP 工具，外加 3 個可訂閱的狀態資源。",
       "tools": "工具",
       "resources": "資源",
-      "uri": "URI"
+      "uri": "URI",
+      "windowsNote": "Windows 上請寫完整路徑："
     },
     "fields": {
       "command": "命令",
       "summary": "說明",
       "tool": "工具"
-    }
+    },
+    "generatedFrom": "產生自 unflick"
   }
 }

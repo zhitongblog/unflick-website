@@ -16,6 +16,9 @@ interface Stats {
   latest_tag: string | null;
   /** Direct link to that release's GitHub page. */
   latest_url: string | null;
+  /** File names attached to that release — lets pages repoint download
+   *  links at a newer release only when the file really exists there. */
+  latest_assets: string[];
   fetchedAt: string;
 }
 
@@ -24,6 +27,7 @@ const FALLBACK: Stats = {
   downloads: 0,
   latest_tag: null,
   latest_url: null,
+  latest_assets: [],
   fetchedAt: new Date(0).toISOString(),
 };
 
@@ -58,7 +62,7 @@ interface ReleaseApi {
   html_url?: string;
   draft?: boolean;
   prerelease?: boolean;
-  assets?: Array<{ download_count?: number }>;
+  assets?: Array<{ name?: string; download_count?: number }>;
 }
 
 async function fetchStats(env: Env): Promise<Stats> {
@@ -78,8 +82,9 @@ async function fetchStats(env: Env): Promise<Stats> {
   const latest = releases.find((r) => !r.draft && !r.prerelease);
   const latest_tag = latest?.tag_name ?? null;
   const latest_url = latest?.html_url ?? null;
+  const latest_assets = (latest?.assets ?? []).map((a) => a.name ?? '').filter(Boolean);
 
-  return { stars, downloads, latest_tag, latest_url, fetchedAt: new Date().toISOString() };
+  return { stars, downloads, latest_tag, latest_url, latest_assets, fetchedAt: new Date().toISOString() };
 }
 
 export const onRequestGet: PagesFunction<Env> = async ({ env }) => {

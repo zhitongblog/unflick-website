@@ -5,11 +5,14 @@
 #
 # macOS: downloads the signed + notarized universal .dmg, copies the .app
 # into /Applications, strips the quarantine bit so first launch doesn't hit
-# Gatekeeper. Requires Homebrew-installed libmpv at runtime: see Prereq.
+# Gatekeeper, and links the `unflick` CLI onto PATH where it can. The app
+# carries its own libmpv; ffmpeg is only needed for clip export and seek-bar
+# thumbnails. (Homebrew users: `brew install --cask zhitongblog/tap/unflick`
+# does all of this and pulls in ffmpeg.)
 #
-# Linux: downloads the AppImage, makes it executable, drops it into
-# ~/.local/bin/unflick. Requires libmpv2 + libwebkit2gtk-4.1-0 from your
-# distro's package manager.
+# Linux (x86_64 or aarch64): downloads the AppImage, makes it executable,
+# drops it into ~/.local/bin/unflick. Requires libmpv2 + libwebkit2gtk-4.1-0
+# from your distro's package manager.
 #
 # Source code: https://github.com/zhitongblog/unflick
 
@@ -68,22 +71,39 @@ case "$OS" in
     hdiutil detach "$MOUNT" -quiet
     rm -rf "$TMP"
 
-    if ! command -v mpv >/dev/null 2>&1 && ! [ -e /opt/homebrew/lib/libmpv*.dylib ] && ! [ -e /usr/local/lib/libmpv*.dylib ]; then
-      echo
-      echo "$(color_dim "Prereq:") unflick loads libmpv at runtime. Install it with:"
-      echo "  brew install mpv"
-    fi
+    # Put the CLI (and so `unflick --mcp`) on PATH, in the first bin dir we
+    # can write to without sudo. Never prompt for a password just for this.
+    APP_BIN=/Applications/unflick.app/Contents/MacOS/unflick
+    LINKED=""
+    for d in /opt/homebrew/bin /usr/local/bin; do
+      if [ -d "$d" ] && [ -w "$d" ]; then
+        ln -sf "$APP_BIN" "$d/unflick" && LINKED="$d/unflick" && break
+      fi
+    done
 
     echo
     say "Installed. Launch:"
     echo "  open -a unflick"
+    if [ -n "$LINKED" ]; then
+      echo "  CLI: unflick --help   $(color_dim "(linked at $LINKED)")"
+    else
+      echo "  CLI: $APP_BIN --help"
+      echo "  $(color_dim "To use it as \`unflick\`:") sudo ln -sf \"$APP_BIN\" /usr/local/bin/unflick"
+    fi
+    if ! command -v ffmpeg >/dev/null 2>&1; then
+      echo
+      echo "$(color_dim "Optional:") clip export and seek-bar thumbnails use ffmpeg:"
+      echo "  brew install ffmpeg"
+    fi
     ;;
 
   Linux)
-    if [ "$ARCH" != "x86_64" ] && [ "$ARCH" != "amd64" ]; then
-      err "only x86_64 Linux builds are published right now (got: $ARCH)"
-    fi
-    URL="https://github.com/$REPO/releases/download/$TAG/unflick_${TAG_BARE}_amd64.AppImage"
+    case "$ARCH" in
+      x86_64|amd64)  APPIMAGE_ARCH=amd64 ;;
+      aarch64|arm64) APPIMAGE_ARCH=aarch64 ;;
+      *) err "no Linux build for $ARCH yet — x86_64 and aarch64 are published" ;;
+    esac
+    URL="https://github.com/$REPO/releases/download/$TAG/unflick_${TAG_BARE}_${APPIMAGE_ARCH}.AppImage"
     DEST="${UNFLICK_INSTALL_DIR:-$HOME/.local/bin}"
     mkdir -p "$DEST"
     BIN="$DEST/unflick"

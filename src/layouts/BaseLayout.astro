@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { type Locale, LOCALES } from '../i18n/config';
 import { t } from '../i18n/utils';
+import stats from '../data/stats.json';
 
 interface Props {
   locale: Locale;
@@ -10,6 +11,8 @@ interface Props {
 const { locale } = Astro.props;
 const strings = t(locale);
 const url = Astro.url;
+// The release the static download links were built against.
+const buildTag = (stats as { latest_tag?: string | null }).latest_tag ?? null;
 ---
 
 <!doctype html>
@@ -44,5 +47,54 @@ const url = Astro.url;
   </head>
   <body class="min-h-screen flex flex-col">
     <slot />
+
+    <script is:inline define:vars={{ buildTag }}>
+      // One /api/stats call per page, for two jobs:
+      //
+      // 1. Live GitHub star / download counts in the hero badge.
+      // 2. Keep download links on the newest release. The site is only
+      //    rebuilt when this repo is pushed, so without this an unflick
+      //    release leaves every button pointing at the previous one. A link
+      //    moves to the new tag only if the renamed file is in that
+      //    release's asset list — if a future release renames an asset, the
+      //    link keeps working on the old version instead of 404ing.
+      (function () {
+        function fmt(n) {
+          return n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : n.toString();
+        }
+        fetch('/api/stats')
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (s) {
+            if (!s) return;
+            // `> 0`, not `!= null`: the function's failure fallback returns
+            // zeros, which must not overwrite the build-time numbers.
+            var starsEl = document.getElementById('hero-stars');
+            var dlEl = document.getElementById('hero-downloads');
+            if (starsEl && s.stars > 0) starsEl.textContent = s.stars.toString();
+            if (dlEl && s.downloads > 0) dlEl.textContent = fmt(s.downloads);
+
+            var tag = s.latest_tag;
+            var assets = s.latest_assets;
+            if (!buildTag || !tag || tag === buildTag || !Array.isArray(assets)) return;
+            var oldBare = buildTag.replace(/^v/, '');
+            var newBare = tag.replace(/^v/, '');
+            var oldDir = '/releases/download/' + buildTag + '/';
+            var attrs = ['href', 'data-win-href', 'data-mac-href', 'data-linux-href'];
+            document.querySelectorAll('a').forEach(function (el) {
+              attrs.forEach(function (attr) {
+                var v = el.getAttribute(attr);
+                if (!v || v.indexOf(oldDir) < 0) return;
+                var file = v.slice(v.indexOf(oldDir) + oldDir.length).split(oldBare).join(newBare);
+                if (assets.indexOf(file) < 0) return;
+                el.setAttribute(attr, v.slice(0, v.indexOf(oldDir)) + '/releases/download/' + tag + '/' + file);
+              });
+            });
+            document.querySelectorAll('[data-release-tag-label]').forEach(function (el) {
+              el.textContent = tag;
+            });
+          })
+          .catch(function () { /* keep build-time values */ });
+      })();
+    </script>
   </body>
 </html>

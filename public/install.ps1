@@ -59,5 +59,5 @@ if ($proc.ExitCode -ne 0) {
 Remove-Item $Tmp -ErrorAction SilentlyContinue
 
 Write-Host ""
-Write-Host "==> Done. Launch from Start menu, or:"
-Write-Host '    & "C:\Program Files\unflick\unflick.exe"'
+Write-Host "==> Done. Launch from the Start menu, or:"
+Write-Host "    & `"$env:LOCALAPPDATA\Programs\unflick\unflick.exe`""

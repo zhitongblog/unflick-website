@@ -21,7 +21,8 @@
     "features": "Fonctionnalités",
     "download": "Télécharger",
     "docs": "Docs",
-    "github": "GitHub"
+    "github": "GitHub",
+    "tobefree": "To Be Free"
   },
   "hero": {
     "headline": "Gratuit · sans pub · pour humains et IA",
@@ -31,8 +32,7 @@
     "primaryCtaLinux": "Télécharger pour Linux",
     "allPlatforms": "Voir toutes les plateformes ↓",
     "installLabel": "⚡ Ou installation en une ligne",
-    "secondaryCta": "Étoile sur GitHub",
-    "version": "v0.6.0 — sorti aujourd'hui"
+    "secondaryCta": "Étoile sur GitHub"
   },
   "principles": {
     "title": "Gratuit, propre, à toi.",
@@ -59,7 +59,7 @@
     "subtitle": "Conçu dès le premier jour pour les humains et les agents IA. Ce que fait l'interface, le CLI et MCP le font aussi.",
     "gui": {
       "title": "Belle interface",
-      "body": "Effet verre dépoli, contrôles auto-masqués, plein écran et incrustation. libmpv sous le capot pour une lecture de niveau professionnel sur tous les formats."
+      "body": "Interface en verre dépoli, PiP et vrai plein écran. Chapitres, signets, boucle A-B, égaliseur 10 bandes. DVD, ISO et Blu-ray, et diffusion vers ta TV en DLNA. libmpv sous le capot lit tous les formats."
     },
     "cli": {
       "title": "CLI complet",
@@ -67,32 +67,34 @@
     },
     "mcp": {
       "title": "Natif IA (MCP)",
-      "body": "Serveur MCP intégré. Claude, ChatGPT, Cursor — n'importe quel agent IA peut lire, découper, transcrire et chercher dans ta bibliothèque via 39 outils et 3 ressources live."
+      "body": "Serveur MCP intégré. Claude, ChatGPT, Cursor — n'importe quel agent IA peut lire, découper, transcrire et chercher dans ta bibliothèque via 101 outils et 3 ressources live."
     }
   },
   "download": {
     "title": "Télécharger unflick",
-    "subtitle": "Windows 10 / 11, macOS et Linux supportés.",
+    "subtitle": "Windows 10 / 11, macOS 11+ et Linux sur x86_64 et ARM.",
     "standard": {
       "name": "Édition Standard",
-      "size": "80 Mo",
+      "size": "100 MB",
       "blurb": "Lecteur complet avec ffmpeg et yt-dlp inclus pour les clips et la lecture par URL.",
       "cta": "Télécharger Standard"
     },
     "ai": {
       "name": "Édition AI",
-      "size": "145 Mo",
+      "size": "165 MB",
       "blurb": "Standard plus un modèle Whisper hors ligne. Sous-titres IA sans configuration.",
       "cta": "Télécharger AI",
       "badge": "Recommandé"
     },
     "mac": {
       "name": "Binaire universel",
-      "size": "111 Mo",
-      "blurb": ".dmg notarisée et signée, avec les tranches Apple Silicon et Intel dans le même paquet. Glisse vers Applications, aucun blocage Gatekeeper.",
+      "size": "45 MB",
+      "blurb": ".dmg universel signé et notarisé pour Apple Silicon et Intel. Il embarque sa propre libmpv : les DVD se lisent et il n'y a rien d'autre à installer.",
       "cta": "Télécharger .dmg",
       "intelTitle": "Mac Intel",
-      "intelBody": "Même DMG. macOS choisit la bonne architecture automatiquement."
+      "intelBody": "Oui — le même DMG. macOS choisit automatiquement la bonne architecture.",
+      "note": "Optionnel : ffmpeg pour l'export de clips et les vignettes de la barre de lecture —",
+      "brew": "Ou avec Homebrew :"
     },
     "github": "Ou le code source sur GitHub →"
   },
@@ -100,9 +102,19 @@
     "title": "Branche unflick dans Claude / Cursor / tout client MCP",
     "body": "Ajoute cette configuration à ton client MCP et l'agent peut piloter la lecture, générer des sous-titres, scanner ta bibliothèque — toutes les fonctions exposées par unflick."
   },
+  "tobefree": {
+    "badge": "Référencé sur To Be Free",
+    "label": "Un projet To Be Free",
+    "title": "D'autres logiciels vraiment gratuits",
+    "body": "unflick fait partie des outils de To Be Free — un annuaire de logiciels triés sur le volet, vraiment libres d'utilisation : pas de pub, pas de compte, pas de paywall qui surgit plus tard. Tu y trouveras la fiche d'unflick et le reste de la collection.",
+    "cta": "Voir unflick sur To Be Free",
+    "more": "Parcourir tous les outils gratuits →"
+  },
   "footer": {
     "tagline": "Open source · licence MIT",
-    "byline": "Conçu avec soin pour les humains et les IA."
+    "byline": "Conçu avec soin pour les humains et les IA.",
+    "madeBy": "Un projet To Be Free",
+    "madeByTail": "des logiciels que chacun peut utiliser librement"
   },
   "switcher": {
     "label": "Langue"
@@ -114,10 +126,12 @@
     "quickStart": {
       "title": "Démarrage rapide",
       "install": "Installation",
-      "installBody": "Télécharge l'installeur de l'édition AI et lance-le. Tout est préconfiguré — pas besoin de modifier le PATH.",
+      "installBody": "Une seule ligne sur chaque plateforme (voir la page d'accueil), Homebrew sur macOS, ou un installeur depuis la section téléchargement. L'édition IA pour Windows embarque aussi un modèle Whisper hors ligne pour des sous-titres sans configuration.",
       "playback": "À tester depuis un terminal",
       "mcp": "Brancher dans un client IA",
-      "mcpBody": "Ajoute ce snippet à la configuration de ton client MCP (Claude Desktop, Cursor, Codex CLI, etc.) et l'agent gagne 39 outils et 3 ressources live pour piloter la lecture, générer des sous-titres, scanner ta bibliothèque, et plus."
+      "mcpBody": "Ajoute ce snippet à la configuration de ton client MCP (Claude Desktop, Cursor, Codex CLI, etc.) et l'agent gagne 101 outils et 3 ressources live pour piloter la lecture, générer des sous-titres, scanner ta bibliothèque, et plus.",
+      "plugin": "Plugin Claude Code",
+      "pluginBody": "Dans Claude Code, ces deux commandes installent sept skills unflick et branchent le serveur MCP en une seule étape."
     },
     "cli": {
       "title": "Référence CLI",
@@ -128,12 +142,14 @@
       "body": "Lancé avec --mcp, unflick expose un serveur Model Context Protocol via stdio. Chaque capacité du CLI est aussi un outil, plus trois ressources abonnables pour l'état.",
       "tools": "Outils",
       "resources": "Ressources",
-      "uri": "URI"
+      "uri": "URI",
+      "windowsNote": "Sous Windows, utilise le chemin complet :"
     },
     "fields": {
       "command": "Commande",
       "summary": "Ce qu'elle fait",
       "tool": "Outil"
-    }
+    },
+    "generatedFrom": "Généré depuis unflick"
   }
 }

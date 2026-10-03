@@ -21,7 +21,8 @@
     "features": "功能",
     "download": "下载",
     "docs": "文档",
-    "github": "GitHub"
+    "github": "GitHub",
+    "tobefree": "To Be Free"
   },
   "hero": {
     "headline": "免费 · 无广告 · 给人类和 AI",
@@ -31,8 +32,7 @@
     "primaryCtaLinux": "下载 Linux 版",
     "allPlatforms": "查看所有平台 ↓",
     "installLabel": "⚡ 或一行命令安装",
-    "secondaryCta": "在 GitHub 上 Star",
-    "version": "v0.6.0 — 今日发布"
+    "secondaryCta": "在 GitHub 上 Star"
   },
   "principles": {
     "title": "免费、纯净、属于你",
@@ -59,7 +59,7 @@
     "subtitle": "从第一天起就为人类和 AI Agent 同时设计。GUI 能做的事，CLI 和 MCP 全都能做。",
     "gui": {
       "title": "精致 GUI",
-      "body": "毛玻璃质感、自动隐藏控制栏、全屏和画中画模式。底层是 libmpv，工业级播放性能，覆盖所有主流格式。"
+      "body": "毛玻璃界面、画中画、真全屏。章节、书签、A-B 循环、10 段均衡器。支持 DVD、ISO 和蓝光，还能通过 DLNA 投屏到电视。底层 libmpv，什么格式都能播。"
     },
     "cli": {
       "title": "完整 CLI",
@@ -67,32 +67,34 @@
     },
     "mcp": {
       "title": "AI 原生 (MCP)",
-      "body": "内置 MCP server。Claude、ChatGPT、Cursor 等任意 AI Agent 都能通过 39 个工具和 3 个实时资源驱动播放、剪辑、转录、搜索媒体库。"
+      "body": "内置 MCP server。Claude、ChatGPT、Cursor 等任意 AI Agent 都能通过 101 个工具和 3 个实时资源驱动播放、剪辑、转录、搜索媒体库。"
     }
   },
   "download": {
     "title": "下载 unflick",
-    "subtitle": "Windows 10 / 11、macOS 和 Linux 全部支持。",
+    "subtitle": "支持 Windows 10 / 11、macOS 11+，以及 x86_64 和 ARM 上的 Linux。",
     "standard": {
       "name": "标准版",
-      "size": "80 MB",
+      "size": "100 MB",
       "blurb": "完整播放器，内置 ffmpeg 和 yt-dlp，支持剪辑和 URL 在线播放。",
       "cta": "下载标准版"
     },
     "ai": {
       "name": "AI 版",
-      "size": "145 MB",
+      "size": "165 MB",
       "blurb": "标准版 + 离线 Whisper 模型。零配置直接生成 AI 字幕。",
       "cta": "下载 AI 版",
       "badge": "推荐"
     },
     "mac": {
       "name": "Universal 通用版",
-      "size": "111 MB",
-      "blurb": "公证签名 .dmg，同一个包内含 Apple Silicon 和 Intel 两套架构。拖到 Applications 即装即用，不会被 Gatekeeper 拦。",
+      "size": "45 MB",
+      "blurb": "已签名并公证的通用 .dmg，同时支持 Apple 芯片和 Intel。自带 libmpv，能直接播 DVD，不用再装别的。",
       "cta": "下载 .dmg",
       "intelTitle": "Intel Mac 用户",
-      "intelBody": "同一个 DMG。macOS 自动挑对的架构跑。"
+      "intelBody": "对，就是同一个 DMG。macOS 会自动选择对应架构。",
+      "note": "可选：剪辑导出和进度条缩略图需要 ffmpeg ——",
+      "brew": "或者用 Homebrew："
     },
     "github": "或者去 GitHub 看源码 →"
   },
@@ -100,9 +102,19 @@
     "title": "接入 Claude / Cursor / 任意 MCP 客户端",
     "body": "把这段配置加到你的 MCP 客户端，AI 就能驱动播放、生成字幕、扫描媒体库——unflick 所有功能 Agent 都能用。"
   },
+  "tobefree": {
+    "badge": "已收录于 To Be Free",
+    "label": "To Be Free 出品",
+    "title": "更多真正免费的软件",
+    "body": "unflick 是 To Be Free 收录的工具之一。To Be Free 是一个精选目录，只收录真正可以自由使用的软件：没有广告，不用注册账号，也不会哪天突然收费。去那里看看 unflick 的介绍，还有更多同类好软件。",
+    "cta": "在 To Be Free 查看 unflick",
+    "more": "浏览全部免费工具 →"
+  },
   "footer": {
     "tagline": "开源 · MIT 协议",
-    "byline": "用心为人类和 AI 打造。"
+    "byline": "用心为人类和 AI 打造。",
+    "madeBy": "To Be Free 出品",
+    "madeByTail": "让每个人都能自由使用软件"
   },
   "switcher": {
     "label": "语言"
@@ -114,10 +126,12 @@
     "quickStart": {
       "title": "快速开始",
       "install": "安装",
-      "installBody": "下载 AI 版安装包并运行。所有依赖都打包好了，无需修改 PATH。",
+      "installBody": "任意平台一行命令安装（见首页），macOS 也可以用 Homebrew，或者在下载区选安装包。Windows AI 版额外内置离线 Whisper 模型，生成字幕零配置。",
       "playback": "终端试用",
       "mcp": "接入 AI 客户端",
-      "mcpBody": "把下面这段配置加到你的 MCP 客户端（Claude Desktop / Cursor / Codex CLI 等），AI Agent 立即获得 39 个工具和 3 个实时资源，可以驱动播放、生成字幕、扫描媒体库等。"
+      "mcpBody": "把下面这段配置加到你的 MCP 客户端（Claude Desktop / Cursor / Codex CLI 等），AI Agent 立即获得 101 个工具和 3 个实时资源，可以驱动播放、生成字幕、扫描媒体库等。",
+      "plugin": "Claude Code 插件",
+      "pluginBody": "在 Claude Code 里运行这两条命令，一步装好 unflick 的七个 skill 并接好 MCP server。"
     },
     "cli": {
       "title": "CLI 参考",
@@ -128,12 +142,14 @@
       "body": "加 --mcp 参数启动时，unflick 通过 stdio 暴露一个 Model Context Protocol 服务。所有 CLI 能力也都是 MCP 工具，外加 3 个可订阅的状态资源。",
       "tools": "工具",
       "resources": "资源",
-      "uri": "URI"
+      "uri": "URI",
+      "windowsNote": "Windows 上请写完整路径："
     },
     "fields": {
       "command": "命令",
       "summary": "说明",
       "tool": "工具"
-    }
+    },
+    "generatedFrom": "生成自 unflick"
   }
 }
