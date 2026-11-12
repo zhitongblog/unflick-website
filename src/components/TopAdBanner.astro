@@ -9,12 +9,8 @@ interface Props {
 const { locale } = Astro.props;
 const s = t(locale);
 
-// Two ads. We render both server-side and let a tiny inline script pick one
-// at random per page-load and remove the other. This keeps the build static
-// while still rotating exposure across visits.
 const ads = [
-  { id: 'solomd', href: 'https://solomd.app', ...s.ads.solomd },
-  { id: 'storyalter', href: 'https://storyalter.com', ...s.ads.storyalter },
+  { id: 'doaipm', href: 'https://doaipm.com', ...s.ads.doaipm },
 ];
 ---
 

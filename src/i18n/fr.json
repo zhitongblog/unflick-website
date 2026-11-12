@@ -4,16 +4,10 @@
     "description": "Lecture moderne et soignée. Contrôle complet via CLI et MCP. Les agents IA peuvent piloter chaque fonctionnalité, jusqu'à la génération de sous-titres hors ligne."
   },
   "ads": {
-    "solomd": {
+    "doaipm": {
       "label": "Du même créateur",
-      "name": "SoloMD",
-      "tagline": "Un éditeur Markdown avec serveur MCP intégré. Connecte tes notes à n'importe quel LLM.",
-      "cta": "Essayer"
-    },
-    "storyalter": {
-      "label": "Du même créateur",
-      "name": "StoryAlter",
-      "tagline": "Entraîne ton alter ego d'écriture IA personnel. De la nouvelle à l'épopée de plusieurs millions de mots.",
+      "name": "DO AI PM",
+      "tagline": "Devenez PM à l'ère de l'IA — parlez, l'IA construit le produit.",
       "cta": "Essayer"
     }
   },

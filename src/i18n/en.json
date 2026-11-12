@@ -4,17 +4,11 @@
     "description": "Beautiful, modern video player with full CLI and MCP control. AI agents can drive every feature, from playback to AI subtitle generation."
   },
   "ads": {
-    "solomd": {
+    "doaipm": {
       "label": "From the same maker",
-      "name": "SoloMD",
-      "tagline": "A markdown editor with a built-in MCP server. Bridge your notes to any LLM.",
-      "cta": "Try it"
-    },
-    "storyalter": {
-      "label": "From the same maker",
-      "name": "StoryAlter",
-      "tagline": "Train your personal AI writing alter ego. From short stories to million-word epics.",
-      "cta": "Try it"
+      "name": "DO AI PM",
+      "tagline": "Become an AI-era PM — speak one sentence, and AI builds the product.",
+      "cta": "doaipm.com"
     }
   },
   "nav": {

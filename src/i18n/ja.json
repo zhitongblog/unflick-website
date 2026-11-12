@@ -4,16 +4,10 @@
     "description": "美しくモダンな再生体験。CLI と MCP の完全な操作。AI エージェントは再生からオフライン AI 字幕生成まで、すべての機能を駆動できます。"
   },
   "ads": {
-    "solomd": {
+    "doaipm": {
       "label": "同じ作者のプロダクト",
-      "name": "SoloMD",
-      "tagline": "MCP サーバー内蔵のマークダウンエディター。あなたのノートを任意の LLM に直結。",
-      "cta": "見てみる"
-    },
-    "storyalter": {
-      "label": "同じ作者のプロダクト",
-      "name": "StoryAlter",
-      "tagline": "あなた専用の AI ライティング分身を育てる。短編から長編まで。",
+      "name": "DO AI PM",
+      "tagline": "AI 時代の PM になる — 一言で AI がプロダクトを作る。",
       "cta": "見てみる"
     }
   },

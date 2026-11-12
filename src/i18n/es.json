@@ -4,16 +4,10 @@
     "description": "Reproducción moderna y cuidada. Control total por CLI y MCP. Los agentes de IA pueden manejar cada función, incluida la generación de subtítulos sin conexión."
   },
   "ads": {
-    "solomd": {
+    "doaipm": {
       "label": "Del mismo autor",
-      "name": "SoloMD",
-      "tagline": "Un editor Markdown con servidor MCP integrado. Conecta tus notas a cualquier LLM.",
-      "cta": "Probar"
-    },
-    "storyalter": {
-      "label": "Del mismo autor",
-      "name": "StoryAlter",
-      "tagline": "Entrena tu alter ego de escritura con IA. Desde relatos cortos hasta sagas de millones de palabras.",
+      "name": "DO AI PM",
+      "tagline": "Conviértete en PM de la era IA — habla, la IA construye el producto.",
       "cta": "Probar"
     }
   },

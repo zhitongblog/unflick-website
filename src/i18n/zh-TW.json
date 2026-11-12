@@ -4,16 +4,10 @@
     "description": "現代、漂亮的影片播放器，完整支援 CLI 和 MCP 控制。AI Agent 可以驅動每一項功能，包含離線 AI 字幕生成。"
   },
   "ads": {
-    "solomd": {
+    "doaipm": {
       "label": "同一作者出品",
-      "name": "SoloMD",
-      "tagline": "內建 MCP server 的 Markdown 編輯器，讓你的筆記直通任何 LLM。",
-      "cta": "去看看"
-    },
-    "storyalter": {
-      "label": "同一作者出品",
-      "name": "StoryAlter",
-      "tagline": "培養專屬 AI 寫作分身，從短篇到百萬字長篇都能寫。",
+      "name": "DO AI PM",
+      "tagline": "成為 AI 時代的產品經理 —— 言出法隨一句話，AI 就給你做出來。",
       "cta": "去看看"
     }
   },
