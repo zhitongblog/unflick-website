@@ -67,7 +67,7 @@
     },
     "mcp": {
       "title": "Nativo de IA (MCP)",
-      "body": "Servidor MCP integrado. Claude, ChatGPT, Cursor — cualquier agente de IA puede reproducir, recortar, transcribir y buscar en tu biblioteca con 101 herramientas y 3 recursos en vivo."
+      "body": "Servidor MCP integrado. Claude, ChatGPT, Cursor — cualquier agente de IA puede reproducir, recortar, transcribir y buscar en tu biblioteca con 107 herramientas y 3 recursos en vivo."
     }
   },
   "download": {
@@ -129,7 +129,7 @@
       "installBody": "Una sola línea en cualquier plataforma (ver la página principal), Homebrew en macOS, o un instalador de la sección de descargas. La edición IA para Windows incluye además un modelo Whisper sin conexión para subtítulos sin configurar nada.",
       "playback": "Pruébalo desde una terminal",
       "mcp": "Conéctalo a un cliente de IA",
-      "mcpBody": "Añade este snippet a la configuración de tu cliente MCP (Claude Desktop, Cursor, Codex CLI, etc.) y el agente obtiene 101 herramientas y 3 recursos en vivo para reproducir, generar subtítulos, escanear la biblioteca y más.",
+      "mcpBody": "Añade este snippet a la configuración de tu cliente MCP (Claude Desktop, Cursor, Codex CLI, etc.) y el agente obtiene 107 herramientas y 3 recursos en vivo para reproducir, generar subtítulos, escanear la biblioteca y más.",
       "plugin": "Plugin de Claude Code",
       "pluginBody": "En Claude Code, estos dos comandos instalan siete skills de unflick y conectan el servidor MCP en un solo paso."
     },

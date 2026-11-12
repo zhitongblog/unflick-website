@@ -72,7 +72,7 @@ const GROUPS = [
   ['Playlist & library', ['playlist', 'library']],
   ['Streams, discs & casting', ['sponsor', 'disc', 'cast']],
   ['Input', ['keybind', 'mouse']],
-  ['Settings', ['settings']],
+  ['Settings & scripts', ['settings', 'script']],
   ['Daemon & diagnostics', ['daemon', 'shutdown', 'startup', 'cleanup', 'dev']],
 ];
 

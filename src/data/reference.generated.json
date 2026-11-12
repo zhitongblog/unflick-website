@@ -1,5 +1,5 @@
 {
-  "version": "0.15.0",
+  "version": "1.0.0",
   "cliGroups": [
     {
       "heading": "Playback",
@@ -213,6 +213,11 @@
           "name": "transcript seek",
           "signature": "unflick transcript seek [--occurrence <OCCURRENCE>] <QUERY>",
           "summary": "Jump to where a phrase is spoken"
+        },
+        {
+          "name": "transcript summary",
+          "signature": "unflick transcript summary [--segments <SEGMENTS>] [--file <FILE>]",
+          "summary": "Structured summary of the transcript: word count, keywords, and timeline segments"
         },
         {
           "name": "nowplaying",
@@ -450,6 +455,11 @@
           "summary": "Search the library by title or path"
         },
         {
+          "name": "library transcript",
+          "signature": "unflick library transcript [--limit <LIMIT>] <QUERY>",
+          "summary": "Search subtitles and transcripts across all files in the library"
+        },
+        {
           "name": "library list",
           "signature": "unflick library list",
           "summary": "List all media in the library"
@@ -562,7 +572,7 @@
       ]
     },
     {
-      "heading": "Settings",
+      "heading": "Settings & scripts",
       "commands": [
         {
           "name": "settings path",
@@ -583,6 +593,31 @@
           "name": "settings unset",
           "signature": "unflick settings unset <KEY>",
           "summary": "Remove a single key"
+        },
+        {
+          "name": "script list",
+          "signature": "unflick script list",
+          "summary": "List installed user scripts (.lua and .js) and whether each is enabled"
+        },
+        {
+          "name": "script add",
+          "signature": "unflick script add <PATH>",
+          "summary": "Install a .lua or .js script into the scripts directory and load it"
+        },
+        {
+          "name": "script enable",
+          "signature": "unflick script enable <NAME>",
+          "summary": "Enable an installed script and load it into the player"
+        },
+        {
+          "name": "script disable",
+          "signature": "unflick script disable <NAME>",
+          "summary": "Disable an installed script (takes effect on next player start)"
+        },
+        {
+          "name": "script remove",
+          "signature": "unflick script remove <NAME>",
+          "summary": "Delete an installed script from the scripts directory"
         }
       ]
     },
@@ -889,6 +924,14 @@
       "summary": "Return the full transcript of the currently playing file as timed cues, plus where it came from."
     },
     {
+      "name": "transcript_summary",
+      "summary": "Return a compact, structured overview of a video's transcript: cue count, word count, speaking duration, top keywords, and timeline segments with representative lead lines."
+    },
+    {
+      "name": "library_transcript_search",
+      "summary": "Search spoken dialogue across every video in the media library that has a sidecar (.srt/.vtt) or cached transcript."
+    },
+    {
       "name": "generate_chapters",
       "summary": "Give a file that has no chapters a set of them, derived from the pauses in its transcript."
     },
@@ -971,6 +1014,22 @@
     {
       "name": "mouse_reset",
       "summary": "Restore a mouse trigger to its default."
+    },
+    {
+      "name": "script_list",
+      "summary": "List installed mpv user scripts (.lua and .js) in the config scripts folder, with each script's path, language, description, and whether it is enabled."
+    },
+    {
+      "name": "script_add",
+      "summary": "Install a .lua or .js mpv user script into the config scripts directory, enable it, and load it into the running player immediately."
+    },
+    {
+      "name": "script_toggle",
+      "summary": "Enable or disable an installed mpv user script by filename (e.g."
+    },
+    {
+      "name": "script_remove",
+      "summary": "Delete an installed mpv user script from the config scripts directory."
     },
     {
       "name": "describe_frame",

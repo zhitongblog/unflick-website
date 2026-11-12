@@ -20,14 +20,14 @@ const initialDownloads = stats.downloads;
 // Derive the headline version from whatever the build-time stats grab pulled.
 // Falls through to a hardcoded value only if the stats fetch was unable to
 // resolve a release (offline build, fresh repo with no releases, etc).
-const versionLabel = (stats as { latest_tag?: string | null }).latest_tag ?? 'v0.15.0';
+const versionLabel = (stats as { latest_tag?: string | null }).latest_tag ?? 'v1.0.0';
 
 // Hero CTA points straight at a release asset, not at the #download anchor —
 // solomd-style direct link via GitHub's 302 to its CDN, so the user gets a
 // download stream instead of bouncing through a github.com page. Defaults
 // to the Windows standard installer (most visitors); inline JS below
 // rewrites the href + label for macOS / Linux user agents.
-const tag = (stats as { latest_tag?: string | null }).latest_tag ?? 'v0.15.0';
+const tag = (stats as { latest_tag?: string | null }).latest_tag ?? 'v1.0.0';
 const tagBare = tag.replace(/^v/, '');
 const RELEASE = `https://github.com/zhitongblog/unflick/releases/download/${tag}`;
 const winHref = `${RELEASE}/unflick_${tagBare}_x64-setup-standard.exe`;

@@ -67,7 +67,7 @@
     },
     "mcp": {
       "title": "AI 原生 (MCP)",
-      "body": "内置 MCP server。Claude、ChatGPT、Cursor 等任意 AI Agent 都能通过 101 个工具和 3 个实时资源驱动播放、剪辑、转录、搜索媒体库。"
+      "body": "内置 MCP server。Claude、ChatGPT、Cursor 等任意 AI Agent 都能通过 107 个工具和 3 个实时资源驱动播放、剪辑、转录、搜索媒体库。"
     }
   },
   "download": {
@@ -129,7 +129,7 @@
       "installBody": "任意平台一行命令安装（见首页），macOS 也可以用 Homebrew，或者在下载区选安装包。Windows AI 版额外内置离线 Whisper 模型，生成字幕零配置。",
       "playback": "终端试用",
       "mcp": "接入 AI 客户端",
-      "mcpBody": "把下面这段配置加到你的 MCP 客户端（Claude Desktop / Cursor / Codex CLI 等），AI Agent 立即获得 101 个工具和 3 个实时资源，可以驱动播放、生成字幕、扫描媒体库等。",
+      "mcpBody": "把下面这段配置加到你的 MCP 客户端（Claude Desktop / Cursor / Codex CLI 等），AI Agent 立即获得 107 个工具和 3 个实时资源，可以驱动播放、生成字幕、扫描媒体库等。",
       "plugin": "Claude Code 插件",
       "pluginBody": "在 Claude Code 里运行这两条命令，一步装好 unflick 的七个 skill 并接好 MCP server。"
     },

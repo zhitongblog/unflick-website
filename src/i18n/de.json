@@ -67,7 +67,7 @@
     },
     "mcp": {
       "title": "KI-nativ (MCP)",
-      "body": "Eingebauter MCP-Server. Claude, ChatGPT, Cursor — jeder KI-Agent kann über 101 Tools und 3 Live-Ressourcen abspielen, schneiden, transkribieren und deine Bibliothek durchsuchen."
+      "body": "Eingebauter MCP-Server. Claude, ChatGPT, Cursor — jeder KI-Agent kann über 107 Tools und 3 Live-Ressourcen abspielen, schneiden, transkribieren und deine Bibliothek durchsuchen."
     }
   },
   "download": {
@@ -129,7 +129,7 @@
       "installBody": "Eine Zeile auf jeder Plattform (siehe Startseite), Homebrew auf macOS oder ein Installer aus dem Download-Bereich. Die Windows-AI-Edition bringt zusätzlich ein Offline-Whisper-Modell für Untertitel ohne Einrichtung mit.",
       "playback": "Im Terminal ausprobieren",
       "mcp": "In einen KI-Client einbinden",
-      "mcpBody": "Füge dieses Snippet zu deiner MCP-Client-Konfiguration hinzu (Claude Desktop, Cursor, Codex CLI usw.) und der Agent erhält 101 Tools und 3 Live-Ressourcen für Wiedergabe, Untertitelgenerierung, Bibliotheksscan und mehr.",
+      "mcpBody": "Füge dieses Snippet zu deiner MCP-Client-Konfiguration hinzu (Claude Desktop, Cursor, Codex CLI usw.) und der Agent erhält 107 Tools und 3 Live-Ressourcen für Wiedergabe, Untertitelgenerierung, Bibliotheksscan und mehr.",
       "plugin": "Claude-Code-Plugin",
       "pluginBody": "In Claude Code installieren diese zwei Befehle sieben unflick-Skills und richten den MCP-Server in einem Schritt ein."
     },
