@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "cliGroups": [
     {
       "heading": "Playback",
@@ -120,6 +120,11 @@
           "summary": "Save the current frame as a downscaled JPEG"
         },
         {
+          "name": "frame sheet",
+          "signature": "unflick frame sheet [--output <OUTPUT>] [--cols <COLS>] [--rows <ROWS>] [--start <START>] [--end <END>] [--max-edge <MAX_EDGE>] [--file <FILE>]",
+          "summary": "Sample multiple frames across a time range into a tiled JPEG contact sheet"
+        },
+        {
           "name": "bookmark add",
           "signature": "unflick bookmark add [--name <NAME>] [--position <POSITION>] [--file <FILE>]",
           "summary": "Save a position — where playback is now, unless told otherwise"
@@ -201,23 +206,43 @@
         },
         {
           "name": "transcript get",
-          "signature": "unflick transcript get",
+          "signature": "unflick transcript get [--speaker <SPEAKER>] [--file <FILE>]",
           "summary": "Print every cue of the current file's transcript"
         },
         {
           "name": "transcript search",
-          "signature": "unflick transcript search [--limit <LIMIT>] <QUERY>",
+          "signature": "unflick transcript search [--limit <LIMIT>] [--speaker <SPEAKER>] [--file <FILE>] <QUERY>",
           "summary": "Find lines containing a phrase"
         },
         {
           "name": "transcript seek",
-          "signature": "unflick transcript seek [--occurrence <OCCURRENCE>] <QUERY>",
+          "signature": "unflick transcript seek [--occurrence <OCCURRENCE>] [--speaker <SPEAKER>] [--file <FILE>] <QUERY>",
           "summary": "Jump to where a phrase is spoken"
         },
         {
           "name": "transcript summary",
           "signature": "unflick transcript summary [--segments <SEGMENTS>] [--file <FILE>]",
-          "summary": "Structured summary of the transcript: word count, keywords, and timeline segments"
+          "summary": "Structured summary of the transcript: word count, keywords, speakers, and timeline segments"
+        },
+        {
+          "name": "transcript speakers",
+          "signature": "unflick transcript speakers [--detect] [--count <COUNT>] [--file <FILE>]",
+          "summary": "List speakers in the transcript, or detect speaker turns automatically"
+        },
+        {
+          "name": "transcript rename-speaker",
+          "signature": "unflick transcript rename-speaker [--file <FILE>] <FROM> <TO>",
+          "summary": "Rename a speaker label across the transcript (persisted in cache)"
+        },
+        {
+          "name": "transcript export",
+          "signature": "unflick transcript export [--format <FORMAT>] [--speaker <SPEAKER>] [--file <FILE>] <OUTPUT>",
+          "summary": "Export the transcript to a file (txt, srt, vtt, or json)"
+        },
+        {
+          "name": "scene detect",
+          "signature": "unflick scene detect [--threshold <THRESHOLD>] [--max-scenes <MAX_SCENES>] [--to-chapters] [--file <FILE>]",
+          "summary": "Detect visual scene cuts using ffmpeg scene-change scoring"
         },
         {
           "name": "nowplaying",
@@ -443,6 +468,16 @@
           "name": "playlist shuffle",
           "signature": "unflick playlist shuffle [ENABLED]",
           "summary": "Get or set shuffle"
+        },
+        {
+          "name": "playlist save",
+          "signature": "unflick playlist save <PATH>",
+          "summary": "Save the current playlist to an .m3u / .m3u8 / .pls file"
+        },
+        {
+          "name": "playlist load",
+          "signature": "unflick playlist load [--append] <PATH>",
+          "summary": "Load a playlist from an .m3u / .m3u8 / .pls file"
         },
         {
           "name": "library scan",
@@ -913,7 +948,7 @@
     },
     {
       "name": "search_transcript",
-      "summary": "Search the currently playing file's subtitles for a phrase and return every match with its timestamp."
+      "summary": "Search the currently playing file's subtitles for a phrase and return every match with its timestamp and speaker (if known)."
     },
     {
       "name": "seek_to_text",
@@ -921,7 +956,7 @@
     },
     {
       "name": "transcript_get",
-      "summary": "Return the full transcript of the currently playing file as timed cues, plus where it came from."
+      "summary": "Return the full transcript of the currently playing file as timed cues (including speaker labels when present), plus where it came from."
     },
     {
       "name": "transcript_summary",
@@ -1034,6 +1069,34 @@
     {
       "name": "describe_frame",
       "summary": "Return the frame showing right now as an image, so you can see what is on screen."
+    },
+    {
+      "name": "transcript_speakers",
+      "summary": "List all speakers in the transcript with cue count, word count, speaking duration, and first/last timestamp."
+    },
+    {
+      "name": "transcript_rename_speaker",
+      "summary": "Rename a speaker label across the transcript (e.g."
+    },
+    {
+      "name": "transcript_export",
+      "summary": "Export the transcript to a formatted string or file in `txt`, `srt`, `vtt`, or `json` format, optionally filtered to a single speaker."
+    },
+    {
+      "name": "frame_contact_sheet",
+      "summary": "Sample a grid of frames (cols × rows) evenly across a time range of the video and return a single tiled JPEG image plus the exact timestamp of every cell."
+    },
+    {
+      "name": "detect_scenes",
+      "summary": "Detect visual scene cuts / shot boundaries in the video using ffmpeg's scene-change filter."
+    },
+    {
+      "name": "playlist_save",
+      "summary": "Save the current playlist to an `.m3u`, `.m3u8`, or `.pls` file."
+    },
+    {
+      "name": "playlist_load",
+      "summary": "Load an `.m3u`, `.m3u8`, or `.pls` playlist file into the player's queue."
     },
     {
       "name": "equalizer_get",

@@ -61,7 +61,7 @@
     },
     "mcp": {
       "title": "AI ネイティブ (MCP)",
-      "body": "MCP サーバー内蔵。Claude、ChatGPT、Cursor — あらゆる AI エージェントが 107 のツールと 3 のライブリソースで再生、クリップ、文字起こし、ライブラリ検索を実行できます。"
+      "body": "MCP サーバー内蔵。Claude、ChatGPT、Cursor — あらゆる AI エージェントが 114 のツールと 3 のライブリソースで再生、クリップ、文字起こし、ライブラリ検索を実行できます。"
     }
   },
   "download": {
@@ -123,7 +123,7 @@
       "installBody": "どのプラットフォームでもワンラインでインストールできます（トップページ参照）。macOS は Homebrew、またはダウンロード欄のインストーラーからも。Windows の AI エディションにはオフライン Whisper モデルが同梱され、設定なしで字幕を生成できます。",
       "playback": "ターミナルから試す",
       "mcp": "AI クライアントに接続",
-      "mcpBody": "以下の設定を MCP クライアント（Claude Desktop / Cursor / Codex CLI など）に追加すると、エージェントが 107 のツールと 3 のライブリソースで再生、字幕生成、ライブラリ検索などを実行できます。",
+      "mcpBody": "以下の設定を MCP クライアント（Claude Desktop / Cursor / Codex CLI など）に追加すると、エージェントが 114 のツールと 3 のライブリソースで再生、字幕生成、ライブラリ検索などを実行できます。",
       "plugin": "Claude Code プラグイン",
       "pluginBody": "Claude Code でこの 2 行を実行すると、unflick の 7 つのスキルと MCP サーバーが一度にセットアップされます。"
     },

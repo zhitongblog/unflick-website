@@ -14,7 +14,7 @@ const s = t(locale);
 // so the file name (e.g. unflick-ai_0.8.1_x64-setup.exe) always matches the
 // asset that GitHub actually has. /releases/latest/download works for the
 // latest tag but breaks if anyone visits an older URL or shares a permalink.
-const tag = (stats as { latest_tag?: string | null }).latest_tag ?? 'v1.0.0';
+const tag = (stats as { latest_tag?: string | null }).latest_tag ?? 'v1.0.1';
 const tagBare = tag.replace(/^v/, '');
 const RELEASE = `https://github.com/zhitongblog/unflick/releases/download/${tag}`;
 ---

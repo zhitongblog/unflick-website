@@ -61,7 +61,7 @@
     },
     "mcp": {
       "title": "AI-native (MCP)",
-      "body": "Built-in MCP server. Claude, ChatGPT, Cursor — any AI agent can play, clip, transcribe, and search your library through 107 tools and 3 live resources."
+      "body": "Built-in MCP server. Claude, ChatGPT, Cursor — any AI agent can play, clip, transcribe, and search your library through 114 tools and 3 live resources."
     }
   },
   "download": {
@@ -123,7 +123,7 @@
       "installBody": "One line on any platform (see the home page), Homebrew on macOS, or an installer from the download section. The Windows AI Edition also bundles an offline Whisper model for zero-config subtitles.",
       "playback": "Try it from a terminal",
       "mcp": "Drop it into an AI client",
-      "mcpBody": "Add this snippet to your MCP client config (Claude Desktop, Cursor, Codex CLI, etc.) and the agent gains 107 tools and 3 live resources to drive playback, generate subtitles, scan your library, and more.",
+      "mcpBody": "Add this snippet to your MCP client config (Claude Desktop, Cursor, Codex CLI, etc.) and the agent gains 114 tools and 3 live resources to drive playback, generate subtitles, scan your library, and more.",
       "plugin": "Claude Code plugin",
       "pluginBody": "In Claude Code, these two commands install seven unflick skills and wire up the MCP server in one step."
     },

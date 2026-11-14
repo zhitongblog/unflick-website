@@ -61,7 +61,7 @@
     },
     "mcp": {
       "title": "AI 네이티브 (MCP)",
-      "body": "MCP 서버 내장. Claude, ChatGPT, Cursor — 모든 AI 에이전트가 107개 도구와 3개 라이브 리소스를 통해 재생, 클립, 전사, 라이브러리 검색을 수행할 수 있습니다."
+      "body": "MCP 서버 내장. Claude, ChatGPT, Cursor — 모든 AI 에이전트가 114개 도구와 3개 라이브 리소스를 통해 재생, 클립, 전사, 라이브러리 검색을 수행할 수 있습니다."
     }
   },
   "download": {
@@ -123,7 +123,7 @@
       "installBody": "모든 플랫폼에서 한 줄로 설치할 수 있습니다(홈페이지 참고). macOS는 Homebrew로, 또는 다운로드 섹션의 설치 파일로도 가능합니다. Windows AI 에디션에는 오프라인 Whisper 모델이 포함되어 설정 없이 자막을 만들 수 있습니다.",
       "playback": "터미널에서 시도",
       "mcp": "AI 클라이언트에 연결",
-      "mcpBody": "다음 설정을 MCP 클라이언트(Claude Desktop / Cursor / Codex CLI 등)에 추가하면 에이전트가 107개 도구와 3개 라이브 리소스로 재생, 자막 생성, 라이브러리 스캔 등을 수행할 수 있습니다.",
+      "mcpBody": "다음 설정을 MCP 클라이언트(Claude Desktop / Cursor / Codex CLI 등)에 추가하면 에이전트가 114개 도구와 3개 라이브 리소스로 재생, 자막 생성, 라이브러리 스캔 등을 수행할 수 있습니다.",
       "plugin": "Claude Code 플러그인",
       "pluginBody": "Claude Code에서 이 두 줄을 실행하면 unflick 스킬 7개와 MCP 서버가 한 번에 설정됩니다."
     },

@@ -66,7 +66,7 @@ function walk(path, about) {
 // listed here still shows up, under "More".
 const GROUPS = [
   ['Playback', ['play', 'pause', 'resume', 'stop', 'seek', 'volume', 'speed', 'status', 'chapter', 'loop', 'frame', 'bookmark', 'session', 'recent', 'incognito']],
-  ['Media tools', ['info', 'screenshot', 'clip', 'transcript', 'nowplaying']],
+  ['Media tools', ['info', 'screenshot', 'clip', 'transcript', 'scene', 'nowplaying']],
   ['Subtitles & audio', ['subtitle', 'audio']],
   ['Picture & window', ['video', 'filter', 'window']],
   ['Playlist & library', ['playlist', 'library']],
